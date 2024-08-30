@@ -45,6 +45,7 @@ library(data.table)
 # Load the dplyr package
 library(dplyr)
 ################################################################################
+#Generate the biom data with full column data including bio and SPR codes 
 
 biom_data = biomformat::read_biom("input_data/Galaxy1760-[Bracken-biom_output_file_(including_metadata)].biom1")
 tse <- makeTreeSEFromBiom(biom_data)
@@ -73,10 +74,6 @@ rownames(col_data_new) <- paste0("Sample_", 1:nrow(col_data_new))
 
 # Assign the modified colData back to the SummarizedExperiment object
 colData(tse) <- col_data_new
-
-
-################################################################################
-##Create bar plots
 
 ################################################################################
 ################################################################################
@@ -146,10 +143,6 @@ fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 ################################################################################
 ##metabolism: reading and cleaning 
 
-#FIX:
-
-
-
 # Define the path to your folder containing TSV files
 folder_path_metabolism <- "input_data/subsystems_result"
 
@@ -216,4 +209,16 @@ names(merged_data_org) <- gsub("^reads_", "", names(merged_data_org))
 
 # Save the merged data to a new file (optional)
 fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
+
+# enzyme lowest level 4
+#SEED_subsystem level 3
+#description level 2
+#SEED_subsystem_functional_category highest level 1 
+
+################################################################################
+##Create bar plots
+
+
+
+
 
