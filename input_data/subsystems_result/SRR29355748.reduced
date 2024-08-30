@@ -1,0 +1,708 @@
+13.418259023354565	948.0	Retron-type reverse transcriptase	Group_II_intron-associated_genes		RNA Metabolism	
+4.911535739561217	347.0	NO HIERARCHY
+3.878273177636235	274.0	Flagellin FlaB2	Archaeal_Flagellum	Motility and Chemotaxis	Flagellar motility in Prokaryota
+3.397027600849257	240.0	Particulate methane monooxygenase C-subunit (EC 1.14.13.25)	Particulate_methane_monooxygenase_(pMMO)	Carbohydrates	Central carbohydrate metabolism
+3.3687190375088463	238.0	Methanol:corrinoid methyltransferase	Methanogenesis_from_methylated_compounds	Carbohydrates	One-carbon Metabolism
+2.618542108987969	185.0	LSU ribosomal protein L11e (L5p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+2.038216560509554	144.0	V-type ATP synthase subunit B (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+1.9815994338287333	140.0	Glutamine synthetase type I (EC 6.3.1.2)	Glutamine,_Glutamate,_Aspartate_and_Asparagine_Biosynthesis	Amino Acids and Derivatives	Glutamine, glutamate, aspartate, asparagine; ammonia assimilation
+1.9532908704883227	138.0	7,8-didemethyl-8-hydroxy-5-deazariboflavin synthase subunit 2	Coenzyme_F420_synthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Coenzyme F420
+1.8400566171266808	130.0	Respiratory nitrate reductase alpha chain (EC 1.7.99.4)	Nitrate_and_nitrite_ammonification		Nitrogen Metabolism	
+1.4720452937013446	104.0	ATP synthase alpha chain (EC 3.6.3.14)	F0F1-type_ATP_synthase	Respiration	ATP synthases
+1.2738853503184713	90.0	Thermosome subunit	Thermosome,_archaeal	Protein Metabolism	Protein folding
+1.2597310686482661	89.0	Methyl coenzyme M reductase operon protein C	Methanogenesis	Carbohydrates	One-carbon Metabolism
+1.019108280254777	72.0	Methanol methyltransferase corrinoid protein	Methanogenesis_from_methylated_compounds	Carbohydrates	One-carbon Metabolism
+0.9907997169143666	70.0	SSU ribosomal protein S23e (S12p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.9341825902335457	66.0	F420-dependent sulfite reductase	Anaerobic_respiratory_reductases	Respiration	Electron accepting reactions
+0.9341825902335457	66.0	Glycerol kinase (EC 2.7.1.30)	Glycerol_and_Glycerol-3-phosphate_Uptake_and_Utilization	Carbohydrates	Sugar alcohols
+0.89171974522293	63.0	LSU ribosomal protein L17p	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.8492569002123143	60.0	Ribosomal-protein-S18p-alanine acetyltransferase (EC 2.3.1.-)	Bacterial_RNA-metabolizing_Zn-dependent_hydrolases		Clustering-based subsystems	
+0.8209483368719037	58.0	DNA gyrase subunit B (EC 5.99.1.3)	Resistance_to_fluoroquinolones	Virulence, Disease and Defense	Resistance to antibiotics and toxic compounds
+0.8209483368719037	58.0	Cytochrome c oxidase polypeptide I (EC 1.9.3.1)	Terminal_cytochrome_C_oxidases	Respiration	Electron accepting reactions
+0.7926397735314933	56.0	Flagellar basal-body rod protein FlgG	Flagellum	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.778485491861288	55.0	LSU ribosomal protein L5e (L18p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.7643312101910829	54.0	Particulate methane monooxygenase B-subunit (EC 1.14.13.25)	Particulate_methane_monooxygenase_(pMMO)	Carbohydrates	Central carbohydrate metabolism
+0.6935598018400566	49.0	Uridine kinase (EC 2.7.1.48) [C1]	pyrimidine_conversions	Nucleosides and Nucleotides	Pyrimidines
+0.6794055201698513	48.0	SSU ribosomal protein S8p (S15Ae)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.6652512384996462	47.0	LSU ribosomal protein P0 (L10p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.6652512384996462	47.0	COG0523: Putative GTPases (G3E family)	Transport_of_Zinc		Membrane Transport	
+0.6510969568294409	46.0	Methyl coenzyme M reductase alpha subunit (EC 2.8.4.1)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.6369426751592356	45.0	Non-specific DNA-binding protein Dps	Oxidative_stress	Stress Response	Oxidative stress
+0.5803255484784147	41.0	LSU ribosomal protein L37Ae	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.5661712668082095	40.0	Translation elongation factor 1 alpha subunit	Translation_elongation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.537862703467799	38.0	Anaerobic nitric oxide reductase flavorubredoxin	Nitrosative_stress		Nitrogen Metabolism	
+0.5237084217975938	37.0	Formylmethanofuran dehydrogenase subunit A (EC 1.2.99.5)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.5237084217975938	37.0	V-type ATP synthase subunit I (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+0.5095541401273885	36.0	Particulate methane monooxygenase A-subunit (EC 1.14.13.25)	Particulate_methane_monooxygenase_(pMMO)	Carbohydrates	Central carbohydrate metabolism
+0.5095541401273885	36.0	AmpG permease	Recycling_of_Peptidoglycan_Amino_Acids		Cell Wall and Capsule	
+0.4953998584571833	35.0	Chaperone protein HtpG	Protein_chaperones	Protein Metabolism	Protein folding
+0.46709129511677283	33.0	TonB-dependent receptor	Ton_and_Tol_transport_systems		Membrane Transport	
+0.45293701344656756	32.0	Sensor histidine kinase colocalized with HrtAB transporter	Heme,_hemin_uptake_and_utilization_systems_in_GramPositives		Iron acquisition and metabolism	
+0.42462845010615713	30.0	NusA protein homolog, archaeal	Transcription_elongation_factors,_archaeal	RNA Metabolism	Transcription
+0.41047416843595186	29.0	Methylcobalamin:coenzyme M methyltransferase, methanol-specific	Methanogenesis_from_methylated_compounds	Carbohydrates	One-carbon Metabolism
+0.41047416843595186	29.0	Methanol dehydrogenase large subunit protein (EC 1.1.99.8)	Respiratory_dehydrogenases_1	Respiration	Electron donating reactions
+0.39631988676574664	28.0	Transcription antitermination protein NusG	Transcription_factors_bacterial	RNA Metabolism	Transcription
+0.39631988676574664	28.0	LSU ribosomal protein L10p (P0)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.3821656050955414	27.0	Methyl coenzyme M reductase gamma subunit (EC 2.8.4.1)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.35385704175513094	25.0	DNA gyrase subunit A (EC 5.99.1.3)	Resistance_to_fluoroquinolones	Virulence, Disease and Defense	Resistance to antibiotics and toxic compounds
+0.33970276008492567	24.0	Methyl coenzyme M reductase beta subunit (EC 2.8.4.1)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.33970276008492567	24.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit B (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.33970276008492567	24.0	Translation elongation factor 2	Translation_elongation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.32554847841472045	23.0	LSU ribosomal protein L7Ae	rRNA_modification_Archaea	RNA Metabolism	RNA processing and modification
+0.32554847841472045	23.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoF	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.31139419674451524	22.0	LSU ribosomal protein L26e (L24p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.29723991507430997	21.0	Phosphoribosylformylglycinamidine synthase, synthetase subunit (EC 6.3.5.3)	De_Novo_Purine_Biosynthesis	Nucleosides and Nucleotides	Purines
+0.29723991507430997	21.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoJ	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.28308563340410475	20.0	Adenylate kinase (EC 2.7.4.3)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.28308563340410475	20.0	ATP synthase beta chain (EC 3.6.3.14)	F0F1-type_ATP_synthase	Respiration	ATP synthases
+0.28308563340410475	20.0	Phosphoenolpyruvate carboxykinase [ATP] (EC 4.1.1.49)	Serine-glyoxylate_cycle	Carbohydrates	One-carbon Metabolism
+0.28308563340410475	20.0	Succinyl-CoA ligase [ADP-forming] beta chain (EC 6.2.1.5)	TCA_Cycle	Carbohydrates	Central carbohydrate metabolism
+0.2689313517338995	19.0	CO dehydrogenase/acetyl-CoA synthase subunit alpha, CO dehydrogenase subcomplex (EC 1.2.99.2)	Carbon_monoxide_induced_hydrogenase		Respiration	
+0.25477707006369427	18.0	LSU ribosomal protein L17e (L22p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.25477707006369427	18.0	GTP pyrophosphokinase (EC 2.7.6.5), (p)ppGpp synthetase I	CBSS-176299.4.peg.1292	Clustering-based subsystems	Probably GTP or GMP signaling related
+0.24062278839348902	17.0	2-isopropylmalate synthase (EC 2.3.3.13)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.22646850672328378	16.0	LSU ribosomal protein L33p	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.22646850672328378	16.0	Sarcosine oxidase alpha subunit (EC 1.5.3.1)	Choline_and_Betaine_Uptake_and_Betaine_Biosynthesis	Stress Response	Osmotic stress
+0.22646850672328378	16.0	Ribonucleotide reductase of class III (anaerobic), large subunit (EC 1.17.4.2)	Ribonucleotide_reduction		Nucleosides and Nucleotides	
+0.22646850672328378	16.0	Translation elongation factor G	Translation_elongation_factors_bacterial	Protein Metabolism	Protein biosynthesis
+0.22646850672328378	16.0	pyrrolysine-containing	Pyrrolysine	Protein Metabolism	Protein biosynthesis
+0.21231422505307856	15.0	SSU ribosomal protein S5e (S7p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.19815994338287332	14.0	Homogentisate 1,2-dioxygenase (EC 1.13.11.5)	Homogentisate_pathway_of_aromatic_compound_degradation	Metabolism of Aromatic Compounds	Metabolism of central aromatic intermediates
+0.19815994338287332	14.0	TldD protein, part of proposed TldE/TldD proteolytic complex (PMID 12029038)	Putative_TldE-TldD_proteolytic_complex	Protein Metabolism	Protein degradation
+0.19815994338287332	14.0	Uncharacterized protein ImpC	Type_VI_secretion_systems	Membrane Transport	Protein secretion system, Type VI
+0.19815994338287332	14.0	Hypothetical protein with distant similarity to Ribonuclease E inhibitor RraA (former MenG)	Formaldehyde_assimilation:_Ribulose_monophosphate_pathway	Carbohydrates	One-carbon Metabolism
+0.19815994338287332	14.0	DNA-directed RNA polymerase beta subunit (EC 2.7.7.6)	RNA_polymerase_bacterial	RNA Metabolism	Transcription
+0.19815994338287332	14.0	Glutamate synthase [NADPH] large chain (EC 1.4.1.13)	Glutamine,_Glutamate,_Aspartate_and_Asparagine_Biosynthesis	Amino Acids and Derivatives	Glutamine, glutamate, aspartate, asparagine; ammonia assimilation
+0.18400566171266808	13.0	Ferrous iron transport protein B	CBSS-196620.1.peg.2477		Clustering-based subsystems	
+0.18400566171266808	13.0	LSU ribosomal protein L1e (L4p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.18400566171266808	13.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoN	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.18400566171266808	13.0	LSU ribosomal protein L23e (L14p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.18400566171266808	13.0	Cell division protein FtsZ (EC 3.4.24.-)	Bacterial_Cytoskeleton		Cell Division and Cell Cycle	
+0.16985138004246284	12.0	LSU ribosomal protein L5p (L11e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.16985138004246284	12.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit D (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.16985138004246284	12.0	Ribonuclease P protein component 3 (EC 3.1.26.5)	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.16985138004246284	12.0	CO dehydrogenase/acetyl-CoA synthase subunit epsilon, CO dehydrogenase subcomplex (EC 1.2.99.2)	Carbon_monoxide_induced_hydrogenase		Respiration	
+0.16985138004246284	12.0	Pyruvate formate-lyase (EC 2.3.1.54)	Fermentations:_Mixed_acid	Carbohydrates	Fermentation
+0.16985138004246284	12.0	Translation elongation factor Tu	Translation_elongation_factors_bacterial	Protein Metabolism	Protein biosynthesis
+0.16985138004246284	12.0	Peptidyl-prolyl cis-trans isomerase (EC 5.2.1.8)	Queuosine-Archaeosine_Biosynthesis	RNA Metabolism	RNA processing and modification
+0.16985138004246284	12.0	ATP-dependent Clp protease ATP-binding subunit ClpA	Proteolysis_in_bacteria,_ATP-dependent	Protein Metabolism	Protein degradation
+0.16985138004246284	12.0	Flagellin protein FlaA	Flagellum_in_Campylobacter	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.16985138004246284	12.0	LSU ribosomal protein L24e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.15569709837225762	11.0	CO dehydrogenase/acetyl-CoA synthase subunit beta, acetyl-CoA synthase (EC 2.3.1.169)	Carbon_monoxide_induced_hydrogenase		Respiration	
+0.15569709837225762	11.0	Alkyl hydroperoxide reductase subunit C-like protein	Oxidative_stress	Stress Response	Oxidative stress
+0.15569709837225762	11.0	Glutamyl-tRNA synthetase (EC 6.1.1.17)	tRNA_aminoacylation,_Glu_and_Gln	Protein Metabolism	Protein biosynthesis
+0.15569709837225762	11.0	Formylmethanofuran dehydrogenase (molybdenum) subunit D (EC 1.2.99.5)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.15569709837225762	11.0	Phosphomannomutase (EC 5.4.2.8)	Mannose_Metabolism	Carbohydrates	Monosaccharides
+0.15569709837225762	11.0	ATP-dependent protease La (EC 3.4.21.53)	Proteolysis_in_bacteria,_ATP-dependent	Protein Metabolism	Protein degradation
+0.15569709837225762	11.0	Phosphate transport system regulatory protein PhoU	Phosphate_metabolism		Phosphorus Metabolism	
+0.14154281670205238	10.0	DNA-directed RNA polymerase subunit N (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.14154281670205238	10.0	Signal transduction histidine kinase CheA (EC 2.7.3.-)	Flagellar_motility	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.14154281670205238	10.0	LSU ribosomal protein L7e (L30p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.14154281670205238	10.0	LSU ribosomal protein L3e (L3p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.14154281670205238	10.0	LSU ribosomal protein L19e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.14154281670205238	10.0	LSU ribosomal protein L23Ae (L23p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.14154281670205238	10.0	Hydantoinase	Hydantoin_metabolism		Nucleosides and Nucleotides	
+0.14154281670205238	10.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoM	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.14154281670205238	10.0	DNA-directed RNA polymerase beta' subunit (EC 2.7.7.6)	RNA_polymerase_bacterial	RNA Metabolism	Transcription
+0.14154281670205238	10.0	Heat shock protein 60 family chaperone GroEL	GroEL_GroES	Protein Metabolism	Protein folding
+0.14154281670205238	10.0	Osmotically activated L-carnitine/choline ABC transporter, ATP-binding protein OpuCA	Choline_and_Betaine_Uptake_and_Betaine_Biosynthesis	Stress Response	Osmotic stress
+0.14154281670205238	10.0	Glucose-1-phosphate cytidylyltransferase (EC 2.7.7.33)	dTDP-rhamnose_synthesis	Cell Wall and Capsule	Capsular and extracellular polysacchrides
+0.14154281670205238	10.0	CO dehydrogenase accessory protein CooC (nickel insertion)	Carbon_monoxide_induced_hydrogenase		Respiration	
+0.14154281670205238	10.0	NADH-ubiquinone oxidoreductase chain D (EC 1.6.5.3)	Respiratory_Complex_I	Respiration	Electron donating reactions
+0.12738853503184713	9.0	LSU ribosomal protein L10Ae (L1p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.12738853503184713	9.0	Valyl-tRNA synthetase (EC 6.1.1.9)	tRNA_aminoacylation,_Val	Protein Metabolism	Protein biosynthesis
+0.12738853503184713	9.0	Cobalt-precorrin-2 C20-methyltransferase (EC 2.1.1.130)	Coenzyme_B12_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.12738853503184713	9.0	Glucose-1-phosphate thymidylyltransferase (EC 2.7.7.24)	Rhamnose_containing_glycans	Cell Wall and Capsule	Capsular and extracellular polysacchrides
+0.12738853503184713	9.0	Phenylalanyl-tRNA synthetase beta chain (EC 6.1.1.20)	tRNA_aminoacylation,_Phe	Protein Metabolism	Protein biosynthesis
+0.12738853503184713	9.0	Serine hydroxymethyltransferase (EC 2.1.2.1)	5-FCL-like_protein	Cofactors, Vitamins, Prosthetic Groups, Pigments	Folate and pterines
+0.11323425336164189	8.0	L-threonine 3-O-phosphate decarboxylase (EC 4.1.1.81)	Coenzyme_B12_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.11323425336164189	8.0	GTPase Rac1	P38_MAP_kinase_pathways	Regulation and Cell signaling	Signal transduction in Eukaryotes
+0.11323425336164189	8.0	V-type ATP synthase subunit D (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+0.11323425336164189	8.0	Glutamine synthetase type III, GlnN (EC 6.3.1.2)	Peptidoglycan_Biosynthesis		Cell Wall and Capsule	
+0.11323425336164189	8.0	High-affnity carbon uptake protein Hat/HatR	CO2_uptake,_carboxysome	Carbohydrates	CO2 fixation
+0.11323425336164189	8.0	DNA-directed RNA polymerase subunit A'' (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.11323425336164189	8.0	Adenylylsulfate reductase beta-subunit (EC 1.8.99.2)	Anaerobic_respiratory_reductases	Respiration	Electron accepting reactions
+0.11323425336164189	8.0	LSU ribosomal protein L1p (L10Ae)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.11323425336164189	8.0	Ribonucleotide reductase of class III (anaerobic), activating protein (EC 1.97.1.4)	Ribonucleotide_reduction		Nucleosides and Nucleotides	
+0.11323425336164189	8.0	D-3-phosphoglycerate dehydrogenase (EC 1.1.1.95)	Pyridoxin_(Vitamin_B6)_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Pyridoxine
+0.11323425336164189	8.0	Monomethylamine methyltransferase corrinoid protein	Methanogenesis_from_methylated_compounds	Carbohydrates	One-carbon Metabolism
+0.11323425336164189	8.0	Endoplasmic reticulum chaperon grp78 (BiP)	Regulatory_Intramembrane_Proteolysis_Pathways	Regulation and Cell signaling	Proteolytic pathway
+0.11323425336164189	8.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit E (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.11323425336164189	8.0	5'-nucleotidase (EC 3.1.3.5)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.11323425336164189	8.0	SSU ribosomal protein S4p (S9e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.11323425336164189	8.0	Superoxide dismutase [Fe] (EC 1.15.1.1)	Oxidative_stress	Stress Response	Oxidative stress
+0.11323425336164189	8.0	Putative coenzyme F420-dependent oxidoreductase MJ1349	Coenzyme_F420_hydrogenase	Respiration	Electron donating reactions
+0.11323425336164189	8.0	UDP-N-acetylglucosamine 1-carboxyvinyltransferase (EC 2.5.1.7)	Sporulation-related_Hypotheticals	Clustering-based subsystems	Clustering-based subsystems
+0.11323425336164189	8.0	Copper-translocating P-type ATPase (EC 3.6.3.4)	Copper_homeostasis	Virulence, Disease and Defense	Resistance to antibiotics and toxic compounds
+0.11323425336164189	8.0	DNA polymerase I (EC 2.7.7.7)	DNA-replication	DNA Metabolism	DNA replication
+0.11323425336164189	8.0	Chaperone protein DnaK	Protein_chaperones	Protein Metabolism	Protein folding
+0.09907997169143666	7.0	SSU ribosomal protein S9e (S4p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.09907997169143666	7.0	Phosphonate ABC transporter phosphate-binding periplasmic component (TC 3.A.1.9.1)	ABC_transporter_alkylphosphonate_(TC_3.A.1.9.1)	Membrane Transport	ABC transporters
+0.09907997169143666	7.0	Propionyl-CoA carboxylase carboxyl transferase subunit (EC 6.4.1.3)	Serine-glyoxylate_cycle	Carbohydrates	One-carbon Metabolism
+0.09907997169143666	7.0	Glutaminyl-tRNA synthetase (EC 6.1.1.18)	tRNA_aminoacylation,_Glu_and_Gln	Protein Metabolism	Protein biosynthesis
+0.09907997169143666	7.0	Tryptophan synthase beta chain (EC 4.2.1.20)	Tryptophan_synthesis	Amino Acids and Derivatives	Aromatic amino acids and derivatives
+0.09907997169143666	7.0	DNA mismatch repair protein MutS	DNA_repair,_bacterial_MutL-MutS_system	DNA Metabolism	DNA repair
+0.09907997169143666	7.0	Peroxide stress regulator PerR, FUR family	Oxidative_stress	Stress Response	Oxidative stress
+0.09907997169143666	7.0	Chaperone protein DnaJ	Protein_chaperones	Protein Metabolism	Protein folding
+0.09907997169143666	7.0	Iron-sulfur cluster assembly protein SufB	Staphylococcal_phi-Mu50B-like_prophages	Phages, Prophages, Transposable elements, Plasmids	Phages, Prophages
+0.09907997169143666	7.0	V-type ATP synthase subunit E (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+0.09907997169143666	7.0	F420-dependent N(5),N(10)-methylenetetrahydromethanopterin reductase (EC 1.5.99.11)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.09907997169143666	7.0	CO dehydrogenase/acetyl-CoA synthase, CO dehydrogenase subunit (EC 1.2.99.2)	Carbon_monoxide_induced_hydrogenase		Respiration	
+0.09907997169143666	7.0	Proteasome subunit beta (EC 3.4.25.1), archaeal	Proteasome_archaeal	Protein Metabolism	Protein degradation
+0.09907997169143666	7.0	Molybdopterin oxidoreductase, iron-sulfur binding subunit (EC 1.2.7.-)	CBSS-269799.3.peg.2220	Clustering-based subsystems	Molybdopterin oxidoreductase
+0.09907997169143666	7.0	Pyruvate dehydrogenase E1 component beta subunit (EC 1.2.4.1)	Pyruvate_metabolism_II:_acetyl-CoA,_acetogenesis_from_pyruvate	Carbohydrates	Central carbohydrate metabolism
+0.09907997169143666	7.0	LSU ribosomal protein L13p (L13Ae)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.09907997169143666	7.0	NADP-specific glutamate dehydrogenase (EC 1.4.1.4)	Glutamine,_Glutamate,_Aspartate_and_Asparagine_Biosynthesis	Amino Acids and Derivatives	Glutamine, glutamate, aspartate, asparagine; ammonia assimilation
+0.09907997169143665	7.0	Succinyl-CoA ligase [ADP-forming] alpha chain (EC 6.2.1.5)	Serine-glyoxylate_cycle	Carbohydrates	One-carbon Metabolism
+0.09907997169143666	7.0	Isocitrate dehydrogenase [NADP] (EC 1.1.1.42)	TCA_Cycle	Carbohydrates	Central carbohydrate metabolism
+0.08492569002123142	6.0	Translation initiation factor 2	Universal_GTPases	Protein Metabolism	Protein biosynthesis
+0.08492569002123142	6.0	hydrogenase, subunit gamma related protein	Hydrogenases	Respiration	Electron donating reactions
+0.08492569002123142	6.0	Putative Zn-dependent hydrolase in polyisoprenoid biosynthetic cluster	Archaeal_lipids	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.08492569002123142	6.0	3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.41)	Fatty_Acid_Biosynthesis_FASII	Fatty Acids, Lipids, and Isoprenoids	Fatty acids
+0.08492569002123142	6.0	Hydroxylamine reductase (EC 1.7.-.-)	Nitrosative_stress		Nitrogen Metabolism	
+0.08492569002123142	6.0	Electron transfer flavoprotein, alpha subunit	Acetyl-CoA_fermentation_to_Butyrate	Carbohydrates	Fermentation
+0.08492569002123142	6.0	Flagellar basal-body rod protein FlgC	Flagellum_in_Campylobacter	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.08492569002123142	6.0	Formylmethanofuran dehydrogenase (molybdenum) subunit B (EC 1.2.99.5)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.08492569002123142	6.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit F (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.08492569002123142	6.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit H (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.08492569002123142	6.0	Ribonucleotide reductase of class Ia (aerobic), beta subunit (EC 1.17.4.1)	Ribonucleotide_reduction		Nucleosides and Nucleotides	
+0.08492569002123142	6.0	RNA polymerase sigma factor RpoD	Transcription_initiation,_bacterial_sigma_factors	RNA Metabolism	Transcription
+0.08492569002123142	6.0	Phosphoenolpyruvate synthase (EC 2.7.9.2)	Pyruvate_metabolism_I:_anaplerotic_reactions,_PEP	Carbohydrates	Central carbohydrate metabolism
+0.08492569002123142	6.0	rubredoxin-oxygen oxidoreductase	Rubrerythrin	Stress Response	Oxidative stress
+0.08492569002123142	6.0	V-type ATP synthase subunit A (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+0.08492569002123142	6.0	Electron transport complex protein RnfC	Na(+)-translocating_NADH-quinone_oxidoreductase_and_rnf-like_group_of_electron_transport_complexes	Respiration	Electron donating reactions
+0.08492569002123142	6.0	Alternative cytochrome c oxidase polypeptide CoxN (EC 1.9.3.1)	Terminal_cytochrome_C_oxidases	Respiration	Electron accepting reactions
+0.08492569002123142	6.0	Aspartate--ammonia ligase (EC 6.3.1.1)	Glutamine,_Glutamate,_Aspartate_and_Asparagine_Biosynthesis	Amino Acids and Derivatives	Glutamine, glutamate, aspartate, asparagine; ammonia assimilation
+0.08492569002123142	6.0	Probable low-affinity inorganic phosphate transporter	Phosphate_metabolism		Phosphorus Metabolism	
+0.08492569002123143	6.0	Translation elongation factor P	Translation_elongation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.08492569002123143	6.0	Succinate dehydrogenase flavoprotein subunit (EC 1.3.99.1)	Serine-glyoxylate_cycle	Carbohydrates	One-carbon Metabolism
+0.08492569002123142	6.0	NAD-dependent glyceraldehyde-3-phosphate dehydrogenase (EC 1.2.1.12)	Redox-dependent_regulation_of_nucleus_processes	Stress Response	Oxidative stress
+0.08492569002123142	6.0	DNA topoisomerase I (EC 5.99.1.2)	Conserved_gene_cluster_associated_with_Met-tRNA_formyltransferase		Clustering-based subsystems	
+0.08492569002123142	6.0	Glucose-6-phosphate 1-dehydrogenase (EC 1.1.1.49)	Pentose_phosphate_pathway	Carbohydrates	Central carbohydrate metabolism
+0.07077140835102619	5.0	Glycogen biosynthesis protein GlgD, glucose-1-phosphate adenylyltransferase family	Glycogen_metabolism	Carbohydrates	Polysaccharides
+0.07077140835102619	5.0	LSU ribosomal protein L16p (L10e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	Catabolite control protein A	HPr_catabolite_repression_system		Regulation and Cell signaling	
+0.07077140835102619	5.0	Superoxide reductase (EC 1.15.1.2)	Oxidative_stress	Stress Response	Oxidative stress
+0.07077140835102619	5.0	SSU ribosomal protein S3e (S3p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	SSU ribosomal protein S19e	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	Phosphoserine phosphatase (EC 3.1.3.3)	Serine_Biosynthesis	Amino Acids and Derivatives	Alanine, serine, and glycine
+0.07077140835102619	5.0	Cell division protein FtsA	Bacterial_Cytoskeleton		Cell Division and Cell Cycle	
+0.07077140835102619	5.0	Methyl coenzyme M reductase operon protein D	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.07077140835102619	5.0	ATP-dependent protease La (EC 3.4.21.53) Type I	Proteolysis_in_bacteria,_ATP-dependent	Protein Metabolism	Protein degradation
+0.07077140835102619	5.0	Ferredoxin	Soluble_cytochromes_and_functionally_related_electron_carriers		Respiration	
+0.07077140835102619	5.0	Dissimilatory sulfite reductase (desulfoviridin), alpha and beta subunits	Anaerobic_respiratory_reductases	Respiration	Electron accepting reactions
+0.07077140835102619	5.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoL	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.07077140835102619	5.0	CoB--CoM heterodisulfide reductase 2 subunit E (EC 1.8.98.1)	Anaerobic_respiratory_reductases	Respiration	Electron accepting reactions
+0.07077140835102619	5.0	Transcription initiation factor B	RNA_polymerase_archaeal_initiation_factors	RNA Metabolism	Transcription
+0.07077140835102619	5.0	Threonyl-tRNA synthetase (EC 6.1.1.3)	tRNA_aminoacylation,_Thr	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	Adenosylhomocysteinase (EC 3.3.1.1)	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.07077140835102619	5.0	Prolyl-tRNA synthetase (EC 6.1.1.15)	tRNA_aminoacylation,_Pro	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	LSU ribosomal protein L14p (L23e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	Formylmethanofuran dehydrogenase (molybdenum) operon gene F (polyferredoxin)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.07077140835102619	5.0	Membrane alanine aminopeptidase N (EC 3.4.11.2)	Aminopeptidases_(EC_3.4.11.-)	Protein Metabolism	Protein degradation
+0.07077140835102619	5.0	DNA-directed RNA polymerase subunit D (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.07077140835102619	5.0	Phosphatidylserine decarboxylase (EC 4.1.1.65)	Glycerolipid_and_Glycerophospholipid_Metabolism_in_Bacteria	Fatty Acids, Lipids, and Isoprenoids	Phospholipids
+0.07077140835102619	5.0	Thiamin biosynthesis protein ThiC	COG2363	Miscellaneous	Plant-Prokaryote DOE project
+0.07077140835102619	5.0	Deblocking aminopeptidase (EC 3.4.11.-)	Protein_degradation	Protein Metabolism	Protein degradation
+0.07077140835102619	5.0	Na(+)-translocating NADH-quinone reductase subunit F (EC 1.6.5.-)	Na(+)-translocating_NADH-quinone_oxidoreductase_and_rnf-like_group_of_electron_transport_complexes	Respiration	Electron donating reactions
+0.07077140835102619	5.0	Triphosphoribosyl-dephospho-CoA synthetase	Methanopterin_biosynthesis2	Cofactors, Vitamins, Prosthetic Groups, Pigments	Folate and pterines
+0.07077140835102619	5.0	S1 RNA binding domain protein	Cell_division-ribosomal_stress_proteins_cluster		Clustering-based subsystems	
+0.07077140835102619	5.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoK	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.07077140835102619	5.0	LSU ribosomal protein L32e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	V-type ATP synthase subunit C (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+0.07077140835102619	5.0	Pyruvate,phosphate dikinase (EC 2.7.9.1)	Glycolysis_and_Gluconeogenesis,_including_Archaeal_enzymes	Carbohydrates	Central carbohydrate metabolism
+0.07077140835102619	5.0	Acetyl-CoA acetyltransferase (EC 2.3.1.9)	Acetyl-CoA_fermentation_to_Butyrate	Carbohydrates	Fermentation
+0.07077140835102619	5.0	Glycerol-3-phosphate dehydrogenase (EC 1.1.5.3)	Respiratory_dehydrogenases_1	Respiration	Electron donating reactions
+0.07077140835102619	5.0	Dimethyladenosine transferase (EC 2.1.1.-)	Ribosome_biogenesis_bacterial	Protein Metabolism	Protein biosynthesis
+0.07077140835102619	5.0	2,3-bisphosphoglycerate-independent phosphoglycerate mutase (EC 5.4.2.1)	Entner-Doudoroff_Pathway	Carbohydrates	Central carbohydrate metabolism
+0.07077140835102619	5.0	Enolase (EC 4.2.1.11)	Glycolysis_and_Gluconeogenesis	Carbohydrates	Central carbohydrate metabolism
+0.056617126680820945	4.0	Flagellar motor rotation protein MotB	Flagellar_motility	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.056617126680820945	4.0	Inosine-5'-monophosphate dehydrogenase (EC 1.1.1.205)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.056617126680820945	4.0	Eukaryotic translation initiation factor 2 alpha subunit	Translation_initiation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	Cell division protein FtsH (EC 3.4.24.-)	Bacterial_Cell_Division		Clustering-based subsystems	
+0.056617126680820945	4.0	archaeosine tRNA-ribosyltransferase (EC 2.4.2.-) type 2	Queuosine-Archaeosine_Biosynthesis	RNA Metabolism	RNA processing and modification
+0.056617126680820945	4.0	Ubiquinol--cytochrome c reductase, cytochrome B subunit (EC 1.10.2.2)	Ubiquinone_Menaquinone-cytochrome_c_reductase_complexes	Respiration	Electron accepting reactions
+0.056617126680820945	4.0	3-oxoacyl-[acyl-carrier protein] reductase (EC 1.1.1.100)	Fatty_Acid_Biosynthesis_FASII	Fatty Acids, Lipids, and Isoprenoids	Fatty acids
+0.056617126680820945	4.0	Tryptophan synthase alpha chain (EC 4.2.1.20)	Tryptophan_synthesis	Amino Acids and Derivatives	Aromatic amino acids and derivatives
+0.056617126680820945	4.0	DNA topoisomerase VI subunit A (EC 5.99.1.3)	DNA_topoisomerases,_Type_II,_ATP-dependent	DNA Metabolism	DNA replication
+0.056617126680820945	4.0	RecA protein	DNA_repair,_bacterial_UmuCD_system	DNA Metabolism	DNA repair
+0.056617126680820945	4.0	Beta-galactosidase (EC 3.2.1.23)	Galactosylceramide_and_Sulfatide_metabolism		Sulfur Metabolism	
+0.056617126680820945	4.0	LSU ribosomal protein L37e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	Pyruvate dehydrogenase E1 component alpha subunit (EC 1.2.4.1)	Pyruvate_metabolism_II:_acetyl-CoA,_acetogenesis_from_pyruvate	Carbohydrates	Central carbohydrate metabolism
+0.056617126680820945	4.0	Formaldehyde activating enzyme	Formaldehyde_assimilation:_Ribulose_monophosphate_pathway	Carbohydrates	One-carbon Metabolism
+0.056617126680820945	4.0	LSU ribosomal protein L6p (L9e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	4-amino-6-deoxy-N-Acetyl-D-hexosaminyl-(Lipid carrier) acetyltrasferase	N-linked_Glycosylation_in_Bacteria	Protein Metabolism	Protein processing and modification
+0.056617126680820945	4.0	NADH-ubiquinone oxidoreductase chain H (EC 1.6.5.3)	Respiratory_Complex_I	Respiration	Electron donating reactions
+0.056617126680820945	4.0	SSU ribosomal protein S17e	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	Eukaryotic translation initiation factor 2 beta subunit	Translation_initiation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	Nitrogenase FeMo-cofactor scaffold and assembly protein NifE	Nitrogen_fixation		Nitrogen Metabolism	
+0.056617126680820945	4.0	Dihydroxy-acid dehydratase (EC 4.2.1.9)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.056617126680820945	4.0	Glycogen debranching enzyme (EC 3.2.1.-)	Glycogen_metabolism	Carbohydrates	Polysaccharides
+0.056617126680820945	4.0	Glutamyl-tRNA(Gln) amidotransferase subunit A (EC 6.3.5.7)	tRNA_aminoacylation,_Glu_and_Gln	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	Predicted L-lactate dehydrogenase, Iron-sulfur cluster-binding subunit YkgF	Lactate_utilization	Carbohydrates	Organic acids
+0.056617126680820945	4.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit A (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.056617126680820945	4.0	Type I restriction-modification system, DNA-methyltransferase subunit M (EC 2.1.1.72)	Type_I_Restriction-Modification		DNA Metabolism	
+0.056617126680820945	4.0	Small acid-soluble spore protein, beta-type SASP	Small_acid-soluble_spore_proteins	Dormancy and Sporulation	Spore DNA protection
+0.056617126680820945	4.0	Electron transport complex protein RnfD	Na(+)-translocating_NADH-quinone_oxidoreductase_and_rnf-like_group_of_electron_transport_complexes	Respiration	Electron donating reactions
+0.056617126680820945	4.0	Putative deoxyribonuclease YcfH	YcfH		DNA Metabolism	
+0.056617126680820945	4.0	LSU ribosomal protein L2p (L8e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	SSU ribosomal protein S15Ae (S8p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	LSU ribosomal protein L24p (L26e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	Methionine aminopeptidase (EC 3.4.11.18)	CBSS-312309.3.peg.1965		Clustering-based subsystems	
+0.056617126680820945	4.0	Manganese superoxide dismutase (EC 1.15.1.1)	Oxidative_stress	Stress Response	Oxidative stress
+0.056617126680820945	4.0	SSU ribosomal protein S14e (S11p)	eukaryotic_rRNA_modification_and_related_functions	RNA Metabolism	RNA processing and modification
+0.056617126680820945	4.0	Transaldolase (EC 2.2.1.2)	Fructose_utilization	Carbohydrates	Monosaccharides
+0.056617126680820945	4.0	Na(+) H(+) antiporter subunit D	Sodium_Hydrogen_Antiporter	Membrane Transport	Uni- Sym- and Antiporters
+0.056617126680820945	4.0	Methyl-accepting chemotaxis protein I (serine chemoreceptor protein)	Bacterial_Chemotaxis		Motility and Chemotaxis	
+0.056617126680820945	4.0	SSU ribosomal protein S15e (S19p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	3-isopropylmalate dehydratase small subunit (EC 4.2.1.33)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.056617126680820945	4.0	DNA polymerase III subunits gamma and tau (EC 2.7.7.7)	DNA_processing_cluster	DNA Metabolism	DNA uptake, competence
+0.056617126680820945	4.0	ATP-dependent Clp protease ATP-binding subunit ClpX	Proteolysis_in_bacteria,_ATP-dependent	Protein Metabolism	Protein degradation
+0.056617126680820945	4.0	GTP-binding protein TypA/BipA	Universal_GTPases	Protein Metabolism	Protein biosynthesis
+0.056617126680820945	4.0	Cytochrome c oxidase polypeptide III (EC 1.9.3.1)	Terminal_cytochrome_C_oxidases	Respiration	Electron accepting reactions
+0.056617126680820945	4.0	Rhodanese-like domain protein	tRNA_modification_Archaea	RNA Metabolism	RNA processing and modification
+0.056617126680820945	4.0	Cytochrome c-type biogenesis protein CcdA (DsbD analog)	Periplasmic_disulfide_interchange	Protein Metabolism	Protein folding
+0.056617126680820945	4.0	Acetyl-coenzyme A synthetase (EC 6.2.1.1)	Pyruvate_metabolism_II:_acetyl-CoA,_acetogenesis_from_pyruvate	Carbohydrates	Central carbohydrate metabolism
+0.056617126680820945	4.0	Cell division transporter, ATP-binding protein FtsE (TC 3.A.5.1.1)	Bacterial_Cell_Division		Clustering-based subsystems	
+0.04246284501061571	3.0	Phage major tail protein	Phage_tail_proteins_2	Phages, Prophages, Transposable elements, Plasmids	Phages, Prophages
+0.04246284501061571	3.0	DNA-directed RNA polymerase alpha subunit (EC 2.7.7.6)	RNA_polymerase_bacterial	RNA Metabolism	Transcription
+0.04246284501061571	3.0	Deoxyhypusine synthase	Alkaloid_biosynthesis_from_L-lysine	Secondary Metabolism	Plant Alkaloids
+0.04246284501061571	3.0	Ribonucleotide reductase of class II (coenzyme B12-dependent) (EC 1.17.4.1)	Ribonucleotide_reduction		Nucleosides and Nucleotides	
+0.04246284501061571	3.0	FIG000233: metal-dependent hydrolase	Phosphate_metabolism		Phosphorus Metabolism	
+0.04246284501061571	3.0	Sulfite dehydrogenase cytochrome subunit SoxD	Sulfur_oxidation		Sulfur Metabolism	
+0.04246284501061571	3.0	Glutamine amidotransferase chain of NAD synthetase	NAD_and_NADP_cofactor_biosynthesis_global	Cofactors, Vitamins, Prosthetic Groups, Pigments	NAD and NADP
+0.04246284501061571	3.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit G (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.04246284501061571	3.0	Isopentenyl-diphosphate delta-isomerase, FMN-dependent (EC 5.3.3.2)	Isoprenoid_Biosynthesis	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.04246284501061571	3.0	Translation elongation factor 1 gamma subunit	Translation_elongation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Universal stress protein family	Universal_stress_protein_family		Stress Response	
+0.04246284501061571	3.0	N-methylhydantoinase (ATP-hydrolyzing) (EC 3.5.2.14)	Hydantoin_metabolism		Nucleosides and Nucleotides	
+0.04246284501061571	3.0	Biotin carboxylase of acetyl-CoA carboxylase (EC 6.3.4.14)	Fatty_Acid_Biosynthesis_FASII	Fatty Acids, Lipids, and Isoprenoids	Fatty acids
+0.04246284501061571	3.0	Pyridoxine biosynthesis glutamine amidotransferase, synthase subunit (EC 2.4.2.-)	Pyridoxin_(Vitamin_B6)_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Pyridoxine
+0.04246284501061571	3.0	Iron-sulfur cluster regulator IscR	Rrf2_family_transcriptional_regulators	RNA Metabolism	Transcription
+0.04246284501061571	3.0	Eukaryotic peptide chain release factor subunit 1	Translation_elongation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Tyrosyl-tRNA synthetase (EC 6.1.1.1)	tRNA_aminoacylation,_Tyr	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Acyl carrier protein	Fatty_Acid_Biosynthesis_FASII	Fatty Acids, Lipids, and Isoprenoids	Fatty acids
+0.04246284501061571	3.0	GTP-binding protein Era	Universal_GTPases	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Circadian clock protein KaiC	Cyanobacterial_Circadian_Clock		Cell Division and Cell Cycle	
+0.04246284501061571	3.0	Isoleucyl-tRNA synthetase (EC 6.1.1.5)	tRNA_aminoacylation,_Ile	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Nitrous-oxide reductase (EC 1.7.99.6)	Denitrification		Nitrogen Metabolism	
+0.04246284501061571	3.0	Cytochrome c oxidase subunit CcoN (EC 1.9.3.1)	Terminal_cytochrome_C_oxidases	Respiration	Electron accepting reactions
+0.04246284501061571	3.0	Methylcrotonyl-CoA carboxylase carboxyl transferase subunit (EC 6.4.1.4)	Serine-glyoxylate_cycle	Carbohydrates	One-carbon Metabolism
+0.04246284501061571	3.0	Type IV fimbrial biogenesis protein FimT	Type_IV_pilus	Membrane Transport	Protein and nucleoprotein secretion system, Type IV
+0.04246284501061571	3.0	Thioredoxin reductase (EC 1.8.1.9)	Thioredoxin-disulfide_reductase		Sulfur Metabolism	
+0.04246284501061571	3.0	TPR domain protein, putative component of TonB system	Ton_and_Tol_transport_systems		Membrane Transport	
+0.04246284501061571	3.0	Ribosomal subunit interface protein	Ribosome_activity_modulation	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Serine acetyltransferase (EC 2.3.1.30)	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.04246284501061571	3.0	DNA-directed RNA polymerase subunit B'' (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.04246284501061571	3.0	Translation elongation factor 1 delta subunit	Translation_elongation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Superoxide dismutase [Cu-Zn] (EC 1.15.1.1)	Regulation_of_Oxidative_Stress_Response	Stress Response	Oxidative stress
+0.04246284501061571	3.0	Arginyl-tRNA synthetase (EC 6.1.1.19)	tRNA_aminoacylation,_Arg	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Glucosamine--fructose-6-phosphate aminotransferase [isomerizing] (EC 2.6.1.16)	Sialic_Acid_Metabolism	Cell Wall and Capsule	Capsular and extracellular polysacchrides
+0.04246284501061571	3.0	DNA-binding protein HU-beta	DNA_structural_proteins,_bacterial		DNA Metabolism	
+0.04246284501061571	3.0	nonspecific lipid-transfer protein (acethyl CoA synthetase)	Ketoisovalerate_oxidoreductase	Amino Acids and Derivatives	Branched-chain amino acids
+0.04246284501061571	3.0	Nitric oxide-dependent regulator DnrN or NorA	Nitrosative_stress		Nitrogen Metabolism	
+0.04246284501061571	3.0	5-formyltetrahydrofolate cyclo-ligase (EC 6.3.3.2)	5-FCL-like_protein	Cofactors, Vitamins, Prosthetic Groups, Pigments	Folate and pterines
+0.04246284501061571	3.0	SSU ribosomal protein S13e (S15p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Glutathione S-transferase (EC 2.5.1.18)	Glutathione:_Non-redox_reactions	Stress Response	Oxidative stress
+0.04246284501061571	3.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoH	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.04246284501061571	3.0	Carbamoyl-phosphate synthase large chain (EC 6.3.5.5)	De_Novo_Pyrimidine_Synthesis	Nucleosides and Nucleotides	Pyrimidines
+0.04246284501061571	3.0	Aspartokinase (EC 2.7.2.4)	Threonine_and_Homoserine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.04246284501061571	3.0	ATP-dependent RNA helicase RhlE	ATP-dependent_RNA_helicases,_bacterial	RNA Metabolism	RNA processing and modification
+0.04246284501061571	3.0	Signal recognition particle receptor protein FtsY (=alpha subunit) (TC 3.A.5.1.1)	Universal_GTPases	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	SSU ribosomal protein S7p (S5e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Rubrerythrin	Oxidative_stress	Stress Response	Oxidative stress
+0.04246284501061571	3.0	SSU ribosomal protein S3Ae	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	L-proline glycine betaine binding ABC transporter protein ProX (TC 3.A.1.12.1)	Choline_and_Betaine_Uptake_and_Betaine_Biosynthesis	Stress Response	Osmotic stress
+0.04246284501061571	3.0	SSU ribosomal protein SAe (S2p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	ATPase component NikO of energizing module of nickel ECF transporter	Transport_of_Nickel_and_Cobalt		Membrane Transport	
+0.04246284501061571	3.0	LSU ribosomal protein L13Ae (L13p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Digeranylgeranylglycerophospholipid reductase	Archaeal_lipids	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.04246284501061571	3.0	FIG004453: protein YceG like	CBSS-323097.3.peg.2594		Clustering-based subsystems	
+0.04246284501061571	3.0	Phenylacetate-coenzyme A ligase (EC 6.2.1.30)	Aromatic_amino_acid_interconversions_with_aryl_acids	Amino Acids and Derivatives	Aromatic amino acids and derivatives
+0.04246284501061571	3.0	Chemotaxis regulator - transmits chemoreceptor signals to flagelllar motor components CheY	Flagellar_motility	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.04246284501061571	3.0	ATP synthase C chain (EC 3.6.3.14)	F0F1-type_ATP_synthase	Respiration	ATP synthases
+0.04246284501061571	3.0	(S)-2,3-di-O-geranylgeranylglyceryl phosphate synthase	Archaeal_lipids	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.04246284501061571	3.0	Aspartyl-tRNA synthetase (EC 6.1.1.12)	tRNA_aminoacylation,_Asp_and_Asn	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	O-phosphoseryl-tRNA(Cys) synthetase	tRNA_aminoacylation,_Cys	Protein Metabolism	Protein biosynthesis
+0.04246284501061571	3.0	Amidophosphoribosyltransferase (EC 2.4.2.14)	De_Novo_Purine_Biosynthesis	Nucleosides and Nucleotides	Purines
+0.04246284501061571	3.0	Malate dehydrogenase (EC 1.1.1.37)	Serine-glyoxylate_cycle	Carbohydrates	One-carbon Metabolism
+0.04246284501061571	3.0	N-acetylglucosamine-1-phosphate uridyltransferase (EC 2.7.7.23)	Iojap	Miscellaneous	Plant-Prokaryote DOE project
+0.04246284501061571	3.0	Dihydrolipoamide acetyltransferase component of pyruvate dehydrogenase complex (EC 2.3.1.12)	Pyruvate_metabolism_II:_acetyl-CoA,_acetogenesis_from_pyruvate	Carbohydrates	Central carbohydrate metabolism
+0.04246284501061571	3.0	SSU ribosomal protein S16p	KH_domain_RNA_binding_protein_YlqC		Clustering-based subsystems	
+0.028308563340410473	2.0	Tryptophanyl-tRNA synthetase (EC 6.1.1.2)	tRNA_aminoacylation,_Trp	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	ATP synthase gamma chain (EC 3.6.3.14)	F0F1-type_ATP_synthase	Respiration	ATP synthases
+0.028308563340410473	2.0	6-phosphogluconate dehydrogenase, decarboxylating (EC 1.1.1.44)	Pentose_phosphate_pathway	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	PTS system, mannose-specific IIB component (EC 2.7.1.69)	Sialic_Acid_Metabolism	Cell Wall and Capsule	Capsular and extracellular polysacchrides
+0.028308563340410473	2.0	V-type ATP synthase subunit K (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+0.028308563340410473	2.0	Cytochrome c oxidase polypeptide II (EC 1.9.3.1)	Terminal_cytochrome_C_oxidases	Respiration	Electron accepting reactions
+0.028308563340410473	2.0	tRNA-i(6)A37 methylthiotransferase	Methylthiotransferases	RNA Metabolism	RNA processing and modification
+0.028308563340410473	2.0	Aquaporin Z	Osmoregulation	Stress Response	Osmotic stress
+0.028308563340410473	2.0	LSU ribosomal protein L30e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Phosphoribosylamine--glycine ligase (EC 6.3.4.13)	De_Novo_Purine_Biosynthesis	Nucleosides and Nucleotides	Purines
+0.028308563340410473	2.0	Phosphate ABC transporter, periplasmic phosphate-binding protein PstS (TC 3.A.1.7.1)	Phosphate_metabolism		Phosphorus Metabolism	
+0.028308563340410473	2.0	Pole remodelling regulatory diguanylate cyclase	ZZ_gjo_need_homes		Miscellaneous	
+0.028308563340410473	2.0	Translation elongation factor G-related protein	Translation_elongation_factors_bacterial	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Cadmium-transporting ATPase (EC 3.6.3.3)	Cadmium_resistance	Virulence, Disease and Defense	Resistance to antibiotics and toxic compounds
+0.028308563340410473	2.0	Mannose-1-phosphate guanylyltransferase (EC 2.7.7.13 )	Mannose_Metabolism	Carbohydrates	Monosaccharides
+0.028308563340410473	2.0	SSU ribosomal protein S11p (S14e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	SSU ribosomal protein S29e (S14p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Ferric iron ABC transporter, iron-binding protein	Iron_acquisition_in_Streptococcus		Iron acquisition and metabolism	
+0.028308563340410473	2.0	Na(+) H(+) antiporter subunit G	Sodium_Hydrogen_Antiporter	Membrane Transport	Uni- Sym- and Antiporters
+0.028308563340410473	2.0	Peptidyl-tRNA hydrolase (EC 3.1.1.29)	Sporulation-associated_proteins_with_broader_functions		Dormancy and Sporulation	
+0.028308563340410473	2.0	ATP-dependent DNA helicase RecQ	DNA_repair,_bacterial_RecFOR_pathway	DNA Metabolism	DNA repair
+0.028308563340410473	2.0	Pyruvate:ferredoxin oxidoreductase, beta subunit (EC 1.2.7.1)	Pyruvate:ferredoxin_oxidoreductase	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	N-Acetylneuraminate cytidylyltransferase (EC 2.7.7.43)	CMP-N-acetylneuraminate_Biosynthesis	Cell Wall and Capsule	Capsular and extracellular polysacchrides
+0.028308563340410473	2.0	Fructose-bisphosphate aldolase class II (EC 4.1.2.13)	Glycolysis_and_Gluconeogenesis	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	Acetyl-coenzyme A carboxyl transferase beta chain (EC 6.4.1.2)	Fatty_Acid_Biosynthesis_FASII	Fatty Acids, Lipids, and Isoprenoids	Fatty acids
+0.028308563340410473	2.0	Glutamyl-tRNA(Gln) amidotransferase asparaginase subunit (EC 6.3.5.7)	tRNA_aminoacylation,_Glu_and_Gln	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Flagellar biosynthesis protein FlhB	Flagellar_motility	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.028308563340410473	2.0	Ferric siderophore transport system, periplasmic binding protein TonB	Ton_and_Tol_transport_systems		Membrane Transport	
+0.028308563340410473	2.0	diptheria toxin resistance protein required for diphthamide biosynthesis (Saccharomyces)-like 1	Diphtheria_toxin	Virulence	Toxins and superantigens
+0.028308563340410473	2.0	ClpB protein	USS-DB-7		Clustering-based subsystems	
+0.028308563340410473	2.0	Putative stomatin/prohibitin-family membrane protease subunit aq_911	YbbK		Miscellaneous	
+0.028308563340410473	2.0	Exosome complex exonuclease 1	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.028308563340410473	2.0	CoB--CoM heterodisulfide reductase 2 iron-sulfur subunit D (EC 1.8.98.1)	Anaerobic_respiratory_reductases	Respiration	Electron accepting reactions
+0.028308563340410473	2.0	SSU ribosomal protein S17p (S11e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	LSU ribosomal protein L8e (L2p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Asparagine synthetase [glutamine-hydrolyzing] (EC 6.3.5.4)	Glutamine,_Glutamate,_Aspartate_and_Asparagine_Biosynthesis	Amino Acids and Derivatives	Glutamine, glutamate, aspartate, asparagine; ammonia assimilation
+0.028308563340410473	2.0	CRISPR-associated helicase Cas3	CRISPRs	DNA Metabolism	CRISPs
+0.028308563340410473	2.0	1,4-alpha-glucan (glycogen) branching enzyme, GH-13-type (EC 2.4.1.18)	Glycogen_metabolism	Carbohydrates	Polysaccharides
+0.028308563340410473	2.0	Phosphate transport ATP-binding protein PstB (TC 3.A.1.7.1)	Phosphate_metabolism		Phosphorus Metabolism	
+0.028308563340410473	2.0	Asparagine synthetase [glutamine-hydrolyzing] (EC 6.3.5.4) AsnH	Glutamine,_Glutamate,_Aspartate_and_Asparagine_Biosynthesis	Amino Acids and Derivatives	Glutamine, glutamate, aspartate, asparagine; ammonia assimilation
+0.028308563340410473	2.0	Eukaryotic translation initiation factor 2 gamma subunit	Translation_initiation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	ATP synthase A chain (EC 3.6.3.14)	F0F1-type_ATP_synthase	Respiration	ATP synthases
+0.028308563340410473	2.0	D-alanyl-D-alanine carboxypeptidase (EC 3.4.16.4)	CBSS-84588.1.peg.1247	Clustering-based subsystems	Lysine, threonine, methionine, and cysteine
+0.028308563340410473	2.0	Glycosyltransferase	CBSS-258594.1.peg.3339	Clustering-based subsystems	Biosynthesis of galactoglycans and related lipopolysacharides
+0.028308563340410473	2.0	Heat shock protein GrpE	Heat_shock_dnaK_gene_cluster_extended	Stress Response	Heat shock
+0.028308563340410473	2.0	Pyrophosphate-energized proton pump (EC 3.6.1.1)	Phosphate_metabolism		Phosphorus Metabolism	
+0.028308563340410473	2.0	Formylmethanofuran dehydrogenase (molybdenum) subunit C (EC 1.2.99.5)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.028308563340410473	2.0	Na(+) H(+) antiporter subunit A	Sodium_Hydrogen_Antiporter	Membrane Transport	Uni- Sym- and Antiporters
+0.028308563340410473	2.0	Cytochrome c551 peroxidase (EC 1.11.1.5)	Protection_from_Reactive_Oxygen_Species	Stress Response	Oxidative stress
+0.028308563340410473	2.0	Pyruvate:ferredoxin oxidoreductase, alpha subunit (EC 1.2.7.1)	Pyruvate:ferredoxin_oxidoreductase	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	LSU ribosomal protein L31e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Formylmethanofuran dehydrogenase (molybdenum) operon gene G	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.028308563340410473	2.0	Shwachman-Bodian-Diamond syndrome protein	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.028308563340410473	2.0	Indolepyruvate oxidoreductase subunit IorA (EC 1.2.7.8)	Aromatic_amino_acid_interconversions_with_aryl_acids	Amino Acids and Derivatives	Aromatic amino acids and derivatives
+0.028308563340410473	2.0	Creatinine amidohydrolase (EC 3.5.2.10)	Creatine_and_Creatinine_Degradation		Amino Acids and Derivatives	
+0.028308563340410473	2.0	50S ribosomal subunit maturation GTPase RbgA (B. subtilis YlqF)	Universal_GTPases	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Chemotaxis response regulator protein-glutamate methylesterase CheB (EC 3.1.1.61)	Bacterial_Chemotaxis		Motility and Chemotaxis	
+0.028308563340410473	2.0	Methylmalonyl-CoA decarboxylase, alpha chain (EC 4.1.1.41)	Na+_translocating_decarboxylases_and_related_biotin-dependent_enzymes	Respiration	Sodium Ion-Coupled Energetics
+0.028308563340410473	2.0	Dimethylamine methyltransferase corrinoid protein	Methanogenesis_from_methylated_compounds	Carbohydrates	One-carbon Metabolism
+0.028308563340410473	2.0	SSU ribosomal protein S2e (S5p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Peptide transport system ATP-binding protein SapD (TC 3.A.1.5.5)	ABC_transporter_peptide_(TC_3.A.1.5.5)	Membrane Transport	ABC transporters
+0.028308563340410473	2.0	6-pyruvoyl tetrahydrobiopterin synthase (EC 4.2.3.12)	Pterin_metabolism_3	Cofactors, Vitamins, Prosthetic Groups, Pigments	Folate and pterines
+0.028308563340410473	2.0	DNA-directed RNA polymerase subunit B (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.028308563340410473	2.0	Multiple sugar ABC transporter, ATP-binding protein	Fructooligosaccharides(FOS)_and_Raffinose_Utilization	Carbohydrates	Di- and oligosaccharides
+0.028308563340410473	2.0	Phage terminase large subunit	Phage_packaging_machinery	Phages, Prophages, Transposable elements, Plasmids	Phages, Prophages
+0.028308563340410473	2.0	DNA-directed RNA polymerase subunit B' (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.028308563340410473	2.0	(R)-citramalate synthase (EC 2.3.1.182)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.028308563340410473	2.0	Ribonucleotide reductase of class Ia (aerobic), alpha subunit (EC 1.17.4.1)	Ribonucleotide_reduction		Nucleosides and Nucleotides	
+0.028308563340410473	2.0	LSU ribosomal protein L9e (L6p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Alcohol dehydrogenase (EC 1.1.1.1)	Fermentations:_Mixed_acid	Carbohydrates	Fermentation
+0.028308563340410473	2.0	Predicted functional analog of homoserine kinase (EC 2.7.1.-)	Threonine_and_Homoserine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.028308563340410473	2.0	Predicted ATPase related to phosphate starvation-inducible protein PhoH	Phosphate_metabolism		Phosphorus Metabolism	
+0.028308563340410473	2.0	Methionyl-tRNA synthetase (EC 6.1.1.10)	tRNA_aminoacylation,_Met	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	UDP-glucose 4-epimerase (EC 5.1.3.2)	Rhamnose_containing_glycans	Cell Wall and Capsule	Capsular and extracellular polysacchrides
+0.028308563340410473	2.0	Thiazole biosynthesis protein ThiH	Thiamin_biosynthesis		Cofactors, Vitamins, Prosthetic Groups, Pigments	
+0.028308563340410473	2.0	FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (EC 5.2.1.8)	Potassium_homeostasis		Potassium metabolism	
+0.028308563340410473	2.0	proteasome regulatory subunit Rpt1	Proteasome_eukaryotic	Protein Metabolism	Protein degradation
+0.028308563340410473	2.0	N-acetylglutamate synthase (EC 2.3.1.1)	Arginine_Biosynthesis_extended	Amino Acids and Derivatives	Arginine; urea cycle, polyamines
+0.028308563340410473	2.0	Uridylate kinase (EC 2.7.4.-)	CBSS-312309.3.peg.1965		Clustering-based subsystems	
+0.028308563340410473	2.0	Succinyl-CoA:3-ketoacid-coenzyme A transferase subunit B (EC 2.8.3.5)	Leucine_Degradation_and_HMG-CoA_Metabolism	Amino Acids and Derivatives	Branched-chain amino acids
+0.028308563340410473	2.0	Branched-chain amino acid ABC transporter, amino acid-binding protein (TC 3.A.1.4.1)	ABC_transporter_branched-chain_amino_acid_(TC_3.A.1.4.1)	Membrane Transport	ABC transporters
+0.028308563340410473	2.0	N5-methyltetrahydromethanopterin:coenzyme M methyltransferase subunit C (EC 2.1.1.86)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.028308563340410473	2.0	Fructose-1,6-bisphosphatase, GlpX type (EC 3.1.3.11)	Glycolysis_and_Gluconeogenesis,_including_Archaeal_enzymes	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	SSU ribosomal protein S1p	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	LSU ribosomal protein L12e (L11p)	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Methionine ABC transporter ATP-binding protein	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.028308563340410473	2.0	Leucine-responsive regulatory protein, regulator for leucine (or lrp) regulon and high-affinity branched-chain amino acid transport system	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.028308563340410473	2.0	LSU ribosomal protein L19p	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Pyruvate carboxyl transferase subunit A (EC 6.4.1.1)	Pyruvate_metabolism_I:_anaplerotic_reactions,_PEP	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	GMP synthase [glutamine-hydrolyzing] (EC 6.3.5.2)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.028308563340410473	2.0	SSU ribosomal protein S20e (S10p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Saccharopine dehydrogenase (EC 1.5.1.9)	Lysine_degradation	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.028308563340410473	2.0	PTS system, galactitol-specific IIA component (EC 2.7.1.69)	D-Tagatose_and_Galactitol_Utilization	Carbohydrates	Monosaccharides
+0.028308563340410473	2.0	Mlr7403 protein	CBSS-290633.1.peg.1906		Clustering-based subsystems	
+0.028308563340410473	2.0	SSU ribosomal protein S5p (S2e)	Ribosomal_protein_S5p_acylation	Protein Metabolism	Protein processing and modification
+0.028308563340410473	2.0	DNA recombination protein RmuC	DNA_repair,_bacterial	DNA Metabolism	DNA repair
+0.028308563340410473	2.0	LSU ribosomal protein L30p (L7e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.028308563340410473	2.0	Transcription accessory protein (S1 RNA-binding domain)	CBSS-243265.1.peg.198	Clustering-based subsystems	Translation
+0.028308563340410473	2.0	Cell division topological specificity factor MinE	Bacterial_Cytoskeleton		Cell Division and Cell Cycle	
+0.028308563340410473	2.0	Negative regulator of flagellin synthesis FlgM	Flagellum	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.028308563340410473	2.0	Dimethylamine permease	Methanogenesis_from_methylated_compounds	Carbohydrates	One-carbon Metabolism
+0.028308563340410473	2.0	DnaJ-class molecular chaperone CbpA	Protein_chaperones	Protein Metabolism	Protein folding
+0.028308563340410473	2.0	GTP-sensing transcriptional pleiotropic repressor codY	Conserved_gene_cluster_associated_with_Met-tRNA_formyltransferase		Clustering-based subsystems	
+0.028308563340410473	2.0	S-adenosylmethionine synthetase (EC 2.5.1.6)	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.028308563340410473	2.0	MAP kinase kinase kinase MAP3K3	P38_MAP_kinase_pathways	Regulation and Cell signaling	Signal transduction in Eukaryotes
+0.028308563340410473	2.0	Peptidyl-prolyl cis-trans isomerase ppiD (EC 5.2.1.8)	Peptidyl-prolyl_cis-trans_isomerase	Protein Metabolism	Protein folding
+0.028308563340410473	2.0	Cobalamin synthase	Coenzyme_B12_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.028308563340410473	2.0	Alanine dehydrogenase (EC 1.4.1.1)	Pyruvate_Alanine_Serine_Interconversions	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	COG1649 predicted glycoside hydrolase	Predicted_carbohydrate_hydrolases	Carbohydrates	Glycoside hydrolases
+0.028308563340410473	2.0		Pyruvate_metabolism_II:_acetyl-CoA,_acetogenesis_from_pyruvate	Carbohydrates	Central carbohydrate metabolism
+0.028308563340410473	2.0	Arylsulfatase (EC 3.1.6.1)	Alkanesulfonate_assimilation	Sulfur Metabolism	Organic sulfur assimilation
+0.028308563340410473	2.0	Long-chain-fatty-acid--CoA ligase (EC 6.2.1.3)	n-Phenylalkanoic_acid_degradation	Metabolism of Aromatic Compounds	Peripheral pathways for catabolism of aromatic compounds
+0.028308563340410473	2.0	VgrG protein	USS-DB-7		Clustering-based subsystems	
+0.028308563340410473	2.0	Adenylosuccinate synthetase (EC 6.3.4.4)	CBSS-262719.3.peg.410	Clustering-based subsystems	Clustering-based subsystems
+0.014154281670205236	1.0	Ornithine decarboxylase (EC 4.1.1.17)	Polyamine_Metabolism	Amino Acids and Derivatives	Arginine; urea cycle, polyamines
+0.014154281670205236	1.0	UDP-glucose dehydrogenase (EC 1.1.1.22)	Streptococcal_Hyaluronic_Acid_Capsule	Cell Wall and Capsule	Capsular and extracellular polysacchrides
+0.014154281670205236	1.0	Lipopolysaccharide ABC transporter, ATP-binding protein LptB	KDO2-Lipid_A_biosynthesis	Cell Wall and Capsule	Gram-Negative cell wall components
+0.014154281670205236	1.0	Glycerol dehydrogenase (EC 1.1.1.6)	Respiratory_dehydrogenases_1	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Zn-dependent hydrolase, RNA-metabolising, CPSF 100 kDa analog	Bacterial_RNA-metabolizing_Zn-dependent_hydrolases		Clustering-based subsystems	
+0.014154281670205236	1.0	Archaeal S-adenosylmethionine synthetase (EC 2.5.1.6)	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Integral membrane protein LafC, accessory function in glycolipid and LTA synthesis	Polyglycerolphosphate_lipoteichoic_acid_biosynthesis	Cell Wall and Capsule	Gram-Positive cell wall components
+0.014154281670205236	1.0	UDP-2,3-diacylglucosamine hydrolase (EC 3.6.1.-)	KDO2-Lipid_A_biosynthesis	Cell Wall and Capsule	Gram-Negative cell wall components
+0.014154281670205236	1.0	Phosphate regulon transcriptional regulatory protein PhoB (SphR)	Phosphate_metabolism		Phosphorus Metabolism	
+0.014154281670205236	1.0	Probable exosome complex RNA-binding protein 1	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.014154281670205236	1.0	Choline dehydrogenase (EC 1.1.99.1)	Choline_and_Betaine_Uptake_and_Betaine_Biosynthesis	Stress Response	Osmotic stress
+0.014154281670205236	1.0	4-hydroxy-3-methylbut-2-enyl diphosphate reductase (EC 1.17.1.2)	Isoprenoid_Biosynthesis	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.014154281670205236	1.0	Transcription initiation factor IIIA	RNA_polymerase_III_initiation_factors	RNA Metabolism	Transcription
+0.014154281670205236	1.0	Pyruvate-flavodoxin oxidoreductase (EC 1.2.7.-)	Pyruvate:ferredoxin_oxidoreductase	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Imidazoleglycerol-phosphate dehydratase (EC 4.2.1.19)	Histidine_Biosynthesis	Amino Acids and Derivatives	Histidine Metabolism
+0.014154281670205236	1.0	Thymidylate kinase (EC 2.7.4.9)	pyrimidine_conversions	Nucleosides and Nucleotides	Pyrimidines
+0.014154281670205236	1.0	ATP-dependent Clp protease proteolytic subunit (EC 3.4.21.92)	cAMP_signaling_in_bacteria		Regulation and Cell signaling	
+0.014154281670205236	1.0	Crotonyl-CoA carboxylase/reductase, ethylmalonyl-CoA producing	Ethylmalonyl-CoA_pathway_of_C2_assimilation	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	SSU ribosomal protein S10p (S20e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Proteasome subunit alpha (EC 3.4.25.1), archaeal	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.014154281670205236	1.0	1-deoxy-D-xylulose 5-phosphate synthase (EC 2.2.1.7)	Pyridoxin_(Vitamin_B6)_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Pyridoxine
+0.014154281670205236	1.0	Chemotaxis protein CheC -- inhibitor of MCP methylation	Bacterial_Chemotaxis		Motility and Chemotaxis	
+0.014154281670205236	1.0	5-carboxymethyl-2-oxo-hex-3- ene-1,7-dioate decarboxylase (EC 4.1.1.68)	Aromatic_amino_acid_degradation	Amino Acids and Derivatives	Aromatic amino acids and derivatives
+0.014154281670205236	1.0	Aspartate aminotransferase (EC 2.6.1.1)	Glutamine,_Glutamate,_Aspartate_and_Asparagine_Biosynthesis	Amino Acids and Derivatives	Glutamine, glutamate, aspartate, asparagine; ammonia assimilation
+0.014154281670205236	1.0	LSU m5C1962 methyltransferase RlmI	Ribosome_biogenesis_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase (EC 2.7.6.3)	Folate_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Folate and pterines
+0.014154281670205236	1.0	3-isopropylmalate dehydrogenase (EC 1.1.1.85)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	Predicted RNA-binding protein COG1491	rRNA_modification_Archaea	RNA Metabolism	RNA processing and modification
+0.014154281670205236	1.0	SSU ribosomal protein S9p (S16e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Geranyltranstransferase (farnesyldiphosphate synthase) (EC 2.5.1.10)	Polyprenyl_Diphosphate_Biosynthesis	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.014154281670205236	1.0	TldE/PmbA protein, part of proposed TldE/TldD proteolytic complex (PMID 12029038)	Putative_TldE-TldD_proteolytic_complex	Protein Metabolism	Protein degradation
+0.014154281670205236	1.0	L-arabinose-binding periplasmic protein precursor AraF (TC 3.A.1.2.2)	L-Arabinose_utilization	Carbohydrates	Monosaccharides
+0.014154281670205236	1.0	Acetoacetyl-CoA reductase (EC 1.1.1.36)	Acetyl-CoA_fermentation_to_Butyrate	Carbohydrates	Fermentation
+0.014154281670205236	1.0	LSU ribosomal protein L25p	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Soluble pyridine nucleotide transhydrogenase (EC 1.6.1.1)	Phosphate_metabolism		Phosphorus Metabolism	
+0.014154281670205236	1.0	Aerobic respiration control sensor protein arcB (EC 2.7.3.-)	Regulation_of_Oxidative_Stress_Response	Stress Response	Oxidative stress
+0.014154281670205236	1.0	Arsenical-resistance protein ACR3	Arsenic_resistance	Virulence, Disease and Defense	Resistance to antibiotics and toxic compounds
+0.014154281670205236	1.0	Archaeal DNA polymerase I (EC 2.7.7.7)	DNA_replication,_archaeal	DNA Metabolism	DNA replication
+0.014154281670205236	1.0	Ribosomal large subunit pseudouridine synthase D (EC 4.2.1.70)	Ribosome_biogenesis_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	LSU ribosomal protein L18p (L5e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	NADH-ubiquinone oxidoreductase chain B (EC 1.6.5.3)	Respiratory_Complex_I	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Gamma-glutamyl phosphate reductase (EC 1.2.1.41)	Proline_Synthesis	Amino Acids and Derivatives	Proline and 4-hydroxyproline
+0.014154281670205236	1.0	Peptide chain release factor 1	Translation_termination_factors_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	UDP-N-acetylglucosamine 4,6-dehydratase (EC 4.2.1.-)	CBSS-296591.1.peg.2330		Clustering-based subsystems	
+0.014154281670205236	1.0	Sulfur oxidation protein SoxZ	Sulfur_oxidation		Sulfur Metabolism	
+0.014154281670205236	1.0	LSU ribosomal protein L15e	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.014154281670205236	1.0	DNA-directed RNA polymerase subunit P (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.014154281670205236	1.0	LSU ribosomal protein L7/L12 (P1/P2)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	5-nucleotidase SurE (EC 3.1.3.5)	Housecleaning_nucleoside_triphosphate_pyrophosphatases	Nucleosides and Nucleotides	Detoxification
+0.014154281670205236	1.0	Lipid A export ATP-binding/permease protein MsbA	ZZ_gjo_need_homes		Miscellaneous	
+0.014154281670205236	1.0	SSU ribosomal protein S11e (S17p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Acetate kinase (EC 2.7.2.1)	Fermentations:_Lactate	Carbohydrates	Fermentation
+0.014154281670205236	1.0	SSU ribosomal protein S15p (S13e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Transketolase (EC 2.2.1.1)	Calvin-Benson_cycle	Carbohydrates	CO2 fixation
+0.014154281670205236	1.0	5-tetrahydromethanopterin:corrinoid iron-sulfur protein methyltransferase	Carbon_monoxide_induced_hydrogenase		Respiration	
+0.014154281670205236	1.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoO	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Translation elongation factor 1 beta subunit	Translation_elongation_factors_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Queuosine biosynthesis QueD, PTPS-I	Zinc_regulated_enzymes		Regulation and Cell signaling	
+0.014154281670205236	1.0	Multiple sugar ABC transporter, substrate-binding protein	Fructooligosaccharides(FOS)_and_Raffinose_Utilization	Carbohydrates	Di- and oligosaccharides
+0.014154281670205236	1.0	proteasome regulatory subunit Rpn12	Proteasome_eukaryotic	Protein Metabolism	Protein degradation
+0.014154281670205236	1.0	COG1180: Radical SAM, Pyruvate-formate lyase-activating enzyme like	tRNA_modification_Archaea	RNA Metabolism	RNA processing and modification
+0.014154281670205236	1.0	Aspartyl-tRNA(Asn) amidotransferase subunit A (EC 6.3.5.6)	tRNA_aminoacylation,_Asp_and_Asn	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	ATP-dependent Clp protease, ATP-binding subunit ClpC	Proteolysis_in_bacteria,_ATP-dependent	Protein Metabolism	Protein degradation
+0.014154281670205236	1.0	Photosystem II CP43 protein (PsbC)	Photosystem_II	Photosynthesis	Electron transport and photophosphorylation
+0.014154281670205236	1.0	Glucose-6-phosphate isomerase (EC 5.3.1.9)	Glycolysis_and_Gluconeogenesis,_including_Archaeal_enzymes	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	D-alanine--D-alanine ligase (EC 6.3.2.4)	Peptidoglycan_biosynthesis--gjo		Cell Wall and Capsule	
+0.014154281670205236	1.0	LSU ribosomal protein L27p	CBSS-176279.3.peg.868		Clustering-based subsystems	
+0.014154281670205236	1.0	Acetaldehyde dehydrogenase (EC 1.2.1.10)	Fermentations:_Mixed_acid	Carbohydrates	Fermentation
+0.014154281670205236	1.0	Two-component sensor protein RcsD (EC 2.7.3.-)	Rcs_phosphorelay_signal_transduction_pathway		Regulation and Cell signaling	
+0.014154281670205236	1.0	Ribulose bisphosphate carboxylase large chain (EC 4.1.1.39)	CO2_uptake,_carboxysome	Carbohydrates	CO2 fixation
+0.014154281670205236	1.0	SSU ribosomal protein S19p (S15e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Selenoprotein O and cysteine-containing homologs	Selenoprotein_O	Protein Metabolism	Selenoproteins
+0.014154281670205236	1.0	Large-conductance mechanosensitive channel	Potassium_homeostasis		Potassium metabolism	
+0.014154281670205236	1.0	DNA polymerase III delta subunit (EC 2.7.7.7)	DNA-replication	DNA Metabolism	DNA replication
+0.014154281670205236	1.0	Fructose-1,6-bisphosphatase, Bacillus type (EC 3.1.3.11)	Glycolysis_and_Gluconeogenesis	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Uroporphyrinogen-III methyltransferase (EC 2.1.1.107)	Coenzyme_B12_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.014154281670205236	1.0	LSU ribosomal protein L11p (L12e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	LSU ribosomal protein L22p (L17e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Predicted rhamnogalacturonan lyase in rhamnose utilization cluster	L-rhamnose_utilization	Carbohydrates	Monosaccharides
+0.014154281670205236	1.0	A/G-specific adenine glycosylase (EC 3.2.2.-)	DNA_repair,_bacterial	DNA Metabolism	DNA repair
+0.014154281670205236	1.0	Alternative cytochrome c oxidase polypeptide CoxP (EC 1.9.3.1)	Terminal_cytochrome_C_oxidases	Respiration	Electron accepting reactions
+0.014154281670205236	1.0	Alpha-amylase (EC 3.2.1.1)	Maltose_and_Maltodextrin_Utilization	Carbohydrates	Di- and oligosaccharides
+0.014154281670205236	1.0	L-lactate dehydrogenase (EC 1.1.2.3)	Lactate_utilization	Carbohydrates	Organic acids
+0.014154281670205236	1.0	Collagen-like surface protein	Streptococcus_pyogenes_Virulome		Virulence, Disease and Defense	
+0.014154281670205236	1.0	ABC-type nitrate/sulfonate/bicarbonate transport systems, periplasmic components	Alkanesulfonate_assimilation	Sulfur Metabolism	Organic sulfur assimilation
+0.014154281670205236	1.0	V-type ATP synthase subunit F (EC 3.6.3.14)	V-Type_ATP_synthase	Respiration	ATP synthases
+0.014154281670205236	1.0	Excinuclease ABC subunit A	DNA_repair,_UvrABC_system	DNA Metabolism	DNA repair
+0.014154281670205236	1.0	Excinuclease ABC subunit C	DNA_repair,_UvrABC_system	DNA Metabolism	DNA repair
+0.014154281670205236	1.0	Beta-lactamase, class C	Beta-lactamase_cluster_in_Streptococcus	Clustering-based subsystems	Carbohydrates
+0.014154281670205236	1.0	Cysteine desulfurase (EC 2.8.1.7)	CBSS-84588.1.peg.1247	Clustering-based subsystems	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Xylose ABC transporter, periplasmic xylose-binding protein XylF	Xylose_utilization	Carbohydrates	Monosaccharides
+0.014154281670205236	1.0	Fructose-bisphosphate aldolase, archaeal class I (EC 4.1.2.13)	Glycolysis_and_Gluconeogenesis,_including_Archaeal_enzymes	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Heat shock protein 60 family co-chaperone GroES	GroEL_GroES	Protein Metabolism	Protein folding
+0.014154281670205236	1.0	DNA ligase (EC 6.5.1.2)	CBSS-393121.3.peg.1913		Clustering-based subsystems	
+0.014154281670205236	1.0	Beta-1,4-galactosyltransferase	LOS_core_oligosaccharide_biosynthesis	Cell Wall and Capsule	Gram-Negative cell wall components
+0.014154281670205236	1.0	Photosystem II CP47 protein (PsbB)	Photosystem_II	Photosynthesis	Electron transport and photophosphorylation
+0.014154281670205236	1.0	DNA-directed RNA polymerase subunit E' (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.014154281670205236	1.0	Unspecified monosaccharide ABC transport system, substrate-binding component	Unspecified_monosaccharide_transport_cluster	Clustering-based subsystems	Monosaccharides
+0.014154281670205236	1.0	Dihydrofolate reductase (EC 1.5.1.3)	Folate_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Folate and pterines
+0.014154281670205236	1.0	LSU ribosomal protein L3p (L3e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	SSU ribosomal protein S28e	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Na(+)-translocating NADH-quinone reductase subunit B (EC 1.6.5.-)	Na(+)-translocating_NADH-quinone_oxidoreductase_and_rnf-like_group_of_electron_transport_complexes	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Cystathionine gamma-synthase (EC 2.5.1.48)	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Peroxidase (EC 1.11.1.7)	Oxidative_stress	Stress Response	Oxidative stress
+0.014154281670205236	1.0	L-aspartate oxidase (EC 1.4.3.16)	NAD_and_NADP_cofactor_biosynthesis_global	Cofactors, Vitamins, Prosthetic Groups, Pigments	NAD and NADP
+0.014154281670205236	1.0	Type IV prepilin peptidase TadV/CpaA	Widespread_colonization_island	Membrane Transport	Protein secretion system, Type II
+0.014154281670205236	1.0	Inorganic pyrophosphatase (EC 3.6.1.1)	Iojap	Miscellaneous	Plant-Prokaryote DOE project
+0.014154281670205236	1.0	Lipoprotein releasing system transmembrane protein LolC	Lipoprotein_sorting_system	Cell Wall and Capsule	Gram-Negative cell wall components
+0.014154281670205236	1.0	Non-phosphorylating glyceraldehyde-3-phosphate dehydrogenase (NADP) (EC 1.2.1.9)	Entner-Doudoroff_Pathway	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Acetolactate synthase large subunit (EC 2.2.1.6)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	Translation initiation factor 3	Translation_initiation_factors_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Ketol-acid reductoisomerase (EC 1.1.1.86)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	Replicative DNA helicase (EC 3.6.1.-)	DNA-replication	DNA Metabolism	DNA replication
+0.014154281670205236	1.0	Kef-type K+ transport systems (NAD-binding component fused to domain related to exopolyphosphatase)	Potassium_homeostasis		Potassium metabolism	
+0.014154281670205236	1.0	Cytochrome c551/c552	Soluble_cytochromes_and_functionally_related_electron_carriers		Respiration	
+0.014154281670205236	1.0	4-hydroxyphenylpyruvate dioxygenase (EC 1.13.11.27)	Aromatic_amino_acid_degradation	Amino Acids and Derivatives	Aromatic amino acids and derivatives
+0.014154281670205236	1.0	Cell division protein FtsJ	Bacterial_Cell_Division		Clustering-based subsystems	
+0.014154281670205236	1.0	Glycerol uptake facilitator protein	Osmoregulation	Stress Response	Osmotic stress
+0.014154281670205236	1.0	Endoglucanase (EC 3.2.1.4)	Mannose_Metabolism	Carbohydrates	Monosaccharides
+0.014154281670205236	1.0	Guanylate kinase (EC 2.7.4.8)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.014154281670205236	1.0	MAP kinase activated protein kinase MAPKAPK2	P38_MAP_kinase_pathways	Regulation and Cell signaling	Signal transduction in Eukaryotes
+0.014154281670205236	1.0	Leucine-, isoleucine-, valine-, threonine-, and alanine-binding protein	Dehydrogenase_complexes	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Additional substrate-specific component NikN of nickel ECF transporter	Transport_of_Nickel_and_Cobalt		Membrane Transport	
+0.014154281670205236	1.0	Porphobilinogen synthase (EC 4.2.1.24)	Heme_and_Siroheme_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.014154281670205236	1.0	NADH-ubiquinone oxidoreductase chain C (EC 1.6.5.3)	Respiratory_Complex_I	Respiration	Electron donating reactions
+0.014154281670205236	1.0	2-haloalkanoic acid dehalogenase (EC 3.8.1.2)	CBSS-323850.3.peg.3269	Clustering-based subsystems	Hypothetical in Lysine biosynthetic cluster
+0.014154281670205236	1.0	Acetylglutamate kinase (EC 2.7.2.8)	Arginine_Biosynthesis_extended	Amino Acids and Derivatives	Arginine; urea cycle, polyamines
+0.014154281670205236	1.0	Riboflavin synthase alpha chain (EC 2.5.1.9)	Riboflavin,_FMN_and_FAD_metabolism	Cofactors, Vitamins, Prosthetic Groups, Pigments	Riboflavin, FMN, FAD
+0.014154281670205236	1.0	Di-/tripeptide transporter	Proton-dependent_Peptide_Transporters	Membrane Transport	Uni- Sym- and Antiporters
+0.014154281670205236	1.0	Type IV pilus biogenesis protein PilN	Type_IV_pilus	Membrane Transport	Protein and nucleoprotein secretion system, Type IV
+0.014154281670205236	1.0	Undecaprenyl pyrophosphate synthetase (EC 2.5.1.31)	Polyprenyl_Diphosphate_Biosynthesis	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.014154281670205236	1.0	MAP kinase activated protein kinase MAPKAPK5	P38_MAP_kinase_pathways	Regulation and Cell signaling	Signal transduction in Eukaryotes
+0.014154281670205236	1.0	PurR: transcription regulator associated with purine metabolism	De_Novo_Purine_Biosynthesis	Nucleosides and Nucleotides	Purines
+0.014154281670205236	1.0	4-deoxy-L-threo-5-hexosulose-uronate ketol-isomerase (EC 5.3.1.17)	D-Galacturonate_and_D-Glucuronate_Utilization	Carbohydrates	Monosaccharides
+0.014154281670205236	1.0	Peptidase M23B precursor	CBSS-224911.1.peg.435		Clustering-based subsystems	
+0.014154281670205236	1.0	Maltose/maltodextrin ABC transporter, permease protein MalF	Maltose_and_Maltodextrin_Utilization	Carbohydrates	Di- and oligosaccharides
+0.014154281670205236	1.0	Ribonuclease P protein component 2 (EC 3.1.26.5)	Ribonuclease_P_archaeal_and_eukaryal	RNA Metabolism	RNA processing and modification
+0.014154281670205236	1.0	photosystem I P700 chlorophyll a apoprotein subunit Ib (PsaB)	Photosystem_I	Photosynthesis	Electron transport and photophosphorylation
+0.014154281670205236	1.0	O-succinylhomoserine sulfhydrylase (EC 2.5.1.48)	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Triosephosphate isomerase (EC 5.3.1.1)	Glycolysis_and_Gluconeogenesis	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Polyribonucleotide nucleotidyltransferase (EC 2.7.7.8)	Bacterial_RNA-metabolizing_Zn-dependent_hydrolases		Clustering-based subsystems	
+0.014154281670205236	1.0	Protoporphyrin IX Mg-chelatase subunit H (EC 6.6.1.1)	Chlorophyll_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.014154281670205236	1.0	Cold-shock DEAD-box protein A	ATP-dependent_RNA_helicases,_bacterial	RNA Metabolism	RNA processing and modification
+0.014154281670205236	1.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoD	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Phosphate regulon sensor protein PhoR (SphS) (EC 2.7.13.3)	Phosphate_metabolism		Phosphorus Metabolism	
+0.014154281670205236	1.0	Ribose ABC transport system, ATP-binding protein RbsA (TC 3.A.1.2.1)	D-ribose_utilization	Carbohydrates	Monosaccharides
+0.014154281670205236	1.0	Flavodoxin 1	Flavodoxin	Cofactors, Vitamins, Prosthetic Groups, Pigments	Riboflavin, FMN, FAD
+0.014154281670205236	1.0	2-dehydro-3-deoxygluconate kinase (EC 2.7.1.45)	Entner-Doudoroff_Pathway	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	D-arabino-3-hexulose 6-phosphate formaldehyde lyase	Formaldehyde_assimilation:_Ribulose_monophosphate_pathway	Carbohydrates	One-carbon Metabolism
+0.014154281670205236	1.0	Deoxyuridine 5'-triphosphate nucleotidohydrolase (EC 3.6.1.23)	Housecleaning_nucleoside_triphosphate_pyrophosphatases	Nucleosides and Nucleotides	Detoxification
+0.014154281670205236	1.0	Fumarate hydratase class I, aerobic (EC 4.2.1.2)	Serine-glyoxylate_cycle	Carbohydrates	One-carbon Metabolism
+0.014154281670205236	1.0	SSU ribosomal protein S4e	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	DNA polymerase III alpha subunit (EC 2.7.7.7)	DNA-replication	DNA Metabolism	DNA replication
+0.014154281670205236	1.0	SSU ribosomal protein S2p (SAe)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Purine nucleoside phosphorylase (EC 2.4.2.1)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.014154281670205236	1.0	Glucose-1-phosphate adenylyltransferase (EC 2.7.7.27)	Glycogen_metabolism	Carbohydrates	Polysaccharides
+0.014154281670205236	1.0	LSU ribosomal protein L39e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Candidate gene for the hypothesized phosphomevalonate decarboxylase	Isoprenoid_Biosynthesis	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.014154281670205236	1.0	3-isopropylmalate dehydratase large subunit (EC 4.2.1.33)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	ADP-dependent phosphofructokinase (EC 2.7.1.146)	Glycolysis_and_Gluconeogenesis,_including_Archaeal_enzymes	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Putative DNA-binding protein in cluster with Type I restriction-modification system	Restriction-Modification_System		DNA Metabolism	
+0.014154281670205236	1.0	protein from nitrogen regulatory protein P-II (GLNB) family, ortholog YAAQ B. subtilis	CBSS-393133.3.peg.2787		Clustering-based subsystems	
+0.014154281670205236	1.0	Sulfite reductase [NADPH] flavoprotein alpha-component (EC 1.8.1.2)	Cysteine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Adenylylsulfate kinase (EC 2.7.1.25)	Cysteine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Type I restriction-modification system, specificity subunit S (EC 3.1.21.3)	Type_I_Restriction-Modification		DNA Metabolism	
+0.014154281670205236	1.0	Glycine betaine transporter OpuD	Choline_and_Betaine_Uptake_and_Betaine_Biosynthesis	Stress Response	Osmotic stress
+0.014154281670205236	1.0	ATP-dependent DNA ligase (EC 6.5.1.1)	DNA_replication,_archaeal	DNA Metabolism	DNA replication
+0.014154281670205236	1.0	Threonine synthase (EC 4.2.3.1)	Threonine_and_Homoserine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Glutamyl-tRNA(Gln) synthetase (EC 6.1.1.24)	tRNA_aminoacylation,_Glu_and_Gln	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Xanthine/uracil/thiamine/ascorbate permease family protein	Purine_Utilization	Nucleosides and Nucleotides	Purines
+0.014154281670205236	1.0	DNA-directed RNA polymerase subunit K (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.014154281670205236	1.0	Homoserine dehydrogenase (EC 1.1.1.3)	Methionine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	NAD-dependent malic enzyme (EC 1.1.1.38)	Pyruvate_metabolism_I:_anaplerotic_reactions,_PEP	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	selenocysteine-containing	Selenocysteine_metabolism	Protein Metabolism	Selenoproteins
+0.014154281670205236	1.0	Oligopeptide ABC transporter, periplasmic oligopeptide-binding protein OppA (TC 3.A.1.5.1)	ABC_transporter_oligopeptide_(TC_3.A.1.5.1)	Membrane Transport	ABC transporters
+0.014154281670205236	1.0	2-Oxobutyrate oxidase, putative	Methionine_Degradation	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Type IV fimbrial biogenesis protein PilY1	Type_IV_pilus	Membrane Transport	Protein and nucleoprotein secretion system, Type IV
+0.014154281670205236	1.0	Malonyl CoA-acyl carrier protein transacylase (EC 2.3.1.39)	Fatty_Acid_Biosynthesis_FASII	Fatty Acids, Lipids, and Isoprenoids	Fatty acids
+0.014154281670205236	1.0	Homocitrate synthase (EC 2.3.3.14)	Lysine_biosynthesis_AAA_pathway_2	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	ATP synthase B chain (EC 3.6.3.14)	F0F1-type_ATP_synthase	Respiration	ATP synthases
+0.014154281670205236	1.0	Coenzyme PQQ synthesis protein A	Pyrroloquinoline_Quinone_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Quinone cofactors
+0.014154281670205236	1.0	Citrate synthase (si) (EC 2.3.3.1)	TCA_Cycle	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	Molybdenum ABC transporter, periplasmic molybdenum-binding protein ModA (TC 3.A.1.8.1)	Molybdenum_cofactor_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Folate and pterines
+0.014154281670205236	1.0	Radical SAM domain heme biosynthesis protein	Heme_biosynthesis_orphans	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.014154281670205236	1.0	COG3269, Predicted RNA-binding protein, contains TRAM domain	rRNA_modification_Archaea	RNA Metabolism	RNA processing and modification
+0.014154281670205236	1.0	SSU ribosomal protein S12p (S23e)	Ribosome_SSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Galactose-1-phosphate uridylyltransferase (EC 2.7.7.10)	Lactose_and_Galactose_Uptake_and_Utilization	Carbohydrates	Di- and oligosaccharides
+0.014154281670205236	1.0	Flagellar motor switch protein FliM	Flagellar_motility	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.014154281670205236	1.0	L-proline glycine betaine ABC transport system permease protein ProW (TC 3.A.1.12.1)	Choline_and_Betaine_Uptake_and_Betaine_Biosynthesis	Stress Response	Osmotic stress
+0.014154281670205236	1.0	Flagella-related protein FlaG	Archaeal_Flagellum	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.014154281670205236	1.0	Chemotaxis protein CheD	Bacterial_Chemotaxis		Motility and Chemotaxis	
+0.014154281670205236	1.0	Ornithine carbamoyltransferase (EC 2.1.3.3)	Arginine_Deiminase_Pathway	Amino Acids and Derivatives	Arginine; urea cycle, polyamines
+0.014154281670205236	1.0	Acyl-CoA dehydrogenase, short-chain specific (EC 1.3.99.2)	Isoleucine_degradation	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	Ribosome hibernation protein YhbH	Ribosome_activity_modulation	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	SSU ribosomal protein S24e	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Multicopper oxidase	Copper_homeostasis	Virulence, Disease and Defense	Resistance to antibiotics and toxic compounds
+0.014154281670205236	1.0	Phosphoglycerate kinase (EC 2.7.2.3)	Entner-Doudoroff_Pathway	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	COG2071: predicted glutamine amidotransferases in hypothetical Actinobacterial gene cluster	CBSS-262316.1.peg.2929	Clustering-based subsystems	Catabolism of an unknown compound
+0.014154281670205236	1.0	Leucyl-tRNA synthetase (EC 6.1.1.4)	tRNA_aminoacylation,_Leu	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	TRAP-type C4-dicarboxylate transport system, periplasmic component	CBSS-49338.1.peg.459	Clustering-based subsystems	Tricarboxylate transporter
+0.014154281670205236	1.0	Quinolinate synthetase (EC 2.5.1.72)	NAD_and_NADP_cofactor_biosynthesis_global	Cofactors, Vitamins, Prosthetic Groups, Pigments	NAD and NADP
+0.014154281670205236	1.0	CO dehydrogenase/acetyl-CoA synthase subunit delta, corrinoid iron-sulfur subcomplex small subunit	Carbon_monoxide_induced_hydrogenase		Respiration	
+0.014154281670205236	1.0	Ubiquinol-cytochrome C reductase iron-sulfur subunit (EC 1.10.2.2)	Ubiquinone_Menaquinone-cytochrome_c_reductase_complexes	Respiration	Electron accepting reactions
+0.014154281670205236	1.0	Cell division protein FtsW	Bacterial_Cytoskeleton		Cell Division and Cell Cycle	
+0.014154281670205236	1.0	DNA topoisomerase VI subunit B (EC 5.99.1.3)	DNA_topoisomerases,_Type_II,_ATP-dependent	DNA Metabolism	DNA replication
+0.014154281670205236	1.0	SSU ribosomal protein S18e (S13p)	Ribosome_SSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Glutathione-regulated potassium-efflux system ATP-binding protein	Glutathione-regulated_potassium-efflux_system_and_associated_functions		Potassium metabolism	
+0.014154281670205236	1.0	Chromosome partitioning protein ParA	Bacterial_Cell_Division		Clustering-based subsystems	
+0.014154281670205236	1.0	Polyphosphate kinase (EC 2.7.4.1)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.014154281670205236	1.0	SusD, outer membrane protein	Cellulosome	Carbohydrates	Polysaccharides
+0.014154281670205236	1.0	Uncharacterized ABC transporter, auxiliary component YrbC	Lipopolysaccharide_assembly	Cell Wall and Capsule	Gram-Negative cell wall components
+0.014154281670205236	1.0	Hydroxymethylglutaryl-CoA synthase (EC 2.3.3.10)	Ketoisovalerate_oxidoreductase	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	Helicase loader DnaI	DNA-replication	DNA Metabolism	DNA replication
+0.014154281670205236	1.0	LSU ribosomal protein L21e	Ribosome_LSU_eukaryotic_and_archaeal	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	16S rRNA processing protein RimM	Ribosome_biogenesis_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	GTP cyclohydrolase II (EC 3.5.4.25)	Riboflavin,_FMN_and_FAD_metabolism	Cofactors, Vitamins, Prosthetic Groups, Pigments	Riboflavin, FMN, FAD
+0.014154281670205236	1.0	Aspartyl-tRNA(Asn) synthetase (EC 6.1.1.23)	tRNA_aminoacylation,_Asp_and_Asn	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	MAP kinase ERK1	P38_MAP_kinase_pathways	Regulation and Cell signaling	Signal transduction in Eukaryotes
+0.014154281670205236	1.0	Asparaginyl-tRNA synthetase (EC 6.1.1.22)	tRNA_aminoacylation,_Asp_and_Asn	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Nitrogenase FeMo-cofactor synthesis FeS core scaffold and assembly protein NifB	Nitrogen_fixation		Nitrogen Metabolism	
+0.014154281670205236	1.0	Thiol:disulfide oxidoreductase related to ResA	Biogenesis_of_c-type_cytochromes		Respiration	
+0.014154281670205236	1.0	Protein export cytoplasm protein SecA ATPase RNA helicase (TC 3.A.5.1.1)	CBSS-393121.3.peg.2760	Clustering-based subsystems	Protein export?
+0.014154281670205236	1.0	DNA-directed RNA polymerase subunit A' (EC 2.7.7.6)	RNA_polymerase_archaeal	RNA Metabolism	Transcription
+0.014154281670205236	1.0	NADH dehydrogenase (EC 1.6.99.3)	Respiratory_dehydrogenases_1	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Branched-chain amino acid aminotransferase (EC 2.6.1.42)	Branched-Chain_Amino_Acid_Biosynthesis	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	Chromosome (plasmid) partitioning protein ParB	Bacterial_Cytoskeleton		Cell Division and Cell Cycle	
+0.014154281670205236	1.0	DNA polymerase IV (EC 2.7.7.7)	DNA_repair,_bacterial	DNA Metabolism	DNA repair
+0.014154281670205236	1.0	Prolyl endopeptidase (EC 3.4.21.26)	Serine_endopeptidase_(EC_3.4.21.-)	Protein Metabolism	Protein degradation
+0.014154281670205236	1.0	Cobyrinic acid A,C-diamide synthase	Coenzyme_B12_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.014154281670205236	1.0	Putative stomatin/prohibitin-family membrane protease subunit YbbK	YbbK		Miscellaneous	
+0.014154281670205236	1.0	LSU ribosomal protein L31p	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	UDP-N-acetylmuramoylalanyl-D-glutamyl-2,6-diaminopimelate--D-alanyl-D-alanine ligase (EC 6.3.2.10)	Peptidoglycan_biosynthesis--gjo		Cell Wall and Capsule	
+0.014154281670205236	1.0	Potassium uptake protein, integral membrane component, KtrA	Hyperosmotic_potassium_uptake		Potassium metabolism	
+0.014154281670205236	1.0	Nucleoside diphosphate kinase (EC 2.7.4.6)	Purine_conversions	Nucleosides and Nucleotides	Purines
+0.014154281670205236	1.0	RNA polymerase sigma factor RpoH	Heat_shock_dnaK_gene_cluster_extended	Stress Response	Heat shock
+0.014154281670205236	1.0	Dihydrolipoamide succinyltransferase component (E2) of 2-oxoglutarate dehydrogenase complex (EC 2.3.1.61)	TCA_Cycle	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	LSU ribosomal protein L35p	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Electron transport complex protein RnfB	Na(+)-translocating_NADH-quinone_oxidoreductase_and_rnf-like_group_of_electron_transport_complexes	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Formylmethanofuran--tetrahydromethanopterin N-formyltransferase (EC 2.3.1.101)	Methanogenesis	Carbohydrates	One-carbon Metabolism
+0.014154281670205236	1.0	Solanesyl diphosphate synthase (EC 2.5.1.11)	Polyprenyl_Diphosphate_Biosynthesis	Fatty Acids, Lipids, and Isoprenoids	Isoprenoids
+0.014154281670205236	1.0	NADH-ubiquinone oxidoreductase chain N (EC 1.6.5.3)	Respiratory_Complex_I	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Branched-chain alpha-keto acid dehydrogenase, E1 component, beta subunit (EC 1.2.4.4)	Valine_degradation	Amino Acids and Derivatives	Branched-chain amino acids
+0.014154281670205236	1.0	Phage shock protein A	Phage_shock_protein_(psp)_operon		Stress Response	
+0.014154281670205236	1.0	Coenzyme F(420)H(2) dehydrogenase (methanophenazine) subunit FpoB	Coenzyme_F420-H2_dehydrogenase_(methanophenazine)	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Translation elongation factor Ts	Translation_elongation_factors_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	FKBP-type peptidyl-prolyl cis-trans isomerase fklB (EC 5.2.1.8)	Peptidyl-prolyl_cis-trans_isomerase	Protein Metabolism	Protein folding
+0.014154281670205236	1.0	Transcriptional repressor of aga operon	N-Acetyl-Galactosamine_and_Galactosamine_Utilization	Carbohydrates	Aminosugars
+0.014154281670205236	1.0	Cob(I)alamin adenosyltransferase (EC 2.5.1.17)	Coenzyme_B12_biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Tetrapyrroles
+0.014154281670205236	1.0	Sulfate permease	Cysteine_Biosynthesis	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	Fe-S oxidoreductase-like protein in Rubrerythrin cluster	Rubrerythrin	Stress Response	Oxidative stress
+0.014154281670205236	1.0	LSU ribosomal protein L4p (L1e)	Ribosome_LSU_bacterial	Protein Metabolism	Protein biosynthesis
+0.014154281670205236	1.0	Diaminopimelate decarboxylase (EC 4.1.1.20)	Lysine_Biosynthesis_DAP_Pathway	Amino Acids and Derivatives	Lysine, threonine, methionine, and cysteine
+0.014154281670205236	1.0	3-methyl-2-oxobutanoate hydroxymethyltransferase (EC 2.1.2.11)	Coenzyme_A_Biosynthesis	Cofactors, Vitamins, Prosthetic Groups, Pigments	Coenzyme A
+0.014154281670205236	1.0	Flagellar P-ring protein FlgI	Flagellum	Motility and Chemotaxis	Flagellar motility in Prokaryota
+0.014154281670205236	1.0	Mitochondrial processing peptidase-like protein (EC 3.4.24.64)	ZZ_gjo_need_homes		Miscellaneous	
+0.014154281670205236	1.0	Probable exosome complex exonuclease 2 (EC 3.1.13.-)	Proteasome_subunit_alpha_archaeal_cluster	Clustering-based subsystems	Proteasome related clusters
+0.014154281670205236	1.0	Diaminohydroxyphosphoribosylaminopyrimidine deaminase (EC 3.5.4.26)	Riboflavin,_FMN_and_FAD_metabolism	Cofactors, Vitamins, Prosthetic Groups, Pigments	Riboflavin, FMN, FAD
+0.014154281670205236	1.0	Arsenical pump-driving ATPase (EC 3.6.3.16)	Arsenic_resistance	Virulence, Disease and Defense	Resistance to antibiotics and toxic compounds
+0.014154281670205236	1.0	NADH-ubiquinone oxidoreductase chain M (EC 1.6.5.3)	Respiratory_Complex_I	Respiration	Electron donating reactions
+0.014154281670205236	1.0	Cephalosporin hydroxylase	ZZ_gjo_need_homes		Miscellaneous	
+0.014154281670205236	1.0	Sulfide dehydrogenase [flavocytochrome C] flavoprotein chain precursor (EC 1.8.2.-)	Sulfur_oxidation		Sulfur Metabolism	
+0.014154281670205236	1.0	Dihydrolipoamide dehydrogenase of branched-chain alpha-keto acid dehydrogenase (EC 1.8.1.4)	Dehydrogenase_complexes	Carbohydrates	Central carbohydrate metabolism
+0.014154281670205236	1.0	6,7-dimethyl-8-ribityllumazine synthase (EC 2.5.1.9)	Riboflavin,_FMN_and_FAD_metabolism	Cofactors, Vitamins, Prosthetic Groups, Pigments	Riboflavin, FMN, FAD
