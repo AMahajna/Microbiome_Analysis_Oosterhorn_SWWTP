@@ -93,6 +93,9 @@ colData(tse) <- col_data_new
 
 tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
+#Check
+#unique(rowData(tse_bacteria)$Kingdom)
+
 
 ################################################################################
 ################################################################################
