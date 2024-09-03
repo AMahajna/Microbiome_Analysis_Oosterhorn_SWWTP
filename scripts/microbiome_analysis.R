@@ -56,7 +56,7 @@ remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
 ################################################################################
 #Generate the biom data with full column data including bio and SPR codes 
 
-biom_data = biomformat::read_biom("input_data/Galaxy1760-[Bracken-biom_output_file_(including_metadata)].biom1")
+biom_data = biomformat::read_biom("input_data/Galaxy1783-[Kraken-biom_output_file].biom1")
 tse <- makeTreeSEFromBiom(biom_data)
 #assays(tse)
 
@@ -81,12 +81,16 @@ colnames(row_data_new) <- c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Ge
 # Assign the modified rowData back to the SummarizedExperiment object
 rowData(tse) <- row_data_new
 
+# Convert the character column to Date
+col_data_new$Date <- as.Date(col_data_new$Date, format = "%d-%m-%Y")
+
+# Convert the year character column to numeric 
+col_data_new$Year <- as.numeric(col_data_new$Year)
+
 # Change row names in colData
 col_data_new <- colData(tse)
-rownames(col_data_new) <- paste0("Sample_", 1:nrow(col_data_new))
-
-# Convert the character column to Date
-#col_data_new$Date <- as.Date(col_data_new$Date, format = "%d-%m-%Y")
+rownames(col_data_new) <- col_data_new$Date
+#rownames(col_data_new) <- paste0("Sample_", 1:nrow(col_data_new))
 
 # Assign the modified colData back to the SummarizedExperiment object
 colData(tse) <- col_data_new
@@ -95,7 +99,6 @@ tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
 #Check
 #unique(rowData(tse_bacteria)$Kingdom)
-
 
 ################################################################################
 ################################################################################
@@ -161,6 +164,11 @@ names(merged_data_org) <- gsub("^reads_", "", names(merged_data_org))
 
 # Save the merged data to a new file (optional)
 fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
+
+## Creating tse_active for metabolically active organisms 
+
+
+
 
 ################################################################################
 ##metabolism: reading and cleaning 
