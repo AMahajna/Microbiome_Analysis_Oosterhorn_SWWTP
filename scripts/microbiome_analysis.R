@@ -84,6 +84,8 @@ process_data <- read_csv(file = "input_data/relevant_process_data.csv", show_col
 #check equal one all 
 #colSums(assay(tse, "relabundance"))
 
+#Don't forget to normalize process data 
+
 ################################################################################
 #rowData is taxonom y-> change column names 
 #rownames is NCBI Tax ID 
