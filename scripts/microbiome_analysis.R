@@ -42,14 +42,27 @@ install.packages("data.table")
 # Load the data.table package
 library(data.table)
 
+install.packages("lubridate")
+library(lubridate)
+
+install.packages("BiocManager")
+BiocManager::install("TreeSummarizedExperiment")
+library(TreeSummarizedExperiment)
+
 # Load the dplyr package
 library(dplyr)
+install.packages("remotes")
+remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
 ################################################################################
 #Generate the biom data with full column data including bio and SPR codes 
 
 biom_data = biomformat::read_biom("input_data/Galaxy1760-[Bracken-biom_output_file_(including_metadata)].biom1")
 tse <- makeTreeSEFromBiom(biom_data)
+#assays(tse)
+
 tse <- transformAssay(tse, method = "relabundance")
+
+
 
 #assay(tse, "relabundance") |> head()
 #check equal one all 
@@ -72,8 +85,14 @@ rowData(tse) <- row_data_new
 col_data_new <- colData(tse)
 rownames(col_data_new) <- paste0("Sample_", 1:nrow(col_data_new))
 
+# Convert the character column to Date
+#col_data_new$Date <- as.Date(col_data_new$Date, format = "%d-%m-%Y")
+
 # Assign the modified colData back to the SummarizedExperiment object
 colData(tse) <- col_data_new
+
+tse_bacteria <- tse[
+  rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
 
 ################################################################################
 ################################################################################
@@ -210,7 +229,7 @@ names(merged_data_org) <- gsub("^reads_", "", names(merged_data_org))
 # Save the merged data to a new file (optional)
 fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 
-# enzyme lowest level 4
+#enzyme lowest level 4
 #SEED_subsystem level 3
 #description level 2
 #SEED_subsystem_functional_category highest level 1 
@@ -218,7 +237,22 @@ fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 ################################################################################
 ##Create bar plots
 
+#Make sure to create tse for bacteria alone to make it comparable to other 
+#activated sludge studies 
 
+
+#Use MultiAssayExperiment (MAE) to combine 3 TSE 
+#TSE_total_community 
+#TSE_active_community 
+#TSE_metabolism 
+
+
+#Must change merged_data_org to exclude species and rowname 
+#altExp can be used for active community data 
+#first create tse_bacteria excluding bacteria only from total community 
+
+#altExp(tse, "active_community") <- merged_data_org
+#altExpNames(tse)
 
 
 
