@@ -53,6 +53,18 @@ library(TreeSummarizedExperiment)
 library(dplyr)
 install.packages("remotes")
 remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
+
+if( !require("readr") ) {
+  install.packages("readr")
+  library("readr")
+}
+
+
+if( !require("readxl") ) {
+  install.packages("readxl")
+  library("readxl")
+}
+
 ################################################################################
 #Generate the biom data with full column data including bio and SPR codes 
 
@@ -62,7 +74,11 @@ tse <- makeTreeSEFromBiom(biom_data)
 
 tse <- transformAssay(tse, method = "relabundance")
 
+#removal_efficiency respective to sample to be added to column data in TSE
+removal_efficiency  = read_excel("input_data/Removal_Efficiency.xlsx")
 
+#Relevant process data to be added to column data in TSE
+process_data <- read_csv(file = "input_data/relevant_process_data.csv", show_col_types = FALSE)
 
 #assay(tse, "relabundance") |> head()
 #check equal one all 
@@ -167,8 +183,19 @@ fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 
 ## Creating tse_active for metabolically active organisms 
 
+#Same samples as in tse thus it's colData(tse)
+#rowData is species column of merged_data_org
+#assay in the numeric values of merged_data_org
 
+#First, change column names in merged_data_org
+colnames(merged_data_org) = c("Species", colnames(tse))
 
+assay_active = merged_data_org[ ,2:33]
+
+tse_active<- TreeSummarizedExperiment(assays = as.matrix(merged_data_org[ ,2:33]),
+                               colData = as.data.frame(colData(tse)),
+                               rowData = as.data.frame(merged_data_org[ ,1])
+)
 
 ################################################################################
 ##metabolism: reading and cleaning 
