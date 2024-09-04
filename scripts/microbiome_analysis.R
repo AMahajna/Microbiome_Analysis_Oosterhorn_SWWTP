@@ -14,7 +14,9 @@ if(!dir.exists("scripts")){dir.create("scripts")}
 ##load packages 
 
 #source(file = "scripts/install_load_packages.r")
+install.packages("data.table")
 
+library(data.table)
 install.packages("biomformat")
 library(biomformat)
 
@@ -64,6 +66,14 @@ if( !require("readxl") ) {
   install.packages("readxl")
   library("readxl")
 }
+library(dplyr)
+
+install.packages("tidyverse")
+library("tidyverse")
+
+# Install and load plyr package
+install.packages("plyr")
+library(plyr)
 
 ################################################################################
 #Generate the biom data with full column data including bio and SPR codes 
@@ -99,15 +109,15 @@ colnames(row_data_new) <- c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Ge
 # Assign the modified rowData back to the SummarizedExperiment object
 rowData(tse) <- row_data_new
 
+
+col_data_new <- colData(tse)
 # Convert the character column to Date
 col_data_new$Date <- as.Date(col_data_new$Date, format = "%d-%m-%Y")
-
+# Change row names in colData
+rownames(col_data_new) <- col_data_new$Date
 # Convert the year character column to numeric 
 col_data_new$Year <- as.numeric(col_data_new$Year)
 
-# Change row names in colData
-col_data_new <- colData(tse)
-rownames(col_data_new) <- col_data_new$Date
 #rownames(col_data_new) <- paste0("Sample_", 1:nrow(col_data_new))
 
 # Assign the modified colData back to the SummarizedExperiment object
@@ -190,13 +200,35 @@ fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 #assay in the numeric values of merged_data_org
 
 #First, change column names in merged_data_org
-colnames(merged_data_org) = c("Species", colnames(tse))
+name_changes <- as.data.frame(colData(tse))[ , c("SRA_accession", "Date")]
+name_changes[] <- lapply(name_changes, as.character)
 
-rowData_active = as.data.frame(merged_data_org[ ,1])
-colnames(rowData_active) = "Species"
+
+# Use mapvalues to rename columns
+colnames(merged_data_org) <- mapvalues(colnames(merged_data_org), 
+                          from = name_changes$SRA_accession, 
+                          to = name_changes$Date, 
+                          warn_missing = FALSE)
+
+
+# Rename the column
+colnames(merged_data_org)[colnames(merged_data_org) == "species"] <- "Species"
+
+# Specify the new order for the first four columns
+new_order_first <- c("Species")
+
+# Get the order of the remaining columns from df2
+remaining_cols_order <- colnames(assay(tse))
+
+# Reorder columns in df1
+merged_data_org_reordered <- merged_data_org %>%
+  select(all_of(new_order_first), all_of(remaining_cols_order))
+
+rowData_active = as.data.frame(merged_data_org_reordered[ ,1])
+#colnames(rowData_active) = "Species"
 rownames(rowData_active) = rowData_active$Species
 
-counts_active = as.matrix(merged_data_org[ ,2:33]) 
+counts_active = as.matrix(merged_data_org_reordered[ ,2:33]) 
 rownames(counts_active) = rowData_active$Species
 
 colData_active = as.data.frame(colData(tse))
@@ -257,35 +289,76 @@ merged_data_metabolism <- Reduce(function(x, y) merge(x, y, by = c("enzyme",
                     "description"), all = TRUE), data_list_func)
 
 #generate a list of unique organisms 
-unique_org = unique(merged_data_org$protein)
+#unique_metabolism = unique(merged_data_metabolism$enzyme)
 
-# Replace NA with 0 in the merged data frame
-merged_data_org[is.na(merged_data_org)] <- 0
+# Replace NA with  in the merged data frame
+#merged_data_metabolism[is.na(merged_data_metabolism)] <- 0
 
 #Check if transformation was done correctly
 #sum of rel_abundance columns if 100
-columns_sum_org = colSums(merged_data_org[, -1], na.rm = TRUE)
+#columns_sum_metabolism = colSums(merged_data_metabolism[, -1], na.rm = TRUE)
 
 # Save the merged data to a new file (optional)
-fwrite(merged_data_org, "output_data/merged_data_org.tsv", sep = "\t")
+#fwrite(merged_data_metabolism, "output_data/merged_data_metabolism.tsv", sep = "\t")
 
 # Display the first few rows of the merged data
-head(merged_data_org)
+#head(merged_data_metabolism)
 
 # Remove columns that start with "rel"
-merged_data_org <- merged_data_org %>%
-  select(-starts_with("rel"))
+#merged_data_metabolism <- merged_data_metabolism %>%
+#  select(-starts_with("rel"))
 
 # Remove the prefix "reads_" from column names
-names(merged_data_org) <- gsub("^reads_", "", names(merged_data_org))
+#names(merged_data_metabolism) <- gsub("^reads_", "", names(merged_data_metabolism))
 
 # Save the merged data to a new file (optional)
-fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
+#fwrite(merged_data_metabolism, "output_data/merged_data_metabolism_reads.tsv", sep = "\t")
 
 #enzyme lowest level 4
 #SEED_subsystem level 3
 #description level 2
 #SEED_subsystem_functional_category highest level 1 
+
+## Creating tse_pathway for metabolic pathways  
+
+# Use mapvalues to rename columns
+colnames(merged_data_metabolism) <- mapvalues(colnames(merged_data_metabolism), 
+                                       from = name_changes$SRA_accession, 
+                                       to = name_changes$Date, 
+                                       warn_missing = FALSE)
+
+# Specify the new order for the first four columns
+new_order_first4 <- c("SEED_subsystem_functional_category", "description", "SEED_subsystem", "enzyme")
+
+# Get the order of the remaining columns from df2
+remaining_cols_order <- colnames(assay(tse))
+
+# Reorder columns in df1
+merged_data_metabolism_reordered <- merged_data_metabolism %>%
+  select(all_of(new_order_first4), all_of(remaining_cols_order))
+
+rowData_active = as.data.frame(merged_data_org[ ,1])
+colnames(rowData_active) = "Species"
+rownames(rowData_active) = rowData_active$Species
+
+counts_active = as.matrix(merged_data_org[ ,2:33]) 
+rownames(counts_active) = rowData_active$Species
+
+colData_active = as.data.frame(colData(tse))
+rownames(colData_active) = colnames(counts_active) 
+
+#Condition:  
+#colnames(counts_active) == rownames(colData_active)
+#rownames(rowData_active) == rownames(counts_active) 
+
+tse_active <- TreeSummarizedExperiment(assays = list(counts = counts_active ),
+                                       colData = colData_active,
+                                       rowData = rowData_active, 
+                                       
+)
+
+
+
 
 ################################################################################
 ##Create bar plots
