@@ -192,11 +192,24 @@ fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 #First, change column names in merged_data_org
 colnames(merged_data_org) = c("Species", colnames(tse))
 
-assay_active = merged_data_org[ ,2:33]
+rowData_active = as.data.frame(merged_data_org[ ,1])
+colnames(rowData_active) = "Species"
+rownames(rowData_active) = rowData_active$Species
 
-tse_active<- TreeSummarizedExperiment(assays = as.matrix(merged_data_org[ ,2:33]),
-                               colData = as.data.frame(colData(tse)),
-                               rowData = as.data.frame(merged_data_org[ ,1])
+counts_active = as.matrix(merged_data_org[ ,2:33]) 
+rownames(counts_active) = rowData_active$Species
+
+colData_active = as.data.frame(colData(tse))
+rownames(colData_active) = colnames(counts_active) 
+  
+#Condition:  
+#colnames(counts_active) == rownames(colData_active)
+#rownames(rowData_active) == rownames(counts_active) 
+  
+tse_active <- TreeSummarizedExperiment(assays = list(counts = counts_active ),
+                               colData = colData_active,
+                               rowData = rowData_active, 
+                               
 )
 
 ################################################################################
