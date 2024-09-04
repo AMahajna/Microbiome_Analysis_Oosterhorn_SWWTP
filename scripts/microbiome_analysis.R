@@ -337,27 +337,25 @@ remaining_cols_order <- colnames(assay(tse))
 merged_data_metabolism_reordered <- merged_data_metabolism %>%
   select(all_of(new_order_first4), all_of(remaining_cols_order))
 
-rowData_active = as.data.frame(merged_data_org[ ,1])
-colnames(rowData_active) = "Species"
-rownames(rowData_active) = rowData_active$Species
+rowData_pathway = as.data.frame(merged_data_metabolism_reordered[ ,1:4])
 
-counts_active = as.matrix(merged_data_org[ ,2:33]) 
-rownames(counts_active) = rowData_active$Species
+#rownames(rowData_pathway) = rowData_pathway$enzyme
 
-colData_active = as.data.frame(colData(tse))
-rownames(colData_active) = colnames(counts_active) 
+counts_pathway = as.matrix(merged_data_metabolism_reordered[ ,5:36]) 
+rownames(counts_pathway) = rownames(rowData_pathway)
+
+colData_pathway = as.data.frame(colData(tse))
+rownames(colData_pathway) = colnames(counts_pathway) 
 
 #Condition:  
 #colnames(counts_active) == rownames(colData_active)
 #rownames(rowData_active) == rownames(counts_active) 
 
-tse_active <- TreeSummarizedExperiment(assays = list(counts = counts_active ),
-                                       colData = colData_active,
-                                       rowData = rowData_active, 
+tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
+                                       colData = colData_pathway,
+                                       rowData = rowData_pathway, 
                                        
 )
-
-
 
 
 ################################################################################
