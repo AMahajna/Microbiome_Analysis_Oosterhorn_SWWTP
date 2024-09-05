@@ -95,7 +95,7 @@ biom_data = biomformat::read_biom("input_data/Galaxy1783-[Kraken-biom_output_fil
 tse <- makeTreeSEFromBiom(biom_data)
 #assays(tse)
 
-tse <- transformAssay(tse, method = "relabundance")
+#tse <- transformAssay(tse, method = "relabundance")
 
 #removal_efficiency respective to sample to be added to column data in TSE
 removal_efficiency  = read_excel("input_data/Removal_Efficiency.xlsx")
@@ -120,7 +120,6 @@ row_data_new <- rowData(tse)
 colnames(row_data_new) <- c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
 # Assign the modified rowData back to the SummarizedExperiment object
 rowData(tse) <- row_data_new
-
 
 col_data_new <- colData(tse)
 # Convert the character column to Date
@@ -252,8 +251,9 @@ rownames(rowData_active) = rowData_active$Species
 counts_active = as.matrix(merged_data_org_reordered[ ,2:33]) 
 rownames(counts_active) = rowData_active$Species
 
-colData_active = as.data.frame(colData(tse))
-rownames(colData_active) = colnames(counts_active) 
+#colData_active = as.data.frame(colData(tse))
+colData_active = colData(tse)
+#rownames(colData_active) = colnames(counts_active) 
   
 #Condition:  
 #colnames(counts_active) == rownames(colData_active)
@@ -366,8 +366,8 @@ rowData_pathway = as.data.frame(merged_data_metabolism_reordered[ ,1:4])
 counts_pathway = as.matrix(merged_data_metabolism_reordered[ ,5:36]) 
 rownames(counts_pathway) = rownames(rowData_pathway)
 
-colData_pathway = as.data.frame(colData(tse))
-rownames(colData_pathway) = colnames(counts_pathway) 
+colData_pathway = colData(tse)
+#rownames(colData_pathway) = colnames(counts_pathway) 
 
 #Condition:  
 #colnames(counts_active) == rownames(colData_active)
@@ -381,35 +381,12 @@ tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
 
 
 ################################################################################
-##Create bar plots
-
-#Make sure to create tse for bacteria alone to make it comparable to other 
-#activated sludge studies 
-
-
-#Use MultiAssayExperiment (MAE) to combine 3 TSE 
+## MultiAssayExperiment (MAE) to combine 3 TSE 
 #tse all organisms 
 #tse_bacteria is bacteria from the total community 
 #tse_active which is metabolically active community 
 #tse_pathway which contains data regarding metabolic pathways 
-# Getting top taxa on a Phylum level
 
 
-# Computing relative abundance
-tse_pathway <- transformAssay(tse_pathway, assay.type = "counts", method = "relabundance")
+################################################################################
 
-# Getting top taxa on a Phylum level
-tse_pathway <- agglomerateByRank(tse_pathway, rank ="Phylum")
-top_taxa <- getTop(tse_pathway, top = 10, assay.type = "relabundance")
-
-# Renaming the "Phylum" rank to keep only top taxa and the rest to "Other"
-phylum_renamed <- lapply(rowData(tse)$Phylum, function(x){
-  if (x %in% top_taxa) {x} else {"Other"}
-})
-rowData(tse)$Phylum_sub <- as.character(phylum_renamed)
-# Agglomerate the data based on specified taxa
-tse_sub <- agglomerateByVariable(tse, by = "rows", f = "Phylum_sub")
-
-# Visualizing the composition barplot, with samples order by "Bacteroidetes"
-plotAbundance(
-  tse_pathway, assay.type = "relabundance")
