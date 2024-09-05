@@ -15,6 +15,11 @@ if(!dir.exists("scripts")){dir.create("scripts")}
 # Check if a package is installed and load it
 #.Rproject 
 
+if (!requireNamespace("data.table", quietly = TRUE)) {
+  install.packages("data.table")
+}
+library(data.table)
+
 if (!requireNamespace("ggplot2", quietly = TRUE)) {
   install.packages("ggplot2")
 }
@@ -114,10 +119,7 @@ library(lubridate)
 #install.packages("remotes")
 #remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
 
-#if (!requireNamespace("data.table", quietly = TRUE)) {
-#  install.packages("data.table")
-#}
-#library(data.table)
+
 
 
 ################################################################################
@@ -330,7 +332,7 @@ read_and_preprocess <- function(file) {
                     "description")
   
   # Ensure 'protein' column is character type for consistency
-  df[, protein := as.character(protein)]
+  #df[, enzyme := as.character(enzyme)]
   
   # Return the data.table
   return(df)
