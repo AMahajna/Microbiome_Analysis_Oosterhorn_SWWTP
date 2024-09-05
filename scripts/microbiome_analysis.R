@@ -40,10 +40,15 @@ if (!requireNamespace("biomformat", quietly = TRUE)) {
 }
 library(biomformat)
 
-if (!requireNamespace("mia", quietly = TRUE)) {
-  BiocManager::install("mia")
+if (!requireNamespace("miaTime", quietly = TRUE)) {
+  BiocManager::install("miaTime")
 }
-library(mia)
+library(miaTime)
+
+if (!requireNamespace("miaViz", quietly = TRUE)) {
+  BiocManager::install("miaViz")
+}
+library(miaViz)
 
 if (!requireNamespace("readr", quietly = TRUE)) {
   install.packages("readr")
@@ -306,6 +311,15 @@ tse_active <- TreeSummarizedExperiment(assays = list(counts = counts_active ),
 ################################################################################
 ##metabolism: reading and cleaning 
 
+### Set ranks
+#setTaxonomyRanks(c("test", "test2", "apple"))
+
+### Get ranks
+#getTaxonomyRanks()
+##  [1] "test"  "test2" "apple"
+
+
+
 # Define the path to your folder containing TSV files
 folder_path_metabolism <- "input_data/subsystems_result"
 
@@ -425,6 +439,100 @@ tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
 #tse_active which is metabolically active community 
 #tse_pathway which contains data regarding metabolic pathways 
 
+################################################################################
+##Transforming tse to relabundance 
+
+tse <- transformAssay(tse, method = "relabundance")
+tse_bacteria <- transformAssay(tse_bacteria, method = "relabundance")
+tse_active <- transformAssay(tse_active, method = "relabundance")
+tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
+################################################################################
+##Create hierarchy tree 
+
+tse <- addHierarchyTree(tse)
+tse_bacteria <- addHierarchyTree(tse_bacteria)
+#There is no hierarchy in tse_active as there is only species 
+#tse_active <- addHierarchyTree(tse_active)
+tse_pathway <- addHierarchyTree(tse_pathway)
+################################################################################
+plotAbundanceDensity(tse_bacteria, layout = "jitter", assay.type = "relabundance",
+                     n = 40, colour_by="Season", point_size=2, point_shape=19) + 
+  scale_x_log10(label=scales::percent)
+
+
+plotAbundanceDensity(tse_bacteria, layout = "density", assay.type = "relabundance",
+                     n = 10, colour_by="Season", point_alpha=1/10) + 
+  scale_x_log10(label=scales::percent) 
+################################################################################
+#Prevalence of bacterial phylum across samples
+rowData(altExp(tse_bacteria,"Phylum"))$prevalence <- getPrevalence(
+  altExp(tse_bacteria,"Phylum"), detection = 0.1,
+  sort = FALSE,
+  assay.type = "counts", as.relative = TRUE)
+
+library(scater)
+plotRowData(altExp(tse_bacteria,"Phylum"), "prevalence", colour_by = "Phylum")
+
+#Core community is the ones with prevalence 1  
+getPrevalence(
+  tse_bacteria, rank = "Phylum", detection = 1/100, sort = TRUE,
+  assay.type = "counts", as.relative = TRUE) |>
+  head()
+
+#Do this to species as well 
+################################################################################
+ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+for (r in ranks) {
+  altExp(tse_bacteria,r) <- agglomerateByRank(tse_bacteria, r, agglomerate.tree = TRUE)
+}
+
+altExps(tse_bacteria) <- lapply(
+  altExps(tse_bacteria), function(y){
+    rowData(y)$prevalence <- getPrevalence(
+      y, detection = 1/100,
+      sort = FALSE,
+      assay.type = "counts",
+      as.relative = TRUE)
+    return(y)
+  })
+
+top_phyla <- getTopTaxa(
+  altExp(tse_bacteria,"Phylum"),
+  method="sum",
+  top=5L,
+  assay.type="counts")
+top_phyla_mean <- getTopTaxa(
+  altExp(tse_bacteria,"Phylum"),
+  method="mean",
+  top=5L,
+  assay.type="counts")
+
+x <- unsplitByRanks(tse_bacteria, ranks = taxonomyRanks(tse_bacteria)[1:6])
+x <- addHierarchyTree(x)
+
+plotRowTree(
+  x[rowData(x)$Phylum %in% top_phyla,],
+  edge_colour_by = "Phylum",
+  tip_colour_by = "prevalence",
+  node_colour_by = "prevalence")
+
+
+plotRowTree(
+  x[rowData(x)$Phylum %in% top_phyla_mean,],
+  edge_colour_by = "Phylum",
+  tip_colour_by = "prevalence",
+  node_colour_by = "prevalence")
 
 ################################################################################
+
+
+
+#set taxonomy ranks 
+#colnames(rowData(tse_pathway))<- c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+#setTaxonomyRanks(colnames(rowData(tse_pathway)))
+#getTaxonomyRanks()
+################################################################################
+#ls("package:mia")
+#co-abundant groups as CAGs, which are clusters of taxa that co-vary across samples 
+#getUniqueTaxa(tse_bacteria, rank = "Phylum")
 
