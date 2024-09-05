@@ -12,79 +12,114 @@ if(!dir.exists("scripts")){dir.create("scripts")}
 
 ################################################################################
 ##load packages 
+# Check if a package is installed and load it
+#.Rproject 
 
-if( !require("vegan") ) {
-  install.packages("vegan")
-  library("vegan")
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2")
 }
+library(ggplot2)
 
+if (!requireNamespace("vegan", quietly = TRUE)) {
+  install.packages("vegan")
+}
+library(vegan)
 
-#source(file = "scripts/install_load_packages.r")
-install.packages("data.table")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
+library(BiocManager)
 
-library(data.table)
-install.packages("biomformat")
+if (!requireNamespace("biomformat", quietly = TRUE)) {
+  install.packages("biomformat")
+}
 library(biomformat)
 
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-
-#BiocManager::install(version = "3.19")  # Ensure you have the latest Bioconductor
-BiocManager::install()  # Update all installed packages to their latest versions
-
-BiocManager::install("phyloseq")
-BiocManager::install("biomformat")
-BiocManager::install("TreeSummarizedExperiment")
-BiocManager::install("microbiomeTree")
-BiocManager::install("mia")
-library(microbiomeTree)
-BiocManager::install("TreeSummarizedExperiment")
-
-library(TreeSummarizedExperiment)
-library(phyloseq)
-library(biom)
-library(phyloseq)
-library(treeio)
+if (!requireNamespace("mia", quietly = TRUE)) {
+  BiocManager::install("mia")
+}
 library(mia)
-# Install the data.table package if it's not already installed
-install.packages("data.table")
 
-# Load the data.table package
-library(data.table)
-
-install.packages("lubridate")
-library(lubridate)
-
-install.packages("BiocManager")
-BiocManager::install("TreeSummarizedExperiment")
-library(TreeSummarizedExperiment)
-
-# Load the dplyr package
-library(dplyr)
-install.packages("remotes")
-remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
-
-if( !require("readr") ) {
+if (!requireNamespace("readr", quietly = TRUE)) {
   install.packages("readr")
-  library("readr")
 }
-library("readr")
+library(readr)
 
-if( !require("readxl") ) {
+if (!requireNamespace("readxl", quietly = TRUE)) {
   install.packages("readxl")
-  library("readxl")
 }
-library("readxl")
-library(dplyr)
+library(readxl)
 
-install.packages("tidyverse")
-library("tidyverse")
-
-# Install and load plyr package
-install.packages("plyr")
+if (!requireNamespace("plyr", quietly = TRUE)) {
+  install.packages("plyr")
+}
 library(plyr)
 
-library("BiocManager")
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+library(dplyr)
+
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
+library(tidyverse)
+
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+library(remotes)
+
+if (!requireNamespace("lubridate", quietly = TRUE)) {
+  install.packages("lubridate")
+}
+library(lubridate)
+
+#if (!requireNamespace("OMA", quietly = TRUE)) {
+#  remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
+#}
+#library(OMA)
+
+
+#BiocManager::install("phyloseq")
+#BiocManager::install("biomformat")
+#BiocManager::install("TreeSummarizedExperiment")
+#BiocManager::install("microbiomeTree")
+#BiocManager::install("mia")
+#library(microbiomeTree)
+
+#BiocManager::install("TreeSummarizedExperiment")
+
+#library(TreeSummarizedExperiment)
+#library(phyloseq)
+#library(biom)
+#library(phyloseq)
+#library(treeio)
+#library(mia)
+# Install the data.table package if it's not already installed
+
+
+# Load the data.table package
+#library(data.table)
+
+#install.packages("lubridate")
+#library(lubridate)
+
+#install.packages("BiocManager")
+#BiocManager::install("TreeSummarizedExperiment")
+#library(TreeSummarizedExperiment)
+
+# Load the dplyr package
+
+#install.packages("remotes")
+#remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
+
+#if (!requireNamespace("data.table", quietly = TRUE)) {
+#  install.packages("data.table")
+#}
+#library(data.table)
+
+
 ################################################################################
 #Generate the biom data with full column data including bio and SPR codes 
 
@@ -136,7 +171,8 @@ process_data[, 10] <- (process_data[, 10])/100
 #Standardize environmental data - reflect on standardization method choice 
 #process_data_normalized <- decostand(process_data, method ="standardize")
 process_data_normalized <- process_data  # Create a copy to store the result
-process_data_normalized[ , !names(process_data) %in% "Capacity_blowers_%"] <- decostand(process_data[ , !names(process_data) %in% "Capacity_blowers_%"], method = "log")
+process_data_normalized[ , !names(process_data) %in% "Capacity_blowers_%"] <- decostand(process_data[ , !names(process_data) %in% "Capacity_blowers_%"], method = "standardize")
+#summary(process_data_normalized)
 
 col_data = DataFrame(cbind(col_data_new,process_data_normalized,(removal_efficiency[ ,3:6])/100))
 
