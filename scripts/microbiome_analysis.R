@@ -13,6 +13,12 @@ if(!dir.exists("scripts")){dir.create("scripts")}
 ################################################################################
 ##load packages 
 
+if( !require("vegan") ) {
+  install.packages("vegan")
+  library("vegan")
+}
+
+
 #source(file = "scripts/install_load_packages.r")
 install.packages("data.table")
 
@@ -32,6 +38,8 @@ BiocManager::install("TreeSummarizedExperiment")
 BiocManager::install("microbiomeTree")
 BiocManager::install("mia")
 library(microbiomeTree)
+BiocManager::install("TreeSummarizedExperiment")
+
 library(TreeSummarizedExperiment)
 library(phyloseq)
 library(biom)
@@ -60,12 +68,13 @@ if( !require("readr") ) {
   install.packages("readr")
   library("readr")
 }
-
+library("readr")
 
 if( !require("readxl") ) {
   install.packages("readxl")
   library("readxl")
 }
+library("readxl")
 library(dplyr)
 
 install.packages("tidyverse")
@@ -75,10 +84,14 @@ library("tidyverse")
 install.packages("plyr")
 library(plyr)
 
+library("BiocManager")
 ################################################################################
 #Generate the biom data with full column data including bio and SPR codes 
 
+#bioformat package 
 biom_data = biomformat::read_biom("input_data/Galaxy1783-[Kraken-biom_output_file].biom1")
+
+#mia package 
 tse <- makeTreeSEFromBiom(biom_data)
 #assays(tse)
 
@@ -105,7 +118,6 @@ process_data <- read_csv(file = "input_data/relevant_process_data.csv", show_col
 # Change column names in rowData
 row_data_new <- rowData(tse)
 colnames(row_data_new) <- c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
-
 # Assign the modified rowData back to the SummarizedExperiment object
 rowData(tse) <- row_data_new
 
@@ -117,11 +129,20 @@ col_data_new$Date <- as.Date(col_data_new$Date, format = "%d-%m-%Y")
 rownames(col_data_new) <- col_data_new$Date
 # Convert the year character column to numeric 
 col_data_new$Year <- as.numeric(col_data_new$Year)
-
+col_data_new = as.data.frame(col_data_new)
 #rownames(col_data_new) <- paste0("Sample_", 1:nrow(col_data_new))
 
+process_data <- subset(process_data, select = -rarity)
+process_data[, 10] <- (process_data[, 10])/100
+#Standardize environmental data - reflect on standardization method choice 
+#process_data_normalized <- decostand(process_data, method ="standardize")
+process_data_normalized <- process_data  # Create a copy to store the result
+process_data_normalized[ , !names(process_data) %in% "Capacity_blowers_%"] <- decostand(process_data[ , !names(process_data) %in% "Capacity_blowers_%"], method = "log")
+
+col_data = DataFrame(cbind(col_data_new,process_data_normalized,(removal_efficiency[ ,3:6])/100))
+
 # Assign the modified colData back to the SummarizedExperiment object
-colData(tse) <- col_data_new
+colData(tse) <- col_data
 
 tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
@@ -337,6 +358,7 @@ remaining_cols_order <- colnames(assay(tse))
 merged_data_metabolism_reordered <- merged_data_metabolism %>%
   select(all_of(new_order_first4), all_of(remaining_cols_order))
 
+colnames(merged_data_metabolism_reordered)[1:4] <- c("Kingdom", "Phylum", "Class", "Order")
 rowData_pathway = as.data.frame(merged_data_metabolism_reordered[ ,1:4])
 
 #rownames(rowData_pathway) = rowData_pathway$enzyme
@@ -366,17 +388,28 @@ tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
 
 
 #Use MultiAssayExperiment (MAE) to combine 3 TSE 
-#TSE_total_community 
-#TSE_active_community 
-#TSE_metabolism 
+#tse all organisms 
+#tse_bacteria is bacteria from the total community 
+#tse_active which is metabolically active community 
+#tse_pathway which contains data regarding metabolic pathways 
+# Getting top taxa on a Phylum level
 
 
-#Must change merged_data_org to exclude species and rowname 
-#altExp can be used for active community data 
-#first create tse_bacteria excluding bacteria only from total community 
+# Computing relative abundance
+tse_pathway <- transformAssay(tse_pathway, assay.type = "counts", method = "relabundance")
 
-#altExp(tse, "active_community") <- merged_data_org
-#altExpNames(tse)
+# Getting top taxa on a Phylum level
+tse_pathway <- agglomerateByRank(tse_pathway, rank ="Phylum")
+top_taxa <- getTop(tse_pathway, top = 10, assay.type = "relabundance")
 
+# Renaming the "Phylum" rank to keep only top taxa and the rest to "Other"
+phylum_renamed <- lapply(rowData(tse)$Phylum, function(x){
+  if (x %in% top_taxa) {x} else {"Other"}
+})
+rowData(tse)$Phylum_sub <- as.character(phylum_renamed)
+# Agglomerate the data based on specified taxa
+tse_sub <- agglomerateByVariable(tse, by = "rows", f = "Phylum_sub")
 
-
+# Visualizing the composition barplot, with samples order by "Bacteroidetes"
+plotAbundance(
+  tse_pathway, assay.type = "relabundance")
