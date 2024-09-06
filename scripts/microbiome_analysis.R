@@ -558,39 +558,40 @@ for (r in ranks) {
 enzyme_accum <- specaccum(t(assay(tse_pathway)), method = 'random')
 pathway_accum <- specaccum(t(assay(altExp(tse_pathway,"Class"))), method = 'random')
 
-
+#png(filename="figures/accum_curve.png" ,units = 'in',width=9, height=6, res=1000)
 # Plot species accumulation curve
-plot(species_accum, xlab = "Number of Samples", ylab = "Number of Features (Species)", main = "Species Accumulation Curve", col = "lightblue", lwd = 2,  xlim = c(0, 35), ci = 0, ylim = c(0,1500))
+plot(species_accum, xlab = "Number of Samples", ylab = "Number of Features",
+     col = "skyblue", lwd = 3,  xlim = c(0, 35), ci = 0, ylim = c(0,1500))
 
 # Add the second curve using the lines() function
 lines(
   genera_accum,
-  col = "lightgreen",      # Different color for the second curve
-  lwd = 2, # Line width
+  col = "darkgreen",      # Different color for the second curve
+  lwd = 3, # Line width
   ci = 0
 )
 
 # Add the second curve using the lines() function
 lines(
   family_accum,
-  col = "pink",      # Different color for the second curve
-  lwd = 2, # Line width
+  col = "darkorange",      # Different color for the second curve
+  lwd = 3, # Line width
   ci = 0
 )
 
 # Add the second curve using the lines() function
 lines(
   bacterial_species_accum,
-  col = "peachpuff",      # Different color for the second curve
-  lwd = 2, # Line width
+  col = "slategrey",      # Different color for the second curve
+  lwd = 3, # Line width
   ci = 0
 )
 
 # Add the second curve using the lines() function
 lines(
   pathway_accum,
-  col = "lightcoral",      # Different color for the second curve
-  lwd = 2, # Line width
+  col = "firebrick",      # Different color for the second curve
+  lwd = 3, # Line width
   ci = 0
 )
 
@@ -599,12 +600,12 @@ lines(
 legend(
   "topleft",
   legend = c("Metabolic Pathways","Bacterial species","Species","Genera","Families"),  # Labels for each curve
-  col = c("lightcoral","peachpuff","lightblue","lightgreen","pink"),         # Corresponding colors
-  lwd = 2,
-  cex = 0.75,# Line width in the legend,
+  col = c("firebrick","slategrey","skyblue","darkgreen","darkorange"),         # Corresponding colors
+  lwd = 3,
+  cex = 1,# Line width in the legend,
   bty = "n"
   )
-
+#dev.off()
 
 
 ################################################################################
