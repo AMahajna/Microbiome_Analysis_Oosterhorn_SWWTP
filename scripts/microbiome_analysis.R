@@ -20,11 +20,6 @@ if (!requireNamespace("data.table", quietly = TRUE)) {
 }
 library(data.table)
 
-if (!requireNamespace("ggplot2", quietly = TRUE)) {
-  install.packages("ggplot2")
-}
-library(ggplot2)
-
 if (!requireNamespace("vegan", quietly = TRUE)) {
   install.packages("vegan")
 }
@@ -40,6 +35,11 @@ if (!requireNamespace("biomformat", quietly = TRUE)) {
 }
 library(biomformat)
 
+if (!requireNamespace("mia", quietly = TRUE)) {
+  BiocManager::install("mia")
+}
+library(mia)
+
 if (!requireNamespace("miaTime", quietly = TRUE)) {
   BiocManager::install("miaTime")
 }
@@ -49,6 +49,16 @@ if (!requireNamespace("miaViz", quietly = TRUE)) {
   BiocManager::install("miaViz")
 }
 library(miaViz)
+
+if (!requireNamespace("phyloseq", quietly = TRUE)) {
+  BiocManager::install("phyloseq")
+}
+library(phyloseq)
+
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  BiocManager::install("ggplot2")
+}
+library(ggplot2)
 
 if (!requireNamespace("readr", quietly = TRUE)) {
   install.packages("readr")
@@ -507,7 +517,8 @@ top_phyla_mean <- getTopTaxa(
   top=5L,
   assay.type="counts")
 
-x <- unsplitByRanks(tse_bacteria, ranks = taxonomyRanks(tse_bacteria)[1:6])
+#Number of ranks can also be decreased
+x <- unsplitByRanks(tse_bacteria, ranks = taxonomyRanks(tse_bacteria)[1:7])
 x <- addHierarchyTree(x)
 
 plotRowTree(
@@ -518,14 +529,85 @@ plotRowTree(
 
 
 plotRowTree(
-  x[rowData(x)$Phylum %in% top_phyla_mean,],
+  x,
   edge_colour_by = "Phylum",
   tip_colour_by = "prevalence",
   node_colour_by = "prevalence")
 
 ################################################################################
+## Plot species accumulation curve
+
+ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+for (r in ranks) {
+  altExp(tse,r) <- agglomerateByRank(tse, r, agglomerate.tree = TRUE)
+}
+
+#Calculate species accumulation
+species_accum <- specaccum(t(assay(tse)), method = 'random')
+genera_accum <- specaccum(t(assay(altExp(tse,"Genus"))), method = 'random')
+family_accum <- specaccum(t(assay(altExp(tse,"Family"))), method = 'random')
+
+bacterial_species_accum <- specaccum(t(assay(tse_bacteria)), method = 'random')
+
+active_species_accum <- specaccum(t(assay(tse_active)), method = 'random')
+
+ranks = c('Kingdom', 'Phylum', 'Class', 'Order')
+for (r in ranks) {
+  altExp(tse_pathway,r) <- agglomerateByRank(tse_pathway, r, agglomerate.tree = TRUE)
+}
+enzyme_accum <- specaccum(t(assay(tse_pathway)), method = 'random')
+pathway_accum <- specaccum(t(assay(altExp(tse_pathway,"Class"))), method = 'random')
 
 
+# Plot species accumulation curve
+plot(species_accum, xlab = "Number of Samples", ylab = "Number of Features (Species)", main = "Species Accumulation Curve", col = "lightblue", lwd = 2,  xlim = c(0, 35), ci = 0, ylim = c(0,1500))
+
+# Add the second curve using the lines() function
+lines(
+  genera_accum,
+  col = "lightgreen",      # Different color for the second curve
+  lwd = 2, # Line width
+  ci = 0
+)
+
+# Add the second curve using the lines() function
+lines(
+  family_accum,
+  col = "pink",      # Different color for the second curve
+  lwd = 2, # Line width
+  ci = 0
+)
+
+# Add the second curve using the lines() function
+lines(
+  bacterial_species_accum,
+  col = "peachpuff",      # Different color for the second curve
+  lwd = 2, # Line width
+  ci = 0
+)
+
+# Add the second curve using the lines() function
+lines(
+  pathway_accum,
+  col = "lightcoral",      # Different color for the second curve
+  lwd = 2, # Line width
+  ci = 0
+)
+
+
+# Add a legend to the plot
+legend(
+  "topleft",
+  legend = c("Metabolic Pathways","Bacterial species","Species","Genera","Families"),  # Labels for each curve
+  col = c("lightcoral","peachpuff","lightblue","lightgreen","pink"),         # Corresponding colors
+  lwd = 2,
+  cex = 0.75,# Line width in the legend,
+  bty = "n"
+  )
+
+
+
+################################################################################
 
 #set taxonomy ranks 
 #colnames(rowData(tse_pathway))<- c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
@@ -535,4 +617,3 @@ plotRowTree(
 #ls("package:mia")
 #co-abundant groups as CAGs, which are clusters of taxa that co-vary across samples 
 #getUniqueTaxa(tse_bacteria, rank = "Phylum")
-
