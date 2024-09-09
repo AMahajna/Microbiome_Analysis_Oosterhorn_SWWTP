@@ -347,23 +347,11 @@ tse_active <- TreeSummarizedExperiment(assays = list(counts = counts_active ),
 ################################################################################
 ##metabolism: reading and cleaning 
 
-### Set ranks
-#setTaxonomyRanks(c("test", "test2", "apple"))
-
-### Get ranks
-#getTaxonomyRanks()
-##  [1] "test"  "test2" "apple"
-
-
-
 # Define the path to your folder containing TSV files
 folder_path_metabolism <- "input_data/subsystems_result"
 
 # List all TSV files in the folder
 file_list_metabolism <- list.files(folder_path_metabolism, pattern = "\\.reduced$", full.names = TRUE)
-
-# Read the file with comment.char argument (assuming no comment character in your case)
-example <- fread("input_data/subsystems_result/SRR29355722.reduced", header = FALSE, sep = "\t", fill = TRUE)
 
 # Function to read and preprocess each file
 read_and_preprocess <- function(file) {
@@ -371,10 +359,20 @@ read_and_preprocess <- function(file) {
   file_name <- tools::file_path_sans_ext(basename(file))
   
   # Read the TSV file
-  df <- fread(file, header = FALSE, sep = "\t")
+  df <- fread(file, header = FALSE, sep = "\t", fill = TRUE)
+  
+  # Check if the data frame has 7 columns
+  if (ncol(df) == 7) {
+    # Drop the 7th column
+    if (is.data.table(df)) {
+      df <- df[, -7, with = FALSE]  # For data.table
+    } else {
+      df <- df[, -7]  # For data.frame
+    }
+  }
   
   # Rename columns
-  colnames(df) <- c(paste0("rel_abundance_", file_name),
+  names(df)[1:6] <- c(paste0("rel_abundance_", file_name),
                     paste0("reads_", file_name),
                     "enzyme",
                     "SEED_subsystem",
@@ -382,8 +380,8 @@ read_and_preprocess <- function(file) {
                     "description")
   
   # Ensure 'protein' column is character type for consistency
-  #df[, enzyme := as.character(enzyme)]
-  
+  df[ , enzyme := as.character(enzyme)]
+
   # Return the data.table
   return(df)
 }
@@ -395,17 +393,18 @@ data_list_metabolism <- lapply(file_list_metabolism, read_and_preprocess)
 merged_data_metabolism <- Reduce(function(x, y) merge(x, y, by = c("enzyme",
                     "SEED_subsystem",
                     "SEED_subsystem_functional_category", 
-                    "description"), all = TRUE), data_list_func)
+                    "description"), all = TRUE), data_list_metabolism)
 
 #generate a list of unique organisms 
 #unique_metabolism = unique(merged_data_metabolism$enzyme)
 
-# Replace NA with  in the merged data frame
-#merged_data_metabolism[is.na(merged_data_metabolism)] <- 0
+#Replace NA with  in the merged data frame
+merged_data_metabolism[is.na(merged_data_metabolism)] <- 0
 
 #Check if transformation was done correctly
 #sum of rel_abundance columns if 100
-#columns_sum_metabolism = colSums(merged_data_metabolism[, -1], na.rm = TRUE)
+columns_sum_metabolism = colSums(merged_data_metabolism[, -c(1,2,3,4)], na.rm = TRUE)
+columns_sum_metabolism
 
 # Save the merged data to a new file (optional)
 #fwrite(merged_data_metabolism, "output_data/merged_data_metabolism.tsv", sep = "\t")
@@ -414,11 +413,11 @@ merged_data_metabolism <- Reduce(function(x, y) merge(x, y, by = c("enzyme",
 #head(merged_data_metabolism)
 
 # Remove columns that start with "rel"
-#merged_data_metabolism <- merged_data_metabolism %>%
-#  select(-starts_with("rel"))
+merged_data_metabolism <- merged_data_metabolism %>%
+  select(-starts_with("rel"))
 
 # Remove the prefix "reads_" from column names
-#names(merged_data_metabolism) <- gsub("^reads_", "", names(merged_data_metabolism))
+names(merged_data_metabolism) <- gsub("^reads_", "", names(merged_data_metabolism))
 
 # Save the merged data to a new file (optional)
 #fwrite(merged_data_metabolism, "output_data/merged_data_metabolism_reads.tsv", sep = "\t")
@@ -467,7 +466,6 @@ tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
                                        
 )
 
-
 ################################################################################
 ## MultiAssayExperiment (MAE) to combine 3 TSE 
 #tse all organisms 
@@ -491,6 +489,8 @@ tse_bacteria <- addHierarchyTree(tse_bacteria)
 #tse_active <- addHierarchyTree(tse_active)
 tse_pathway <- addHierarchyTree(tse_pathway)
 ################################################################################
+##Microbiome analysis tse_bacteria 
+
 plotAbundanceDensity(tse_bacteria, layout = "jitter", assay.type = "relabundance",
                      n = 40, colour_by="Season", point_size=2, point_shape=19) + 
   scale_x_log10(label=scales::percent)
@@ -772,7 +772,7 @@ sample_tree <- ggtree(sample_tree) + layout_dendrogram() +
 samples_ordered <- rev(get_taxa_name(sample_tree))
 
 # to view the tree, run
-# sample_tree
+sample_tree
 
 # Creates clusters
 sample_clusters <- factor(cutree(tree = sample_hclust, k = 3))
@@ -801,7 +801,7 @@ sample_data <- sample_data %>%
 rownames(sample_data) = sample_data$Date
 sample_data$Date = NULL
 ############
-#png(filename="figures/heatmap_core_enzyme_clusters.png" ,units = 'in',width=9, height=6, res=1000)
+png(filename="figures/heatmap_core_enzyme_clusters.png" ,units = 'in',width=9, height=6, res=1000)
 
 breaks <- seq(-ceiling(max(abs(mat))), ceiling(max(abs(mat))), 
               length.out = ifelse( max(abs(mat))>5, 2*ceiling(max(abs(mat))), 10 ) )
@@ -811,7 +811,7 @@ pheatmap(mat, annotation_row = taxa_clusters,
          annotation_col = sample_data,
          breaks = breaks,
          color = colors, border_color = grey)
-#dev.off()
+dev.off()
 
 ################################################################################
 #ls("package:mia")
