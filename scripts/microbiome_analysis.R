@@ -120,6 +120,11 @@ if (!requireNamespace("forcats", quietly = TRUE)) {
 }
 library(forcats)
 
+if (!requireNamespace("scater", quietly = TRUE)) {
+  install.packages("scater")
+}
+library(scater)
+
 
 #if (!requireNamespace("OMA", quietly = TRUE)) {
 #  remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
@@ -221,11 +226,15 @@ col_data = DataFrame(cbind(col_data_new,process_data_normalized,(removal_efficie
 
 # Assign the modified colData back to the SummarizedExperiment object
 colData(tse) <- col_data
+tse
+
+#Check
+#unique(rowData(tse_bacteria)$Kingdom)
+
 
 tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
-#Check
-#unique(rowData(tse_bacteria)$Kingdom)
+
 
 ################################################################################
 ################################################################################
@@ -491,36 +500,53 @@ tse_pathway <- addHierarchyTree(tse_pathway)
 ################################################################################
 ##Microbiome analysis tse_bacteria 
 
-plotAbundanceDensity(tse_bacteria, layout = "jitter", assay.type = "relabundance",
-                     n = 40, colour_by="Season", point_size=2, point_shape=19) + 
-  scale_x_log10(label=scales::percent)
-
-
-plotAbundanceDensity(tse_bacteria, layout = "density", assay.type = "relabundance",
-                     n = 10, colour_by="Season", point_alpha=1/10) + 
-  scale_x_log10(label=scales::percent) 
-################################################################################
-#Prevalence of bacterial phylum across samples
-rowData(altExp(tse_bacteria,"Phylum"))$prevalence <- getPrevalence(
-  altExp(tse_bacteria,"Phylum"), detection = 0.1,
-  sort = FALSE,
-  assay.type = "counts", as.relative = TRUE)
-
-library(scater)
-plotRowData(altExp(tse_bacteria,"Phylum"), "prevalence", colour_by = "Phylum")
-
-#Core community is the ones with prevalence 1  
-getPrevalence(
-  tse_bacteria, rank = "Phylum", detection = 1/100, sort = TRUE,
-  assay.type = "counts", as.relative = TRUE) |>
-  head()
-
-#Do this to species as well 
-################################################################################
+#Creating alternative experiment for esach taxonomic level
 ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+setTaxonomyRanks(ranks)
 for (r in ranks) {
   altExp(tse_bacteria,r) <- agglomerateByRank(tse_bacteria, r, agglomerate.tree = TRUE)
 }
+
+#relative abundance for the top-10 phylum over a log-scaled axis
+png(filename="figures/density_plot_bacterial_phylum.png" ,units = 'in',width=9, height=6, res=1000)
+plotAbundanceDensity(altExp(tse_bacteria, "Phylum"), layout = "jitter", 
+                     assay.type = "relabundance",
+                     n = 10, point_size=2, point_shape=19, colour_by="Season",
+                     point_alpha=0.5) + 
+  scale_x_log10(label=scales::percent)
+dev.off()
+
+#relative abundance for the top-10 species over a log-scaled axis
+#png(filename="figures/density_plot_bacteria.png" ,units = 'in',width=9, height=6, res=1000)
+plotAbundanceDensity(altExp(tse_bacteria, "Species"), layout = "density", 
+                     assay.type = "relabundance",
+                     n = 10, colour_by="Season", 
+                     point_alpha=1/10) +
+  scale_x_log10()
+#dev.off()
+
+################################################################################
+#Prevalence scater plot 
+
+#Prevalence of Phylum in total community labeled by kingdom 
+rowData(altExp(tse,"Phylum"))$prevalence <- 
+  getPrevalence(altExp(tse,"Phylum"), detection = 1/100, 
+                sort = FALSE,
+                assay.type = "counts", as.relative = TRUE)
+
+#png(filename="figures/prevalence.png" ,units = 'in',width=9, height=6, res=1000)
+plotRowData(altExp(tse,"Phylum"), "prevalence", point_size=5,
+            colour_by = "Kingdom")
+#dev.off()
+
+#Core community is made of 8 Phyla: 
+sum(getPrevalence(altExp(tse,"Phylum"), detection = 1/100, sort = FALSE,
+                  assay.type = "counts", as.relative = TRUE, prevalence = 1) == 1)
+################################################################################
+#Prevalence taxonomic tree
+
+tse_bacteria <- tse[
+  rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
 
 altExps(tse_bacteria) <- lapply(
   altExps(tse_bacteria), function(y){
@@ -532,12 +558,12 @@ altExps(tse_bacteria) <- lapply(
     return(y)
   })
 
-top_phyla <- getTopTaxa(
+top_phyla <- getTopFeatures(
   altExp(tse_bacteria,"Phylum"),
   method="sum",
   top=5L,
   assay.type="counts")
-top_phyla_mean <- getTopTaxa(
+top_phyla_mean <- getTopFeatures(
   altExp(tse_bacteria,"Phylum"),
   method="mean",
   top=5L,
@@ -547,18 +573,27 @@ top_phyla_mean <- getTopTaxa(
 x <- unsplitByRanks(tse_bacteria, ranks = taxonomyRanks(tse_bacteria)[1:7])
 x <- addHierarchyTree(x)
 
+#png(filename="figures/prevalence_tree_bacteria.png" ,units = 'in',width=9, height=6, res=1000)
 plotRowTree(
   x[rowData(x)$Phylum %in% top_phyla,],
   edge_colour_by = "Phylum",
   tip_colour_by = "prevalence",
   node_colour_by = "prevalence")
+#dev.off()
+
+################################################################################
+#Quality Control 
+tse_bacteria <- addPerCellQC(tse_bacteria)
+
+#png(filename="figures/library_size.png" ,units = 'in',width=9, height=6, res=1000)
+plotColData(tse_bacteria,"sum","Season", colour_by = "Season") + 
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+#dev.off()
 
 
-plotRowTree(
-  x,
-  edge_colour_by = "Phylum",
-  tip_colour_by = "prevalence",
-  node_colour_by = "prevalence")
+
+
+################################################################################
 
 ################################################################################
 ## Plot species accumulation curve
