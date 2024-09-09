@@ -50,6 +50,16 @@ if (!requireNamespace("miaViz", quietly = TRUE)) {
 }
 library(miaViz)
 
+if (!requireNamespace("ggtree", quietly = TRUE)) {
+  BiocManager::install("ggtree")
+}
+library(ggtree)
+
+if (!requireNamespace("scuttle", quietly = TRUE)) {
+  BiocManager::install("scuttle")
+}
+library(scuttle)
+
 if (!requireNamespace("phyloseq", quietly = TRUE)) {
   BiocManager::install("phyloseq")
 }
@@ -99,6 +109,11 @@ if (!requireNamespace("pheatmap", quietly = TRUE)) {
   install.packages("pheatmap")
 }
 library(pheatmap)
+
+if (!requireNamespace("ape", quietly = TRUE)) {
+  install.packages("ape")
+}
+library(ape)
 
 #if (!requireNamespace("OMA", quietly = TRUE)) {
 #  remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
@@ -642,17 +657,20 @@ tse_functional_category <- transformAssay(tse_functional_category, assay.type = 
 mat <- assay(tse_functional_category, "clr_z")
 
 
-png(filename="figures/heatmap_functional_category.png" ,units = 'in',width=9, height=6, res=1000)
+#png(filename="figures/heatmap_functional_category.png" ,units = 'in',width=9, height=6, res=1000)
 # Creates the heatmap
 pheatmap(mat)
-dev.off()
+#dev.off()
 
 
 
+core_description = getPrevalentFeatures(altExp(tse_pathway,"description"), detection = 0, prevalence = 99/100,
+                                        rank = "description", sort = TRUE)
 
-tse_empty  <- tse_pathway[rowData(tse_pathway)$SEED_subsystem_functional_category %in% 
-                     c("") 
-                   , ]
+#check
+sum((getPrevalence(altExp(tse_pathway,"description"), detection = 1/100, 
+                   sort = TRUE, assay.type = "counts",
+                   as.relative = TRUE))== 1)
 ################################################################################
 #ls("package:mia")
 #co-abundant groups as CAGs, which are clusters of taxa that co-vary across samples 
