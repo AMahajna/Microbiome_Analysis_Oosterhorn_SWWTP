@@ -95,6 +95,11 @@ if (!requireNamespace("lubridate", quietly = TRUE)) {
 }
 library(lubridate)
 
+if (!requireNamespace("pheatmap", quietly = TRUE)) {
+  install.packages("pheatmap")
+}
+library(pheatmap)
+
 #if (!requireNamespace("OMA", quietly = TRUE)) {
 #  remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
 #}
@@ -611,9 +616,43 @@ legend(
 ################################################################################
 
 #set taxonomy ranks 
-#colnames(rowData(tse_pathway))<- c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
-#setTaxonomyRanks(colnames(rowData(tse_pathway)))
-#getTaxonomyRanks()
+colnames(rowData(tse_pathway))<- c("SEED_subsystem_functional_category", 
+                                   "description", 
+                                   "SEED_subsystem",
+                                   "enzyme")
+setTaxonomyRanks(colnames(rowData(tse_pathway)))
+getTaxonomyRanks()
+
+for (r in ranks) {
+  altExp(tse_pathway,r) <- agglomerateByRank(tse_pathway, r, agglomerate.tree = TRUE)
+}
+#length(unique(rowData(tse_pathway)[ ,1]))
+
+tse_functional_category <- agglomerateByRank(tse_pathway,rank = "SEED_subsystem_functional_category")
+
+# Add clr-transformation on samples
+tse_functional_category <- transformAssay(tse_functional_category, MARGIN = "samples", method = "clr", assay.type = "counts", pseudocount=1)
+
+# Add standardize-transformation on features (taxa)
+tse_functional_category <- transformAssay(tse_functional_category, assay.type = "clr",
+                             MARGIN = "features", 
+                             method = "standardize", name = "clr_z")
+
+# Gets the assay table
+mat <- assay(tse_functional_category, "clr_z")
+
+
+png(filename="figures/heatmap_functional_category.png" ,units = 'in',width=9, height=6, res=1000)
+# Creates the heatmap
+pheatmap(mat)
+dev.off()
+
+
+
+
+tse_empty  <- tse_pathway[rowData(tse_pathway)$SEED_subsystem_functional_category %in% 
+                     c("") 
+                   , ]
 ################################################################################
 #ls("package:mia")
 #co-abundant groups as CAGs, which are clusters of taxa that co-vary across samples 
