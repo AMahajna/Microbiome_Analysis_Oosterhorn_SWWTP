@@ -40,6 +40,44 @@ mat_fun_cat <- assay(tse_functional_category, "clr_z")
 pheatmap(mat_fun_cat)
 #dev.off()
 
+
+################################################################################
+##Heatmap core pathway 
+
+core_pathway = getPrevalentFeatures(tse_pathway_right_rank, detection = 0, prevalence = 0.999,
+                                   rank = "SEED_subsystem", sort = TRUE)
+
+core_description = getPrevalentFeatures(tse_pathway_right_rank, detection = 0, prevalence = 0.999,
+                                    rank = "description", sort = TRUE)
+
+sum((getPrevalence(tse_pathway_right_rank, rank ="description", detection = 1/100, prevalence =1,  
+                   sort = TRUE, assay.type = "counts",
+                   as.relative = TRUE))== 1)
+
+tse_description <- agglomerateByRank(tse_pathway_right_rank,rank = "description")
+
+tse_description  <- transformAssay(tse_description , method = "relabundance")
+
+tse_description_subset <- tse_description[core_description, ]
+
+# Add clr-transformation
+tse_description_subset <- transformAssay(tse_description_subset, method = "clr",
+                                    MARGIN="samples",
+                                    assay.type = "counts")
+# Does standardize-transformation
+tse_description_subset  <- transformAssay(tse_description_subset , assay.type = "clr",
+                                     MARGIN = "features", 
+                                     method = "standardize", name = "clr_z")
+
+# Gets the assay table
+
+mat_core_description <- assay(tse_description_subset, "clr_z")
+
+#png(filename="figures/heatmap_core_description.png" ,units = 'in',width=12, height=9, res=1000)
+# Creates the heatmap
+pheatmap(mat_core_description)
+#dev.off()
+
 ################################################################################
 ##Heatmap core enzymes 
 
@@ -59,7 +97,7 @@ pheatmap(mat_fun_cat)
 core_enzyme = getPrevalentFeatures(tse_pathway_right_rank, detection = 0, prevalence = 0.999,
                                    rank = "enzyme", sort = TRUE)
 
-sum((getPrevalence(tse_pathway_right_rank, tank ="enzyme", detection = 1/100, prevalence =1,  
+sum((getPrevalence(tse_pathway_right_rank, rank ="enzyme", detection = 1/100, prevalence =1,  
                    sort = TRUE, assay.type = "counts",
                    as.relative = TRUE))== 1)
 
