@@ -55,13 +55,12 @@ col_data = DataFrame(cbind(col_data_new,process_data_normalized,(removal_efficie
 
 # Assign the modified colData back to the SummarizedExperiment object
 colData(tse) <- col_data
-tse
-
-#Check
-#unique(rowData(tse_bacteria)$Kingdom)
+#tse
 
 tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
+#Check
+#unique(rowData(tse_bacteria)$Kingdom)
 
 ################################################################################
 ################################################################################
@@ -113,10 +112,10 @@ merged_data_org[is.na(merged_data_org)] <- 0
 columns_sum_org = colSums(merged_data_org[, -1], na.rm = TRUE)
 
 # Save the merged data to a new file (optional)
-fwrite(merged_data_org, "output_data/merged_data_org.tsv", sep = "\t")
+#fwrite(merged_data_org, "output_data/merged_data_org.tsv", sep = "\t")
 
 # Display the first few rows of the merged data
-head(merged_data_org)
+#head(merged_data_org)
 
 # Remove columns that start with "rel"
 merged_data_org <- merged_data_org %>%
@@ -126,7 +125,7 @@ merged_data_org <- merged_data_org %>%
 names(merged_data_org) <- gsub("^reads_", "", names(merged_data_org))
 
 # Save the merged data to a new file (optional)
-fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
+#fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 
 ## Creating tse_active for metabolically active organisms 
 
