@@ -1,175 +1,6 @@
+source(file = "scripts/install_load_packages.R")
 ################################################################################
-##Create folder for project organization
-
-if(!dir.exists("input_data")){dir.create("input_data")}
-if(!dir.exists("input_data/func_result")){dir.create("input_data/func_result")}
-if(!dir.exists("input_data/org_result")){dir.create("input_data/org_result")}
-if(!dir.exists("input_data/subsystems_result")){dir.create("input_data/subsystems_result")}
-
-if(!dir.exists("output_data")){dir.create("output_data")}
-if(!dir.exists("figures")){dir.create("figures")}
-if(!dir.exists("scripts")){dir.create("scripts")}
-
-################################################################################
-##load packages 
-# Check if a package is installed and load it
-#.Rproject 
-
-if (!requireNamespace("data.table", quietly = TRUE)) {
-  install.packages("data.table")
-}
-library(data.table)
-
-if (!requireNamespace("vegan", quietly = TRUE)) {
-  install.packages("vegan")
-}
-library(vegan)
-
-if (!requireNamespace("BiocManager", quietly = TRUE)) {
-  install.packages("BiocManager")
-}
-library(BiocManager)
-
-if (!requireNamespace("biomformat", quietly = TRUE)) {
-  install.packages("biomformat")
-}
-library(biomformat)
-
-if (!requireNamespace("mia", quietly = TRUE)) {
-  BiocManager::install("mia")
-}
-library(mia)
-
-if (!requireNamespace("miaTime", quietly = TRUE)) {
-  BiocManager::install("miaTime")
-}
-library(miaTime)
-
-if (!requireNamespace("miaViz", quietly = TRUE)) {
-  BiocManager::install("miaViz")
-}
-library(miaViz)
-
-if (!requireNamespace("ggtree", quietly = TRUE)) {
-  BiocManager::install("ggtree")
-}
-library(ggtree)
-
-if (!requireNamespace("scuttle", quietly = TRUE)) {
-  BiocManager::install("scuttle")
-}
-library(scuttle)
-
-if (!requireNamespace("phyloseq", quietly = TRUE)) {
-  BiocManager::install("phyloseq")
-}
-library(phyloseq)
-
-if (!requireNamespace("ggplot2", quietly = TRUE)) {
-  BiocManager::install("ggplot2")
-}
-library(ggplot2)
-
-if (!requireNamespace("readr", quietly = TRUE)) {
-  install.packages("readr")
-}
-library(readr)
-
-if (!requireNamespace("readxl", quietly = TRUE)) {
-  install.packages("readxl")
-}
-library(readxl)
-
-if (!requireNamespace("plyr", quietly = TRUE)) {
-  install.packages("plyr")
-}
-library(plyr)
-
-if (!requireNamespace("dplyr", quietly = TRUE)) {
-  install.packages("dplyr")
-}
-library(dplyr)
-
-if (!requireNamespace("tidyverse", quietly = TRUE)) {
-  install.packages("tidyverse")
-}
-library(tidyverse)
-
-if (!requireNamespace("remotes", quietly = TRUE)) {
-  install.packages("remotes")
-}
-library(remotes)
-
-if (!requireNamespace("lubridate", quietly = TRUE)) {
-  install.packages("lubridate")
-}
-library(lubridate)
-
-if (!requireNamespace("pheatmap", quietly = TRUE)) {
-  install.packages("pheatmap")
-}
-library(pheatmap)
-
-if (!requireNamespace("ape", quietly = TRUE)) {
-  install.packages("ape")
-}
-library(ape)
-
-if (!requireNamespace("forcats", quietly = TRUE)) {
-  install.packages("forcats")
-}
-library(forcats)
-
-if (!requireNamespace("scater", quietly = TRUE)) {
-  install.packages("scater")
-}
-library(scater)
-
-
-#if (!requireNamespace("OMA", quietly = TRUE)) {
-#  remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
-#}
-#library(OMA)
-
-
-#BiocManager::install("phyloseq")
-#BiocManager::install("biomformat")
-#BiocManager::install("TreeSummarizedExperiment")
-#BiocManager::install("microbiomeTree")
-#BiocManager::install("mia")
-#library(microbiomeTree)
-
-#BiocManager::install("TreeSummarizedExperiment")
-
-#library(TreeSummarizedExperiment)
-#library(phyloseq)
-#library(biom)
-#library(phyloseq)
-#library(treeio)
-#library(mia)
-# Install the data.table package if it's not already installed
-
-
-# Load the data.table package
-#library(data.table)
-
-#install.packages("lubridate")
-#library(lubridate)
-
-#install.packages("BiocManager")
-#BiocManager::install("TreeSummarizedExperiment")
-#library(TreeSummarizedExperiment)
-
-# Load the dplyr package
-
-#install.packages("remotes")
-#remotes::install_github("microbiome/OMA", dependencies = TRUE, upgrade = TRUE)
-
-
-
-
-################################################################################
-#Generate the biom data with full column data including bio and SPR codes 
+##Read biom data  
 
 #bioformat package 
 biom_data = biomformat::read_biom("input_data/Galaxy1783-[Kraken-biom_output_file].biom1")
@@ -177,8 +8,10 @@ biom_data = biomformat::read_biom("input_data/Galaxy1783-[Kraken-biom_output_fil
 #mia package 
 tse <- makeTreeSEFromBiom(biom_data)
 #assays(tse)
-
 #tse <- transformAssay(tse, method = "relabundance")
+#assay(tse, "relabundance") |> head()
+#check equal one all 
+#colSums(assay(tse, "relabundance"))
 
 #removal_efficiency respective to sample to be added to column data in TSE
 removal_efficiency  = read_excel("input_data/Removal_Efficiency.xlsx")
@@ -186,17 +19,12 @@ removal_efficiency  = read_excel("input_data/Removal_Efficiency.xlsx")
 #Relevant process data to be added to column data in TSE
 process_data <- read_csv(file = "input_data/relevant_process_data.csv", show_col_types = FALSE)
 
-#assay(tse, "relabundance") |> head()
-#check equal one all 
-#colSums(assay(tse, "relabundance"))
-
-#Don't forget to normalize process data 
-
 ################################################################################
-#rowData is taxonom y-> change column names 
+##preprocess taxonomic data  
+
+#rowData is taxonomy-> change column names 
 #rownames is NCBI Tax ID 
 #colData is Sample information -> change rowname 
-#colnames
 
 # Change column names in rowData
 row_data_new <- rowData(tse)
@@ -231,10 +59,8 @@ tse
 #Check
 #unique(rowData(tse_bacteria)$Kingdom)
 
-
 tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
-
 
 ################################################################################
 ################################################################################
@@ -492,11 +318,12 @@ tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
 ################################################################################
 ##Create hierarchy tree 
 
-tse <- addHierarchyTree(tse)
-tse_bacteria <- addHierarchyTree(tse_bacteria)
+#getHierarchyTree(tse)
+#tse <- mia::addHierarchyTree(tse)
+#tse_bacteria <- mia::addHierarchyTree(tse_bacteria)
 #There is no hierarchy in tse_active as there is only species 
 #tse_active <- addHierarchyTree(tse_active)
-tse_pathway <- addHierarchyTree(tse_pathway)
+#tse_pathway <- mia::addHierarchyTree(tse_pathway)
 ################################################################################
 ##Microbiome analysis tse_bacteria 
 
@@ -508,13 +335,13 @@ for (r in ranks) {
 }
 
 #relative abundance for the top-10 phylum over a log-scaled axis
-png(filename="figures/density_plot_bacterial_phylum.png" ,units = 'in',width=9, height=6, res=1000)
+#png(filename="figures/density_plot_bacterial_phylum.png" ,units = 'in',width=9, height=6, res=1000)
 plotAbundanceDensity(altExp(tse_bacteria, "Phylum"), layout = "jitter", 
                      assay.type = "relabundance",
                      n = 10, point_size=2, point_shape=19, colour_by="Season",
                      point_alpha=0.5) + 
   scale_x_log10(label=scales::percent)
-dev.off()
+#dev.off()
 
 #relative abundance for the top-10 species over a log-scaled axis
 #png(filename="figures/density_plot_bacteria.png" ,units = 'in',width=9, height=6, res=1000)
@@ -522,11 +349,43 @@ plotAbundanceDensity(altExp(tse_bacteria, "Species"), layout = "density",
                      assay.type = "relabundance",
                      n = 10, colour_by="Season", 
                      point_alpha=1/10) +
-  scale_x_log10()
+  scale_x_log10(label=scales::percent)
 #dev.off()
 
 ################################################################################
+# Core community 
+
+core_phylum = getPrevalence(
+  tse, rank = "Phylum",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(8)
+
+core_species =getPrevalence(
+  tse, rank = "Species",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(14)
+
+core_phylum_bacteria = getPrevalence(
+  tse_bacteria, rank = "Phylum",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(5)
+
+core_species_bacteria = getPrevalence(
+  tse_bacteria, rank = "Species",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(13)
+
+core_class_bacteria = getPrevalence(
+  tse_bacteria, rank = "Class",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(12)
+
+mapTaxonomy(tse_bacteria, taxa = "s__flagellatus")
+#Homonyms in Taxonomy 
+
+################################################################################
 #Prevalence scater plot 
+#Creating alternative experiment for esach taxonomic level
+ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+setTaxonomyRanks(ranks)
+for (r in ranks) {
+  altExp(tse,r) <- agglomerateByRank(tse, r, agglomerate.tree = TRUE)
+}
 
 #Prevalence of Phylum in total community labeled by kingdom 
 rowData(altExp(tse,"Phylum"))$prevalence <- 
@@ -539,7 +398,7 @@ plotRowData(altExp(tse,"Phylum"), "prevalence", point_size=5,
             colour_by = "Kingdom")
 #dev.off()
 
-#Core community is made of 8 Phyla: 
+#Core community is made of 8 Phyla (5 bacteria and 3 Eukaryota)
 sum(getPrevalence(altExp(tse,"Phylum"), detection = 1/100, sort = FALSE,
                   assay.type = "counts", as.relative = TRUE, prevalence = 1) == 1)
 ################################################################################
@@ -586,15 +445,175 @@ plotRowTree(
 tse_bacteria <- addPerCellQC(tse_bacteria)
 
 #png(filename="figures/library_size.png" ,units = 'in',width=9, height=6, res=1000)
-plotColData(tse_bacteria,"sum","Season", colour_by = "Season") + 
+plotColData(tse_bacteria,"sum","Season", colour_by = "Season", point_size = 5, 
+            shape_by ="Season") + 
   theme(axis.text.x = element_text(angle = 45, hjust=1))
+#dev.off()
+################################################################################
+#Composition barplot for core community based on class level
+
+# Getting top taxa on a Phylum level
+tse_class_bacteria <- agglomerateByRank(tse_bacteria, rank ="Class")
+tse_class_bacteria <- transformAssay(tse_class_bacteria, assay.type = "counts", method = "relabundance")
+top_taxa_bacteria <- getTopFeatures(tse_class_bacteria, top = 12, assay.type = "relabundance")
+
+# Renaming the "Phylum" rank to keep only top taxa and the rest to "Other"
+class_renamed <- lapply(rowData(tse_class_bacteria)$Class, function(x){
+  if (x %in% top_taxa_bacteria) {x} else {"Other"}
+})
+rowData(tse_class_bacteria)$Class <- as.character(class_renamed)
+
+tse_class_bacteria_sub <- agglomerateByRank(tse_class_bacteria, rank= "Class")
+
+
+plots <- plotAbundance(tse_class_bacteria_sub, rank = "Class", 
+                       assay.type = "relabundance", features = "Date")
+
+# Modify the legend of the first plot to be smaller
+plots[[1]] <- plots[[1]] +
+  theme(
+    legend.key.size = unit(0.3, 'cm'),
+    legend.text = element_text(size = 8),
+    legend.title = element_text(size = 10))
+
+# Modify the legend of the second plot to be smaller
+plots[[2]] <- plots[[2]] +
+  theme(
+    legend.key.height = unit(0.3, 'cm'),
+    legend.key.width = unit(0.3, 'cm'),
+    legend.text = element_text(size = 6),
+    legend.title = element_text(size = 8),
+    legend.direction = "vertical")
+
+
+# Combine legends
+legend <- wrap_plots(
+  as_ggplot(get_legend(plots[[1]])),
+  as_ggplot(get_legend(plots[[2]])),
+  ncol = 1)
+
+# Removes legends from the plots
+plots[[1]] <- plots[[1]] + theme(legend.position = "none")
+plots[[2]] <- plots[[2]] +
+  theme(legend.position = "none", axis.title.x=element_blank())
+
+# Combine plots
+plot <- wrap_plots(plots[[2]], plots[[1]], ncol = 1, heights = c(2, 10))
+# Combine the plot with the legend
+
+#png(filename="figures/barplot_class.png" ,units = 'in',width=9, height=6, res=1000)
+wrap_plots(plot, legend, nrow = 1, widths = c(2, 1))
+#dev.off()
+
+
+# Getting top taxa on a Phylum level
+tse_phylum_bacteria <- agglomerateByRank(tse_bacteria, rank ="Phylum")
+tse_phylum_bacteria <- transformAssay(tse_phylum_bacteria, assay.type = "counts", method = "relabundance")
+top_taxa_bacteria_phylum <- getTopFeatures(tse_phylum_bacteria, top = 10, assay.type = "relabundance")
+
+# Renaming the "Phylum" rank to keep only top taxa and the rest to "Other"
+phylum_renamed <- lapply(rowData(tse_phylum_bacteria)$Phylum, function(x){
+  if (x %in% top_taxa_bacteria_phylum) {x} else {"Other"}
+})
+rowData(tse_phylum_bacteria)$Phylum <- as.character(phylum_renamed)
+
+tse_phylum_bacteria_sub <- agglomerateByRank(tse_phylum_bacteria, rank= "Phylum")
+
+
+plots <- plotAbundance(tse_phylum_bacteria_sub, rank = "Phylum", 
+                       assay.type = "relabundance", features = "Date")
+
+# Modify the legend of the first plot to be smaller
+plots[[1]] <- plots[[1]] +
+  theme(
+    legend.key.size = unit(0.3, 'cm'),
+    legend.text = element_text(size = 8),
+    legend.title = element_text(size = 10))
+
+# Modify the legend of the second plot to be smaller
+plots[[2]] <- plots[[2]] +
+  theme(
+    legend.key.height = unit(0.3, 'cm'),
+    legend.key.width = unit(0.3, 'cm'),
+    legend.text = element_text(size = 6),
+    legend.title = element_text(size = 8),
+    legend.direction = "vertical")
+
+
+# Combine legends
+legend <- wrap_plots(
+  as_ggplot(get_legend(plots[[1]])),
+  as_ggplot(get_legend(plots[[2]])),
+  ncol = 1)
+
+# Removes legends from the plots
+plots[[1]] <- plots[[1]] + theme(legend.position = "none")
+plots[[2]] <- plots[[2]] +
+  theme(legend.position = "none", axis.title.x=element_blank())
+
+# Combine plots
+plot <- wrap_plots(plots[[2]], plots[[1]], ncol = 1, heights = c(2, 10))
+# Combine the plot with the legend
+
+#png(filename="figures/barplot_phylum.png" ,units = 'in',width=9, height=6, res=1000)
+wrap_plots(plot, legend, nrow = 1, widths = c(2, 1))
 #dev.off()
 
 
 
 
-################################################################################
 
+################################################################################
+#Diversity  
+#Visualizing significance in group-wise comparisons
+
+index <- "shannon"
+group_var <- "Season"
+
+tse_bacteria <- estimateDiversity(tse_bacteria, assay.type = "counts", index = "shannon")
+
+
+# Calculate p values
+pvals <- pairwise.wilcox.test(
+  tse_bacteria[[index]], tse_bacteria[[group_var]], p.adjust.method = "fdr")
+# Put them to data.frame format
+pvals <- pvals[["p.value"]] |>
+  as.data.frame()
+varname <- "group1"
+pvals[[varname]] <- rownames(pvals)
+# To long format
+pvals <- reshape(
+  pvals,
+  direction = "long",
+  varying = colnames(pvals)[ !colnames(pvals) %in% varname ],
+  times = colnames(pvals)[ !colnames(pvals) %in% varname ],
+  v.names = "p",
+  timevar = "group2",
+  idvar = "group1"
+) |>
+  na.omit()
+# Add y-axis position
+pvals[["y.position"]] <- apply(pvals, 1, function(x){
+  temp1 <- tse[[index]][ tse[[group_var]] == x[["group1"]] ]
+  temp2 <- tse[[index]][ tse[[group_var]] == x[["group2"]] ]
+  temp <- max( c(temp1, temp2) )
+  return(temp)
+})
+pvals[["y.position"]] <- max(pvals[["y.position"]]) +
+  order(pvals[["y.position"]]) * 0.2
+# Round values
+pvals[["p"]] <- round(pvals[["p"]], 3)
+
+# Create a boxplot
+p <- plotColData(
+  tse_bacteria, x = group_var, y = index, show_violin = TRUE, shape_by = "Season",
+  point_size = 5, color_by = "Season") +
+  theme(text = element_text(size = 10)) +
+  stat_pvalue_manual(pvals) 
+
+#png(filename="figures/diversity_plot.png" ,units = 'in',width=9, height=6, res=1000)
+p
+#dev.off()
 ################################################################################
 ## Plot species accumulation curve
 
@@ -744,7 +763,7 @@ tse_enzyme_subset <- tse_enzyme[core_enzyme, ]
 # Add clr-transformation
 tse_enzyme_subset <- transformAssay(tse_enzyme_subset, method = "clr",
                                     MARGIN="samples",
-                                    assay.type = "counts", pseudocount=1)
+                                    assay.type = "counts")
 # Does standardize-transformation
 tse_enzyme_subset  <- transformAssay(tse_enzyme_subset , assay.type = "clr",
                                     MARGIN = "features", 
@@ -754,10 +773,10 @@ tse_enzyme_subset  <- transformAssay(tse_enzyme_subset , assay.type = "clr",
 
 mat <- assay(tse_enzyme_subset, "clr_z")
 
-#png(filename="figures/heatmap_core_enzyme.png" ,units = 'in',width=9, height=6, res=1000)
+png(filename="figures/heatmap_core_enzyme.png" ,units = 'in',width=9, height=6, res=1000)
 # Creates the heatmap
 pheatmap(mat)
-#dev.off()
+dev.off()
 
 # Hierarchical clustering
 taxa_hclust <- hclust(dist(mat), method = "complete")
