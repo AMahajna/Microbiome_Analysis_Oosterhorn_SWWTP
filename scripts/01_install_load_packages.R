@@ -136,4 +136,11 @@ if (!requireNamespace("patchwork", quietly = TRUE)) {
 }
 library(patchwork)
 
+if (!requireNamespace("stringr", quietly = TRUE)) {
+  install("stringr")
+}
+library(stringr)
+
+
+
 

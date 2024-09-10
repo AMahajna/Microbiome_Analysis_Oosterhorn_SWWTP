@@ -315,13 +315,20 @@ tse_active <- transformAssay(tse_active, method = "relabundance")
 tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
 
 ################################################################################
-
 ##Create hierarchy tree 
-
 #getHierarchyTree(tse)
 #tse <- mia::addHierarchyTree(tse)
 #tse_bacteria <- mia::addHierarchyTree(tse_bacteria)
 #There is no hierarchy in tse_active as there is only species 
 #tse_active <- addHierarchyTree(tse_active)
 #tse_pathway <- mia::addHierarchyTree(tse_pathway)
+
+################################################################################
+##Create Multi-assay experiment mae  
+# Create a list of TSE objects
+
+tse_list <- list(microbiota = tse_bacteria, functions = tse_pathway)
+
+# Combine into a MultiAssayExperiment object
+mae <- MultiAssayExperiment::MultiAssayExperiment(experiments = tse_list)
 
