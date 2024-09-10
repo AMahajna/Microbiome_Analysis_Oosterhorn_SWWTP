@@ -1,5 +1,3 @@
-source(file = "scripts/01_install_load_packages.R")
-################################################################################
 ##Read biom data  
 
 #bioformat package 
