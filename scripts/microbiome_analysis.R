@@ -35,6 +35,7 @@ rowData(tse) <- row_data_new
 col_data_new <- colData(tse)
 # Convert the character column to Date
 col_data_new$Date <- as.Date(col_data_new$Date, format = "%d-%m-%Y")
+
 # Change row names in colData
 rownames(col_data_new) <- col_data_new$Date
 # Convert the year character column to numeric 
