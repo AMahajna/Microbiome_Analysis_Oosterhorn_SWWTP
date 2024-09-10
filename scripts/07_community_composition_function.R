@@ -42,10 +42,7 @@ pheatmap(mat_fun_cat)
 
 
 ################################################################################
-##Heatmap core pathway 
-
-core_pathway = getPrevalentFeatures(tse_pathway_right_rank, detection = 0, prevalence = 0.999,
-                                   rank = "SEED_subsystem", sort = TRUE)
+##Heatmap core description 
 
 core_description = getPrevalentFeatures(tse_pathway_right_rank, detection = 0, prevalence = 0.999,
                                     rank = "description", sort = TRUE)
@@ -76,6 +73,42 @@ mat_core_description <- assay(tse_description_subset, "clr_z")
 #png(filename="figures/heatmap_core_description.png" ,units = 'in',width=12, height=9, res=1000)
 # Creates the heatmap
 pheatmap(mat_core_description)
+#dev.off()
+
+################################################################################
+################################################################################
+##Heatmap core pathway 
+
+core_pathway = getPrevalentFeatures(tse_pathway_right_rank, detection = 0, prevalence = 0.999,
+                                    rank = "SEED_subsystem", sort = TRUE)
+
+
+sum((getPrevalence(tse_pathway_right_rank, rank ="SEED_subsystem", detection = 1/100, prevalence =1,  
+                   sort = TRUE, assay.type = "counts",
+                   as.relative = TRUE))== 1)
+
+tse_pathway <- agglomerateByRank(tse_pathway_right_rank,rank = "SEED_subsystem")
+
+tse_pathway  <- transformAssay(tse_pathway , method = "relabundance")
+
+tse_pathway_subset <- tse_pathway[core_pathway, ]
+
+# Add clr-transformation
+tse_pathway_subset <- transformAssay(tse_pathway_subset, method = "clr",
+                                         MARGIN="samples",
+                                         assay.type = "counts")
+# Does standardize-transformation
+tse_pathway_subset  <- transformAssay(tse_pathway_subset , assay.type = "clr",
+                                          MARGIN = "features", 
+                                          method = "standardize", name = "clr_z")
+
+# Gets the assay table
+
+mat_core_pathway <- assay(tse_pathway_subset, "clr_z")
+
+#png(filename="figures/heatmap_core_pathway.png" ,units = 'in',width=17.5, height=9, res=1000)
+# Creates the heatmap
+pheatmap(mat_core_pathway)
 #dev.off()
 
 ################################################################################
@@ -120,7 +153,7 @@ tse_enzyme_subset  <- transformAssay(tse_enzyme_subset , assay.type = "clr",
 
 mat_core_enzyme <- assay(tse_enzyme_subset, "clr_z")
 
-#png(filename="figures/heatmap_core_enzyme.png" ,units = 'in',width=9, height=6, res=1000)
+#png(filename="figures/heatmap_core_enzyme.png" ,units = 'in',width=12, height=6, res=1000)
 # Creates the heatmap
 pheatmap(mat_core_enzyme)
 #dev.off()
