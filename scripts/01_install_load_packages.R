@@ -155,4 +155,15 @@ if (!requireNamespace("car", quietly = TRUE)) {
 }
 library(car)
 
+if (!requireNamespace("bluster", quietly = TRUE)) {
+  install("bluster")
+}
+library(bluster)
+
+if (!requireNamespace("kableExtra", quietly = TRUE)) {
+  install("kableExtra")
+}
+library(kableExtra)
+
+
 
