@@ -103,11 +103,11 @@ merged_data_org <- Reduce(function(x, y) merge(x, y, by = "species", all = TRUE)
 unique_org = unique(merged_data_org$species)
 
 # Replace NA with 0 in the merged data frame
-merged_data_org[is.na(merged_data_org)] <- 0
+#merged_data_org[is.na(merged_data_org)] <- 0
 
 #Check if transformation was done correctly
 #sum of rel_abundance columns if 100
-columns_sum_org = colSums(merged_data_org[, -1], na.rm = TRUE)
+#columns_sum_org = colSums(merged_data_org[, -1], na.rm = TRUE)
 
 # Save the merged data to a new file (optional)
 #fwrite(merged_data_org, "output_data/merged_data_org.tsv", sep = "\t")
@@ -236,8 +236,8 @@ merged_data_metabolism[is.na(merged_data_metabolism)] <- 0
 
 #Check if transformation was done correctly
 #sum of rel_abundance columns if 100
-columns_sum_metabolism = colSums(merged_data_metabolism[, -c(1,2,3,4)], na.rm = TRUE)
-columns_sum_metabolism
+#columns_sum_metabolism = colSums(merged_data_metabolism[, -c(1,2,3,4)], na.rm = TRUE)
+#columns_sum_metabolism
 
 # Save the merged data to a new file (optional)
 #fwrite(merged_data_metabolism, "output_data/merged_data_metabolism.tsv", sep = "\t")
@@ -314,6 +314,18 @@ tse_bacteria <- transformAssay(tse_bacteria, method = "relabundance")
 tse_active <- transformAssay(tse_active, method = "relabundance")
 tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
 
+################################################################################
+
+ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+for (r in ranks) {
+  altExp(tse,r) <- agglomerateByRank(tse, r, agglomerate.tree = TRUE)
+  altExp(tse_bacteria,r) <- agglomerateByRank(tse_bacteria, r, agglomerate.tree = TRUE)
+}
+
+#ranks = c('Kingdom', 'Phylum', 'Class', 'Order')
+#for (r in ranks) {
+#  altExp(tse_pathway,r) <- agglomerateByRank(tse_pathway, r, agglomerate.tree = TRUE)
+#}
 ################################################################################
 ##Create hierarchy tree 
 #getHierarchyTree(tse)

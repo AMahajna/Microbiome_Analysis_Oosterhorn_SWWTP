@@ -1,13 +1,6 @@
 ################################################################################
 ##Abundance 
 
-#Creating alternative experiment for esach taxonomic level
-ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
-setTaxonomyRanks(ranks)
-for (r in ranks) {
-  altExp(tse_bacteria,r) <- agglomerateByRank(tse_bacteria, r, agglomerate.tree = TRUE)
-}
-
 #relative abundance for the top-10 phylum over a log-scaled axis
 #png(filename="figures/density_plot_bacterial_phylum.png" ,units = 'in',width=9, height=6, res=1000)
 plotAbundanceDensity(altExp(tse_bacteria, "Phylum"), layout = "jitter", 
@@ -54,12 +47,7 @@ core_class_bacteria = getPrevalence(
 
 ################################################################################
 ##Prevalence  
-#Creating alternative experiment for esach taxonomic level
-ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
-setTaxonomyRanks(ranks)
-for (r in ranks) {
-  altExp(tse,r) <- agglomerateByRank(tse, r, agglomerate.tree = TRUE)
-}
+#Creating alternative experiment for each taxonomic level
 
 #Prevalence of Phylum in total community labeled by kingdom 
 rowData(altExp(tse,"Phylum"))$prevalence <- 
@@ -114,6 +102,7 @@ plotRowTree(
   node_colour_by = "prevalence")
 #dev.off()
 
+
 ################################################################################
 #Quality Control 
 tse_bacteria <- addPerCellQC(tse_bacteria)
@@ -124,3 +113,42 @@ plotColData(tse_bacteria,"sum","Season", colour_by = "Season", point_size = 5,
   theme(axis.text.x = element_text(angle = 45, hjust=1))
 #dev.off()
 ################################################################################
+################################################################################
+##Library size distribution
+
+p1 <- ggplot(as.data.frame(colData(tse_bacteria))) +
+  geom_histogram(aes(x = sum), color = "black", fill = "gray", bins = 30) +
+  labs(x = "Library size", y = "Frequency (n)") + 
+  scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^x), 
+                labels = scales::trans_format("log10", scales::math_format(10^.x))) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(), # Removes the grid
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black")) # Adds y-axis
+
+
+df_quality <- as.data.frame(colData(tse_bacteria)) %>%
+  arrange(sum) %>%
+  mutate(index = 1:n())
+p2 <- ggplot(df_quality, aes(y = index, x = sum/1e6)) +
+  geom_point() +  
+  labs(x = "Library size (million reads)", y = "Sample index") +  
+  theme_bw() +
+  theme(panel.grid.major = element_blank(), # Removes the grid
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black")) # Adds y-axis
+
+#The distribution of calculated library sizes can be visualized as a histogram (left)
+#or by sorting the samples by library size (right).
+
+LibrarySize =p1 + p2
+
+png(filename="figures/library_size_bacteria.png" ,units = 'in',width=9, height=6, res=1000)
+#pdf("figures/LibrarySize.pdf")
+print(LibrarySize)
+dev.off() 
+

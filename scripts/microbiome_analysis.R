@@ -9,6 +9,11 @@ source(file = "scripts/08_diversity_taxonomy.R")
 
 ################################################################################
 #ls("package:mia")
+
+#Creating alternative experiment for esach taxonomic level
+ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+setTaxonomyRanks(ranks)
+
 ################################################################################
 ##Multi-omics: Cross-association
 #This the only valid thing for our analysis out of meta-omics section 
@@ -27,7 +32,7 @@ rownames(mae[[1]]) <- getTaxonomyLabels(mae[[1]])
 mae[[2]] <- agglomerateByPrevalence(mae[[2]], rank = "Kingdom")
 rownames(mae[[2]]) <- getTaxonomyLabels(mae[[2]])
 
-library(mia)
+
 # Cross correlates data sets
 res <- testExperimentCrossCorrelation(
   mae,
@@ -44,10 +49,6 @@ res <- testExperimentCrossCorrelation(
   sort = TRUE,
   show.warnings = FALSE)
 
-BiocManager::install("ComplexHeatmap")
-install.packages("shadowtext")
-library(ComplexHeatmap)
-library(shadowtext)
 
 # Function for marking significant correlations with "X"
 add_signif <- function(j, i, x, y, width, height, fill) {

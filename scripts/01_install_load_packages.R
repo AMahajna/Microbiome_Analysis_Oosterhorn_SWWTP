@@ -13,7 +13,6 @@ if(!dir.exists("scripts")){dir.create("scripts")}
 ################################################################################
 ##load packages 
 # Check if a package is installed and load it
-#.Rproject 
 
 if (!requireNamespace("data.table", quietly = TRUE)) {
   install.packages("data.table")
@@ -141,6 +140,12 @@ if (!requireNamespace("stringr", quietly = TRUE)) {
 }
 library(stringr)
 
+if (!requireNamespace("ComplexHeatmap", quietly = TRUE)) {
+  BiocManager::install("ComplexHeatmap")
+}
+library(ComplexHeatmap)
 
-
-
+if (!requireNamespace("shadowtext", quietly = TRUE)) {
+  BiocManager::install("shadowtext")
+}
+library(shadowtext)
