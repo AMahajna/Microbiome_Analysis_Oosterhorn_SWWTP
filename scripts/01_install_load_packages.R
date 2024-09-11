@@ -146,6 +146,13 @@ if (!requireNamespace("ComplexHeatmap", quietly = TRUE)) {
 library(ComplexHeatmap)
 
 if (!requireNamespace("shadowtext", quietly = TRUE)) {
-  BiocManager::install("shadowtext")
+  install("shadowtext")
 }
 library(shadowtext)
+
+if (!requireNamespace("car", quietly = TRUE)) {
+  install("car")
+}
+library(car)
+
+
