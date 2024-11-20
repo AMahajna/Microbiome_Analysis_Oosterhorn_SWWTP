@@ -183,9 +183,9 @@ library_size_season_active = plotColData(tse_active,"sum","Season", colour_by = 
                                            shape_by ="Season") + 
   theme(axis.text.x = element_text(angle = 45, hjust=1))
 
-png(filename="figures/library_size_season_active.png" ,units = 'in',width=9, height=6, res=1000)
-print(library_size_season_active)
-dev.off()
+#png(filename="figures/library_size_season_active.png" ,units = 'in',width=9, height=6, res=1000)
+#print(library_size_season_active)
+#dev.off()
 ################################################################################
 ##Library size distribution
 
