@@ -5,7 +5,7 @@
 species_acc = specaccum(t(assay(tse_active)), method = 'exact')
 species_function_curve = as.data.frame(species_acc[[4]])
 
-enzyme_acc = specaccum(t(assay(tse_enzyme)), method = 'exact')
+enzyme_acc = specaccum(t(assay(tse_enzymes)), method = 'exact')
 species_function_curve = cbind(species_function_curve, as.data.frame(enzyme_acc[[4]]))
 
 tse_subsystem <- agglomerateByRank(tse_pathway, rank = "Class")

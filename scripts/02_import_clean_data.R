@@ -1,28 +1,20 @@
-##Read biom data  
+##Reading input data
 
-#bioformat package 
+#read biom data using bioformat package 
 biom_data = biomformat::read_biom("input_data/Galaxy1783-[Kraken-biom_output_file].biom1")
 
-#mia package 
+#convert biom to TSE usingmia package 
 tse <- makeTreeSEFromBiom(biom_data)
-#assays(tse)
-#tse <- transformAssay(tse, method = "relabundance")
-#assay(tse, "relabundance") |> head()
-#check equal one all 
-#colSums(assay(tse, "relabundance"))
 
 #removal_efficiency respective to sample to be added to column data in TSE
 removal_efficiency  = read_excel("input_data/Removal_Efficiency.xlsx")
 
 #Relevant process data to be added to column data in TSE
-process_data <- read_csv(file = "input_data/relevant_process_data.csv", show_col_types = FALSE)
+process_data <- read_csv(file = "input_data/Weekly_Data.csv", show_col_types = FALSE)
 
 ################################################################################
-##preprocess taxonomic data  
-
-#rowData is taxonomy-> change column names 
-#rownames is NCBI Tax ID 
-#colData is Sample information -> change rowname 
+################################################################################
+##preprocess taxonomic data from Kraken2   
 
 # Change column names in rowData
 row_data_new <- rowData(tse)
@@ -36,24 +28,19 @@ col_data_new$Date <- as.Date(col_data_new$Date, format = "%d-%m-%Y")
 
 # Change row names in colData
 rownames(col_data_new) <- col_data_new$Date
+
 # Convert the year character column to numeric 
 col_data_new$Year <- as.numeric(col_data_new$Year)
 col_data_new = as.data.frame(col_data_new)
-#rownames(col_data_new) <- paste0("Sample_", 1:nrow(col_data_new))
 
-process_data <- subset(process_data, select = -rarity)
-process_data[, 10] <- (process_data[, 10])/100
-#Standardize environmental data - reflect on standardization method choice 
-#process_data_normalized <- decostand(process_data, method ="standardize")
-process_data_normalized <- process_data  # Create a copy to store the result
-process_data_normalized[ , !names(process_data) %in% "Capacity_blowers_%"] <- decostand(process_data[ , !names(process_data) %in% "Capacity_blowers_%"], method = "standardize")
+#Preprocess process and environmental data
+process_data_normalized <- decostand(process_data[ ,1:13], method = "standardize")
 #summary(process_data_normalized)
 
 col_data = DataFrame(cbind(col_data_new,process_data_normalized,(removal_efficiency[ ,3:6])/100))
 
 # Assign the modified colData back to the SummarizedExperiment object
 colData(tse) <- col_data
-#tse
 
 tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
@@ -99,52 +86,38 @@ data_list_org <- lapply(file_list_org, read_and_preprocess)
 # Merge all data frames by taxonomy column
 merged_data_org <- Reduce(function(x, y) merge(x, y, by = "species", all = TRUE), data_list_org)
 
-#generate a list of unique organisms 
-unique_org = unique(merged_data_org$species)
-
 # Replace NA with 0 in the merged data frame
-#merged_data_org[is.na(merged_data_org)] <- 0
+merged_data_org[is.na(merged_data_org)] <- 0
 
 #Check if transformation was done correctly
 #sum of rel_abundance columns if 100
-#columns_sum_org = colSums(merged_data_org[, -1], na.rm = TRUE)
+columns_sum_org = colSums(merged_data_org[, -1], na.rm = TRUE)
 
 # Save the merged data to a new file (optional)
 #fwrite(merged_data_org, "output_data/merged_data_org.tsv", sep = "\t")
 
-# Display the first few rows of the merged data
-#head(merged_data_org)
-
 # Remove columns that start with "rel"
-merged_data_org <- merged_data_org %>%
+merged_data_org_reads <- merged_data_org %>%
   select(-starts_with("rel"))
 
 # Remove the prefix "reads_" from column names
-names(merged_data_org) <- gsub("^reads_", "", names(merged_data_org))
+names(merged_data_org_reads) <- gsub("^reads_", "", names(merged_data_org_reads))
 
 # Save the merged data to a new file (optional)
 #fwrite(merged_data_org, "output_data/merged_data_org_reads.tsv", sep = "\t")
 
-## Creating tse_active for metabolically active organisms 
-
-#Same samples as in tse thus it's colData(tse)
-#rowData is species column of merged_data_org
-#assay in the numeric values of merged_data_org
-
-#First, change column names in merged_data_org
+#First, change column names in merged_data_org_reads
 name_changes <- as.data.frame(colData(tse))[ , c("SRA_accession", "Date")]
 name_changes[] <- lapply(name_changes, as.character)
 
-
 # Use mapvalues to rename columns
-colnames(merged_data_org) <- mapvalues(colnames(merged_data_org), 
+colnames(merged_data_org_reads) <- mapvalues(colnames(merged_data_org_reads), 
                                        from = name_changes$SRA_accession, 
                                        to = name_changes$Date, 
                                        warn_missing = FALSE)
 
-
 # Rename the column
-colnames(merged_data_org)[colnames(merged_data_org) == "species"] <- "Species"
+colnames(merged_data_org_reads)[colnames(merged_data_org_reads) == "species"] <- "Species"
 
 # Specify the new order for the first four columns
 new_order_first <- c("Species")
@@ -153,11 +126,11 @@ new_order_first <- c("Species")
 remaining_cols_order <- colnames(assay(tse))
 
 # Reorder columns in df1
-merged_data_org_reordered <- merged_data_org %>%
+merged_data_org_reordered <- merged_data_org_reads %>%
   select(all_of(new_order_first), all_of(remaining_cols_order))
 
+#rowData structure
 rowData_active = as.data.frame(merged_data_org_reordered[ ,1])
-#colnames(rowData_active) = "Species"
 rownames(rowData_active) = rowData_active$Species
 
 counts_active = as.matrix(merged_data_org_reordered[ ,2:33]) 
@@ -228,22 +201,16 @@ merged_data_metabolism <- Reduce(function(x, y) merge(x, y, by = c("enzyme",
                                                                    "SEED_subsystem_functional_category", 
                                                                    "description"), all = TRUE), data_list_metabolism)
 
-#generate a list of unique organisms 
-#unique_metabolism = unique(merged_data_metabolism$enzyme)
-
 #Replace NA with  in the merged data frame
 merged_data_metabolism[is.na(merged_data_metabolism)] <- 0
 
 #Check if transformation was done correctly
 #sum of rel_abundance columns if 100
-#columns_sum_metabolism = colSums(merged_data_metabolism[, -c(1,2,3,4)], na.rm = TRUE)
+columns_sum_metabolism = colSums(merged_data_metabolism[, -c(1,2,3,4)], na.rm = TRUE)
 #columns_sum_metabolism
 
 # Save the merged data to a new file (optional)
 #fwrite(merged_data_metabolism, "output_data/merged_data_metabolism.tsv", sep = "\t")
-
-# Display the first few rows of the merged data
-#head(merged_data_metabolism)
 
 # Remove columns that start with "rel"
 merged_data_metabolism <- merged_data_metabolism %>%
@@ -271,27 +238,20 @@ colnames(merged_data_metabolism) <- mapvalues(colnames(merged_data_metabolism),
 # Specify the new order for the first four columns
 new_order_first4 <- c("SEED_subsystem_functional_category", "description", "SEED_subsystem", "enzyme")
 
-# Get the order of the remaining columns from df2
+# Get the order of the remaining columns 
 remaining_cols_order <- colnames(assay(tse))
 
-# Reorder columns in df1
+# Reorder columns 
 merged_data_metabolism_reordered <- merged_data_metabolism %>%
   select(all_of(new_order_first4), all_of(remaining_cols_order))
 
 colnames(merged_data_metabolism_reordered)[1:4] <- c("Kingdom", "Phylum", "Class", "Order")
 rowData_pathway = as.data.frame(merged_data_metabolism_reordered[ ,1:4])
 
-#rownames(rowData_pathway) = rowData_pathway$enzyme
-
 counts_pathway = as.matrix(merged_data_metabolism_reordered[ ,5:36]) 
 rownames(counts_pathway) = rownames(rowData_pathway)
 
 colData_pathway = colData(tse)
-#rownames(colData_pathway) = colnames(counts_pathway) 
-
-#Condition:  
-#colnames(counts_active) == rownames(colData_active)
-#rownames(rowData_active) == rownames(counts_active) 
 
 tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
                                         colData = colData_pathway,
@@ -300,6 +260,31 @@ tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
 )
 
 ################################################################################
+
+tse_enzyme
+
+
+assay_enzyme <- merged_data_metabolism_reordered[ ,4:36] %>%
+  group_by(Order) %>%
+  summarise(across(everything(), sum, na.rm = TRUE))
+
+colData_enzyme= colData(tse)
+rowData_enzyme = as.data.frame(assay_enzyme[ ,1])
+rownames(rowData_enzyme) <- rowData_enzyme[, 1]  
+counts_enzyme = assay_enzyme[ ,2:33]
+rownames(counts_enzyme)=rowData_enzyme[, 1]
+
+tse_enzymes <- TreeSummarizedExperiment(assays = list(counts = counts_enzyme),
+                                        colData = colData_enzyme,
+                                        rowData = rowData_enzyme, 
+                                        
+)
+################################################################################
+################################################################################
+
+
+
+
 ################################################################################
 ## MultiAssayExperiment (MAE) to combine 3 TSE 
 #tse all organisms 
