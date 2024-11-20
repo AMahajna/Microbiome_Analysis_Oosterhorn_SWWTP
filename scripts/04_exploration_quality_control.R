@@ -32,7 +32,7 @@ print(combined_plot_density)
 ##Core community 
 core_active_species = getPrevalence(
   tse_active, detection = 1, sort = TRUE, assay.type = "counts",
-  as.relative = FALSE) %>% head(20)
+  as.relative = FALSE) %>% head(50)
 
 cat("There are 19 core active species in the microbiome")
 print(core_active_species)
@@ -88,7 +88,6 @@ print(prevalence_plot)
 #Core community is made of 8 Phyla (5 bacteria and 3 Eukaryota)
 sum(getPrevalence(altExp(tse,"Phylum"), detection = 1/100, sort = FALSE,
                   assay.type = "counts", as.relative = TRUE, prevalence = 1) == 1)
-
 
 ################################################################################
 #Prevalence taxonomic tree
