@@ -106,7 +106,20 @@ legend_plot <- legend_plot +
 legend_plot
 ###################
 #Print all 
+
+combined_plot_acc_curve <- plot_grid(
+  enzyme_acc_curve, 
+  function_acc_curve, 
+  legend_plot,
+  ncol = 1, 
+  labels = c("A", "B"),  # Labels for the plots
+  label_size = 10,       # Customize label size
+  rel_heights = c(4, 4, 1)  # Adjust relative heights (first two = full size, last = 1/4 size)
+)
+
 png(filename="figures/species_function_acc_curve.png" ,units = 'in',width=9, height=6, res=1000)
-grid.arrange(enzyme_acc_curve, function_acc_curve,legend_plot, ncol = 1, nrow = 3,  heights = c(1, 1, 0.25))
+print(combined_plot_acc_curve)
 dev.off()
+
+
 

@@ -42,6 +42,11 @@ col_data = DataFrame(cbind(col_data_new,process_data_normalized,(removal_efficie
 # Assign the modified colData back to the SummarizedExperiment object
 colData(tse) <- col_data
 
+tse <- transformAssay(tse, method = "relabundance")
+
+#Generate a hierarchy tree on the fly
+tse <- addHierarchyTree(tse)
+
 tse_bacteria <- tse[
   rowData(tse)$Kingdom %in% c("k__Bacteria"), ]
 #Check
@@ -149,6 +154,7 @@ tse_active <- TreeSummarizedExperiment(assays = list(counts = counts_active ),
                                        rowData = rowData_active, 
                                        
 )
+tse_active <- transformAssay(tse_active, method = "relabundance")
 
 ################################################################################
 ##metabolism: reading and cleaning 
@@ -258,6 +264,7 @@ tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
                                         rowData = rowData_pathway, 
                                         
 )
+tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
 
 ################################################################################
 
@@ -279,6 +286,9 @@ tse_enzymes <- TreeSummarizedExperiment(assays = list(counts = counts_enzyme),
                                         rowData = rowData_enzyme, 
                                         
 )
+
+tse_enzymes <- transformAssay(tse_enzymes, method = "relabundance")
+
 ################################################################################
 ################################################################################
 
@@ -291,14 +301,6 @@ tse_enzymes <- TreeSummarizedExperiment(assays = list(counts = counts_enzyme),
 #tse_bacteria is bacteria from the total community 
 #tse_active which is metabolically active community 
 #tse_pathway which contains data regarding metabolic pathways 
-################################################################################
-##Transforming tse to relabundance 
-
-tse <- transformAssay(tse, method = "relabundance")
-tse_bacteria <- transformAssay(tse_bacteria, method = "relabundance")
-tse_active <- transformAssay(tse_active, method = "relabundance")
-tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
-
 ################################################################################
 
 ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
