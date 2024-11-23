@@ -1,6 +1,15 @@
 ## Plot species accumulation curve
 #create new tse from the origional ones so you can maintain the origional ones
 
+# Load the global variable 
+mae <- readRDS("mae.rds")
+tse = mae[[1]]
+tse_bacteria = mae[[2]]
+tse_active = mae[[3]]
+tse_pathway = mae[[4]]
+tse_enzyme = mae[[5]]
+
+
 #Calculate species accumulation
 species_accum <- specaccum(t(assay(tse)), method = 'random')
 genera_accum <- specaccum(t(assay(altExp(tse,"Genus"))), method = 'random')

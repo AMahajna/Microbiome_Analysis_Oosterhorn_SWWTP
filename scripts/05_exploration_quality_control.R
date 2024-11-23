@@ -1,5 +1,13 @@
 ################################################################################
-##Abundance: SAMSA2 Data for active bacterial community 
+##Abundance: SAMSA2 Data for active bacterial community .
+
+# Load the global variable 
+mae <- readRDS("mae.rds")
+tse = mae[[1]]
+tse_bacteria = mae[[2]]
+tse_active = mae[[3]]
+tse_pathway = mae[[4]]
+tse_enzyme = mae[[5]]
 
 #relative abundance for the top-20 phylum
 #png(filename="figures/abundance_density_plot_active_20.png" ,units = 'in',width=9, height=6, res=1000)

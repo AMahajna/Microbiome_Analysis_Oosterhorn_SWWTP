@@ -2,6 +2,15 @@
 #tse_active 
 #tse_pathway 
 
+# Load the global variable 
+mae <- readRDS("mae.rds")
+tse = mae[[1]]
+tse_bacteria = mae[[2]]
+tse_active = mae[[3]]
+tse_pathway = mae[[4]]
+tse_enzyme = mae[[5]]
+
+#accumulation curve 
 species_acc = specaccum(t(assay(tse_active)), method = 'exact')
 species_function_curve = as.data.frame(species_acc[[4]])
 
@@ -24,11 +33,12 @@ species_function_curve = cbind(species_function_curve, as.data.frame(description
 colnames(species_function_curve)[1] <- "Species_Accumulation"
 colnames(species_function_curve)[2] <- "Enzyme_Accumulation"
 colnames(species_function_curve)[3] <- "SEED_Subsystem_Accumulation"
-colnames(species_function_curve)[4] <- "SEED_subsystem_functional_category_Accumulation"
-colnames(species_function_curve)[5] <- "Description_Accumulation"
+colnames(species_function_curve)[4] <- "Description_Accumulation"
+colnames(species_function_curve)[5] <- "SEED_subsystem_functional_category_Accumulation"
 # Create a new row to add
 new_row <- data.frame(Species_Accumulation = 0, Enzyme_Accumulation= 0,SEED_Subsystem_Accumulation =0,
-                      SEED_subsystem_functional_category_Accumulation=0,Description_Accumulation= 0 )  # New values for the first row
+                      Description_Accumulation= 0, 
+                      SEED_subsystem_functional_category_Accumulation=0)  # New values for the first row
 
 # Add the new row at the top of the data frame and shift the rest of the rows down
 species_function_curve <- rbind(new_row, species_function_curve[1:(nrow(species_function_curve)), ])
@@ -36,10 +46,10 @@ species_function_curve <- rbind(new_row, species_function_curve[1:(nrow(species_
 ###################################################
 function_acc_curve = ggplot() +
   # Scatter plot for species vs. SEED subsystem functional category
-  geom_point(data = species_function_curve, aes(x = Species_Accumulation, y = SEED_subsystem_functional_category_Accumulation, color = SEED_subsystem_functional_category_Accumulation), color = "blue") +
+  geom_point(data = species_function_curve, aes(x = Species_Accumulation, y = SEED_subsystem_functional_category_Accumulation, color = SEED_subsystem_functional_category_Accumulation), color = "darkgreen") +
   
   # Regression line for species vs. SEED subsystem functional category
-  geom_smooth(data = species_function_curve, aes(x = Species_Accumulation, y = SEED_subsystem_functional_category_Accumulation), method = "auto", se = FALSE, color = "skyblue") +
+  geom_smooth(data = species_function_curve, aes(x = Species_Accumulation, y = SEED_subsystem_functional_category_Accumulation), method = "auto", se = FALSE, color = "palegreen") +
   
   # Regression line for genera accumulation
   # geom_smooth(data = species_function_curve, aes(x = Species_Accumulation, y = Enzyme_Accumulation), method = "auto", se = FALSE, color = "darkgreen") +
@@ -51,10 +61,10 @@ function_acc_curve = ggplot() +
   geom_smooth(data = species_function_curve, aes(x = Species_Accumulation, y = SEED_Subsystem_Accumulation), method = "auto", se = FALSE, color = "lightcoral") +
   
   # Scatter plot for species vs. SEED subsystem functional category
-  geom_point(data = species_function_curve, aes(x = Species_Accumulation, y = Description_Accumulation), color = "darkgreen") +
+  geom_point(data = species_function_curve, aes(x = Species_Accumulation, y = Description_Accumulation), color = "blue") +
   
   # Regression line for bacterial species accumulation
-  geom_smooth(data = species_function_curve, aes(x = Species_Accumulation, y = Description_Accumulation), method = "auto", se = FALSE, color = "palegreen") +
+  geom_smooth(data = species_function_curve, aes(x = Species_Accumulation, y = Description_Accumulation), method = "auto", se = FALSE, color = "skyblue") +
   
   # Theme and labels
   theme_minimal() +
@@ -80,7 +90,7 @@ legend_data <- data.frame(
   x = rep(1, 5),
   y = 1:5,
   color = c("black","darkorange", "firebrick", "blue", "darkgreen"),
-  label = c("Legend","Enzymes", "SEED Subsystems", "SEED Subsystems Functional Category", "Description")
+  label = c("Legend","Enzymes", "SEED Subsystems", "Description", "SEED Subsystems Functional Category")
 )
 
 # Create a plot for the manual legend
@@ -99,8 +109,8 @@ legend_plot <- legend_plot +
   annotation_custom(grob = textGrob("Legend", gp = gpar(col = "black", fontsize = 10)), xmin = -0.95, ymin = 0.5) +
   annotation_custom(grob = textGrob("Enzymes", gp = gpar(col = "darkorange", fontsize = 10)), xmin = -0.65, ymin = 0.5) +
   annotation_custom(grob = textGrob("SEED Subsystems", gp = gpar(col = "firebrick", fontsize = 10)), xmin = -0.2, ymin = 0.5) +
-  annotation_custom(grob = textGrob("SEED Subsystems Functional Category", gp = gpar(col = "blue", fontsize = 10)), xmin = 0.4, ymin = 0.5) +
-  annotation_custom(grob = textGrob("Description", gp = gpar(col = "darkgreen", fontsize = 10)), xmin = 0.85, ymin = 0.5)
+  annotation_custom(grob = textGrob("Description", gp = gpar(col = "blue", fontsize = 10)), xmin = 0.15, ymin = 0.5) +
+  annotation_custom(grob = textGrob("SEED Subsystems Functional Category", gp = gpar(col = "darkgreen", fontsize = 10)), xmin = 0.65, ymin = 0.5)
 
 # Display the legend plot
 legend_plot
@@ -117,9 +127,9 @@ combined_plot_acc_curve <- plot_grid(
   rel_heights = c(4, 4, 1)  # Adjust relative heights (first two = full size, last = 1/4 size)
 )
 
-png(filename="figures/species_function_acc_curve.png" ,units = 'in',width=9, height=6, res=1000)
-print(combined_plot_acc_curve)
-dev.off()
+#png(filename="figures/species_function_acc_curve.png" ,units = 'in',width=9, height=6, res=1000)
+#print(combined_plot_acc_curve)
+#dev.off()
 
 
 

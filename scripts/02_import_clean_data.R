@@ -259,9 +259,19 @@ rownames(counts_pathway) = rownames(rowData_pathway)
 
 colData_pathway = colData(tse)
 
+
+# Apply the specified conditions
+rowData_pathway_processed <- within(rowData_pathway, {
+  Kingdom <- ifelse(Kingdom == "" & (Order == "" | Order == "NO HIERARCHY"), "NO HIERARCHY",
+                 ifelse(Kingdom == "" & !(Order == "" | Order == "NO HIERARCHY"), Phylum, Kingdom))
+  Phylum <- ifelse(Kingdom == "NO HIERARCHY", "NO HIERARCHY", Phylum)
+  Class <- ifelse(Kingdom == "NO HIERARCHY", "NO HIERARCHY", Class)
+  Order <- ifelse(Kingdom == "NO HIERARCHY", "NO HIERARCHY", Order)
+})
+
 tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
                                         colData = colData_pathway,
-                                        rowData = rowData_pathway, 
+                                        rowData = rowData_pathway_processed, 
                                         
 )
 tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
@@ -290,17 +300,26 @@ tse_enzymes <- TreeSummarizedExperiment(assays = list(counts = counts_enzyme),
 tse_enzymes <- transformAssay(tse_enzymes, method = "relabundance")
 
 ################################################################################
-################################################################################
-
-
 
 
 ################################################################################
-## MultiAssayExperiment (MAE) to combine 3 TSE 
-#tse all organisms 
-#tse_bacteria is bacteria from the total community 
-#tse_active which is metabolically active community 
-#tse_pathway which contains data regarding metabolic pathways 
+##Create Multi-assay experiment mae  
+# Create a list of TSE objects
+
+tse_list <- list(microbiota = tse, bacteriota  = tse_bacteria, active = tse_active, functions = tse_pathway, enzymes = tse_enzyme)
+
+# Combine into a MultiAssayExperiment object
+mae <- MultiAssayExperiment::MultiAssayExperiment(experiments = tse_list)
+
+################################################################################
+#Saving global varibales 
+
+# Save global variable MAE (Multi Assay Experiment)
+saveRDS(mae, file = "mae.rds")
+
+
+
+################################################################################
 ################################################################################
 
 ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
@@ -322,12 +341,4 @@ for (r in ranks) {
 #tse_active <- addHierarchyTree(tse_active)
 #tse_pathway <- mia::addHierarchyTree(tse_pathway)
 
-################################################################################
-##Create Multi-assay experiment mae  
-# Create a list of TSE objects
-
-tse_list <- list(microbiota = tse_bacteria, functions = tse_pathway)
-
-# Combine into a MultiAssayExperiment object
-mae <- MultiAssayExperiment::MultiAssayExperiment(experiments = tse_list)
 
