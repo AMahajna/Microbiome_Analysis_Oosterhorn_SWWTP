@@ -8,6 +8,7 @@ tse_bacteria = mae[[2]]
 tse_active = mae[[3]]
 tse_pathway = mae[[4]]
 tse_enzyme = mae[[5]]
+tse_gene = mae[[6]]
 
 
 #Calculate species accumulation

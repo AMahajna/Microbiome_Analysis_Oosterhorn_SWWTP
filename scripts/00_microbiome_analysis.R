@@ -77,3 +77,22 @@ p <- Heatmap(res$cor,
 )
 p
 
+
+
+################################################################################
+################################################################################
+
+ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
+for (r in ranks) {
+  altExp(tse,r) <- agglomerateByRank(tse, r, agglomerate.tree = TRUE)
+  altExp(tse_bacteria,r) <- agglomerateByRank(tse_bacteria, r, agglomerate.tree = TRUE)
+}
+
+#ranks = c('Kingdom', 'Phylum', 'Class', 'Order')
+#for (r in ranks) {
+#  altExp(tse_pathway,r) <- agglomerateByRank(tse_pathway, r, agglomerate.tree = TRUE)
+#}
+################################################################################
+
+
+

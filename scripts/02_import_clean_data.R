@@ -156,8 +156,129 @@ tse_active <- TreeSummarizedExperiment(assays = list(counts = counts_active ),
 )
 tse_active <- transformAssay(tse_active, method = "relabundance")
 
+
 ################################################################################
-##metabolism: reading and cleaning 
+##gene: reading and cleaning 
+
+# Define the path to your folder containing TSV files
+folder_path_gene <- "input_data/func_result"
+
+# List all TSV files in the folder
+file_list_gene <- list.files(folder_path_gene, pattern = "\\.tsv$", full.names = TRUE)
+
+# Function to read and preprocess each file
+read_and_preprocess <- function(file) {
+  # Extract the file name without extension
+  file_name <- tools::file_path_sans_ext(basename(file))
+  
+  # Read the TSV file
+  df <- fread(file, header = FALSE, sep = "\t")
+  
+  # Rename columns
+  colnames(df) <- c(paste0("rel_abundance_", file_name),
+                    paste0("reads_", file_name),
+                    "Species")
+  
+  # Ensure 'Species' column is character type for consistency
+  df[, Species := as.character(Species)]
+  
+  # Check for duplicates in the 'gene' column
+  if (anyDuplicated(df$Species) > 0) {
+    df <- df[, lapply(.SD, sum), by = Species, .SDcols = c(paste0("rel_abundance_", file_name), paste0("reads_", file_name))]
+  }
+  
+  # Return the data.table
+  return(df)
+}
+
+# Read and preprocess all files
+data_list_gene <- lapply(file_list_gene, read_and_preprocess)
+
+# Merge all data frames by taxonomy column
+merged_data_gene <- Reduce(function(x, y) merge(x, y, by = "Species", all = TRUE), data_list_gene)
+
+# Replace NA with 0 in the merged data frame
+merged_data_gene[is.na(merged_data_gene)] <- 0
+
+# unify 
+merged_data_gene <- merged_data_gene %>%
+  mutate(Species = case_when(
+    Species %in% c("hypothetical protein", 
+                   "hypothetical protein, partial", 
+                   "hypothetical protein ") ~ "hypothetical protein", 
+    TRUE ~ Species
+  ))
+
+
+merged_data_gene <- merged_data_gene %>%
+  group_by(Species) %>%
+  summarise(across(everything(), sum, na.rm = FALSE), .groups = 'drop')
+
+
+
+#Check if transformation was done correctly
+#sum of rel_abundance columns if 100
+columns_sum_gene = colSums(merged_data_gene[, -1], na.rm = TRUE)
+
+# Save the merged data to a new file (optional)
+#fwrite(merged_data_gene, "output_data/merged_data_gene.tsv", sep = "\t")
+
+# Remove columns that start with "rel"
+merged_data_gene_reads <- merged_data_gene %>%
+  select(-starts_with("rel"))
+
+# Remove the prefix "reads_" from column names
+names(merged_data_gene_reads) <- gsub("^reads_", "", names(merged_data_gene_reads))
+
+# Save the merged data to a new file (optional)
+#fwrite(merged_data_gene, "output_data/merged_data_gene_reads.tsv", sep = "\t")
+
+#First, change column names in merged_data_gene_reads
+name_changes <- as.data.frame(colData(tse))[ , c("SRA_accession", "Date")]
+name_changes[] <- lapply(name_changes, as.character)
+
+# Use mapvalues to rename columns
+colnames(merged_data_gene_reads) <- mapvalues(colnames(merged_data_gene_reads), 
+                                              from = name_changes$SRA_accession, 
+                                              to = name_changes$Date, 
+                                              warn_missing = FALSE)
+
+
+
+# Specify the new order for the first four columns
+new_order_first <- c("Species")
+
+# Get the order of the remaining columns from df2
+remaining_cols_order <- colnames(assay(tse))
+
+# Reorder columns in df1
+merged_data_gene_reordered <- merged_data_gene_reads %>%
+  select(all_of(new_order_first), all_of(remaining_cols_order))
+
+#rowData structure
+rowData_gene = as.data.frame(merged_data_gene_reordered[ ,1])
+rownames(rowData_gene) = rowData_gene$Species
+
+counts_gene = as.matrix(merged_data_gene_reordered[ ,2:33]) 
+rownames(counts_gene) = rowData_gene$Species
+
+#colData_gene = as.data.frame(colData(tse))
+colData_gene = colData(tse)
+#rownames(colData_gene) = colnames(counts_gene) 
+
+#Condition:  
+#colnames(counts_gene) == rownames(colData_gene)
+#rownames(rowData_gene) == rownames(counts_gene) 
+
+tse_gene <- TreeSummarizedExperiment(assays = list(counts = counts_gene ),
+                                     colData = colData_gene,
+                                     rowData = rowData_gene, 
+                                     
+)
+tse_gene <- transformAssay(tse_gene, method = "relabundance")
+
+################################################################################
+##pathway: reading and cleaning 
 
 # Define the path to your folder containing TSV files
 folder_path_metabolism <- "input_data/subsystems_result"
@@ -207,8 +328,46 @@ merged_data_metabolism <- Reduce(function(x, y) merge(x, y, by = c("enzyme",
                                                                    "SEED_subsystem_functional_category", 
                                                                    "description"), all = TRUE), data_list_metabolism)
 
+
+columns_sum_metabolism = colSums(merged_data_metabolism[, -c(1,2,3,4)], na.rm = TRUE)
+
+merged_data_metabolism<- {
+  # Directly access the columns by index without using 'within'
+  
+  # Check if column 4 (Order) contains "Retron-type reverse transcriptase"
+  merged_data_metabolism[[1]] <- ifelse(merged_data_metabolism[[1]] == "Retron-type reverse transcriptase", 
+                                        "NO HIERARCHY", 
+                                        merged_data_metabolism[[1]])
+  
+  # Check column 1 (Kingdom) and update based on conditions
+  merged_data_metabolism[[3]] <- ifelse(
+    merged_data_metabolism[[3]] == "" & (merged_data_metabolism[[1]] == "" | merged_data_metabolism[[1]] == " " | merged_data_metabolism[[1]] == "NO HIERARCHY"), 
+    "NO HIERARCHY", 
+    ifelse(
+      merged_data_metabolism[[3]] == "" & !(merged_data_metabolism[[1]] == "" | merged_data_metabolism[[1]] == " " | merged_data_metabolism[[1]] == "NO HIERARCHY"), 
+      merged_data_metabolism[[4]], 
+      merged_data_metabolism[[3]]
+    )
+  )
+  
+  # Ensure consistency for rows where Kingdom is set to "NO HIERARCHY"
+  merged_data_metabolism[[4]] <- ifelse(merged_data_metabolism[[3]] == "NO HIERARCHY", "NO HIERARCHY", merged_data_metabolism[[4]])  # Phylum
+  merged_data_metabolism[[2]] <- ifelse(merged_data_metabolism[[3]] == "NO HIERARCHY", "NO HIERARCHY", merged_data_metabolism[[2]])  # Class
+  merged_data_metabolism[[1]] <- ifelse(merged_data_metabolism[[3]] == "NO HIERARCHY", "NO HIERARCHY", merged_data_metabolism[[1]])  # Order
+  
+  # Return the modified data frame
+  merged_data_metabolism
+}
+
 #Replace NA with  in the merged data frame
 merged_data_metabolism[is.na(merged_data_metabolism)] <- 0
+
+
+merged_data_metabolism <- merged_data_metabolism %>%
+  group_by(across(1:4)) %>%
+  summarise(across(everything(), sum, na.rm = FALSE), .groups = 'drop')
+
+
 
 #Check if transformation was done correctly
 #sum of rel_abundance columns if 100
@@ -260,18 +419,10 @@ rownames(counts_pathway) = rownames(rowData_pathway)
 colData_pathway = colData(tse)
 
 
-# Apply the specified conditions
-rowData_pathway_processed <- within(rowData_pathway, {
-  Kingdom <- ifelse(Kingdom == "" & (Order == "" | Order == "NO HIERARCHY"), "NO HIERARCHY",
-                 ifelse(Kingdom == "" & !(Order == "" | Order == "NO HIERARCHY"), Phylum, Kingdom))
-  Phylum <- ifelse(Kingdom == "NO HIERARCHY", "NO HIERARCHY", Phylum)
-  Class <- ifelse(Kingdom == "NO HIERARCHY", "NO HIERARCHY", Class)
-  Order <- ifelse(Kingdom == "NO HIERARCHY", "NO HIERARCHY", Order)
-})
 
 tse_pathway <- TreeSummarizedExperiment(assays = list(counts = counts_pathway ),
                                         colData = colData_pathway,
-                                        rowData = rowData_pathway_processed, 
+                                        rowData = rowData_pathway, 
                                         
 )
 tse_pathway <- transformAssay(tse_pathway, method = "relabundance")
@@ -300,13 +451,12 @@ tse_enzymes <- TreeSummarizedExperiment(assays = list(counts = counts_enzyme),
 tse_enzymes <- transformAssay(tse_enzymes, method = "relabundance")
 
 ################################################################################
-
-
 ################################################################################
 ##Create Multi-assay experiment mae  
 # Create a list of TSE objects
 
-tse_list <- list(microbiota = tse, bacteriota  = tse_bacteria, active = tse_active, functions = tse_pathway, enzymes = tse_enzyme)
+tse_list <- list(microbiota = tse, bacteriota  = tse_bacteria, active = tse_active, 
+                 functions = tse_pathway, enzymes = tse_enzyme, genes = tse_gene)
 
 # Combine into a MultiAssayExperiment object
 mae <- MultiAssayExperiment::MultiAssayExperiment(experiments = tse_list)
@@ -316,29 +466,5 @@ mae <- MultiAssayExperiment::MultiAssayExperiment(experiments = tse_list)
 
 # Save global variable MAE (Multi Assay Experiment)
 saveRDS(mae, file = "mae.rds")
-
-
-
-################################################################################
-################################################################################
-
-ranks = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus','Species')
-for (r in ranks) {
-  altExp(tse,r) <- agglomerateByRank(tse, r, agglomerate.tree = TRUE)
-  altExp(tse_bacteria,r) <- agglomerateByRank(tse_bacteria, r, agglomerate.tree = TRUE)
-}
-
-#ranks = c('Kingdom', 'Phylum', 'Class', 'Order')
-#for (r in ranks) {
-#  altExp(tse_pathway,r) <- agglomerateByRank(tse_pathway, r, agglomerate.tree = TRUE)
-#}
-################################################################################
-##Create hierarchy tree 
-#getHierarchyTree(tse)
-#tse <- mia::addHierarchyTree(tse)
-#tse_bacteria <- mia::addHierarchyTree(tse_bacteria)
-#There is no hierarchy in tse_active as there is only species 
-#tse_active <- addHierarchyTree(tse_active)
-#tse_pathway <- mia::addHierarchyTree(tse_pathway)
 
 
