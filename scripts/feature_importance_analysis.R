@@ -49,14 +49,13 @@ rf_model <- train(
 )
 
 # Get feature importance
-importance <- varImp(rf_model)
+importance <- varImp(rf_model, scale = FALSE)
 print(importance)
 
 # Plot feature importance
 #png(filename="figures/feature_importance_rf_loocv_relabundance_stress_response.png" ,units = 'in',width=9, height=6, res=1000)
 plot(importance)
 #dev.off()
-
 
 
 
