@@ -109,13 +109,13 @@ plot_phylum_relabundance <- wrap_plots(plots_phylum[[2]], plots_phylum[[1]], nco
 # Combine the plot with the legend
 
 #png(filename="figures/barplot_phylum.png" ,units = 'in',width=9, height=6, res=1000)
-wrap_plots(plot_phylum_relabundance, legend_phylum, nrow = 1, widths = c(2, 1))
+#wrap_plots(plot_phylum_relabundance, legend_phylum, nrow = 1, widths = c(2, 1))
 #dev.off()
 
 #######################################################################
 
 #png(filename="figures/combined_barplot.png" ,units = 'in',width=9, height=6, res=1000)
-wrap_plots(plot_phylum_relabundance, legend_phylum,plots[[1]], legend, nrow = 2, widths = c(2, 1))
+#wrap_plots(plot_phylum_relabundance, legend_phylum,plots[[1]], legend, nrow = 2, widths = c(2, 1))
 #dev.off()
 
 #######################################################################
@@ -405,5 +405,5 @@ plot_stress_Phylum <- wrap_plots(plots[[2]], plots[[1]], ncol = 1, heights = c(2
 
 
 #png(filename="figures/combined_barplot_pathway_stress.png" ,units = 'in',width=9, height=6, res=1000)
-print(wrap_plots(plot_core_func_cat_relabundance, legend ,plots[[1]], legend, nrow = 2, widths = c(2, 1)))
+#print(wrap_plots(plot_core_func_cat_relabundance, legend ,plots[[1]], legend, nrow = 2, widths = c(2, 1)))
 #dev.off()

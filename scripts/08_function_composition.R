@@ -89,6 +89,14 @@ core_cat = getPrevalence(
 mapTaxonomy(tse_bacteria, taxa = "s__flagellatus")
 
 
+
+core_genes = getPrevalence(
+  tse_pathway, rank = "Order",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(30)
+core_pathways = getPrevalence(
+  tse_pathway, rank = "Class",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(30)
+
 # Identifying no hierarchy functional genes
 
 unknown_genes <- c("NO HIERARCHY")
