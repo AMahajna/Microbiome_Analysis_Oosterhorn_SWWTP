@@ -67,8 +67,8 @@ res <- testExperimentCrossCorrelation(
   mae_stress,
   experiment1 = 1,
   experiment2 = 2,
-  assay.type1 = "clr",
-  assay.type2 = "clr",
+  assay.type1 = "relabundance",
+  assay.type2 = "relabundance",
   method = "spearman",
   test.signif = TRUE,
   p_adj_threshold = NULL,    # Add significance threshold
@@ -99,11 +99,15 @@ p <- Heatmap(res$cor,
              column_names_rot = -45,
              column_names_gp = gpar(fontsize = 8),  # Font size for column names
              row_names_gp = gpar(fontsize = 8),     # Font size for row names
+             clustering_distance_rows = "spearman",
              clustering_method_rows = "ward.D",
+             clustering_distance_columns = "spearman",
              clustering_method_columns = "ward.D"
 )
              
 
-#png(filename="figures/heatmap_stress_subsystems_core_active_genes_clr_spearman_euclidean_wardd.png" ,units = 'in',width=9, height=6, res=1000)
+#png(filename="figures/heatmap_stress_subsystems_core_active_genes_relabundance_spearman_spearman_wardd.png" ,units = 'in',width=9, height=6, res=1000)
+
 p
 #dev.off()
+
