@@ -98,10 +98,12 @@ p <- Heatmap(res$cor,
                title = "correlation", legend_height = unit(5, "cm")),
              column_names_rot = -45,
              column_names_gp = gpar(fontsize = 8),  # Font size for column names
-             row_names_gp = gpar(fontsize = 8)     # Font size for row names
+             row_names_gp = gpar(fontsize = 8),     # Font size for row names
+             clustering_method_rows = "ward.D",
+             clustering_method_columns = "ward.D"
 )
              
 
-#png(filename="figures/heatmap_stress_subsystems_core_active_genes_clr_spearman.png" ,units = 'in',width=9, height=6, res=1000)
+#png(filename="figures/heatmap_stress_subsystems_core_active_genes_clr_spearman_euclidean_wardd.png" ,units = 'in',width=9, height=6, res=1000)
 p
 #dev.off()
