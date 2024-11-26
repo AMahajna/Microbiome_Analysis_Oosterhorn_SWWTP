@@ -37,9 +37,10 @@ pheatmap(mat ,fontsize_row = 7 ,fontsize_col = 8,
          annotation_legend = TRUE, heatmap_legend_param = list(title = "clr_z") )
 #dev.off()
 
-#pheatmap(mat, cluster_rows = FALSE,fontsize_row = 8 ,fontsize_col = 9,
+#png(filename="figures/heatmap_func_cat_clr_z_no_cluster.png" ,units = 'in',width=9, height=6, res=1000)
+#pheatmap(mat, cluster_rows = FALSE,fontsize_row = 8 ,fontsize_col = 8,
 #         cluster_cols = FALSE,annotation_legend = TRUE, heatmap_legend_param = list(title = "clr_z"))
-
+#dev.off()
 #######################################################################
 ################################################################################
 
