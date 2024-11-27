@@ -14,7 +14,7 @@ required_packages <- c("data.table", "vegan", "BiocManager", "biomformat", "mia"
                        "scuttle", "ggplot2", "readr", "readxl", "plyr", "dplyr", "tidyverse", "remotes", "lubridate", 
                        "pheatmap", "ape", "forcats", "scater", "phyloseq", "ggpubr", "patchwork", "stringr", 
                        "ComplexHeatmap", "shadowtext", "car", "bluster", "kableExtra","grid","gridExtra","cowplot",
-                       "RColorBrewer","writexl", "caret")
+                       "RColorBrewer","writexl", "caret","FeatureTerminatoR")
 
 # Install and load packages
 lapply(required_packages, function(pkg) {

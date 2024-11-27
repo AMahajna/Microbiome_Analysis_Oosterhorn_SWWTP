@@ -12,7 +12,7 @@ tse_enzyme = mae[[5]]
 tse_gene = mae[[6]]
 
 #accumulation curve 
-species_acc = specaccum(t(assay(tse_active)), method = 'collector')
+species_acc = specaccum(t(assay(tse)), method = 'collector')
 species_function_curve = as.data.frame(species_acc[[4]])
 
 enzyme_acc = specaccum(t(assay(tse_enzymes)), method = 'collector')
@@ -134,9 +134,9 @@ combined_plot_acc_curve <- plot_grid(
   rel_heights = c(4, 4, 1)  # Adjust relative heights (first two = full size, last = 1/4 size)
 )
 
-#png(filename="figures/species_function_acc_curve.png" ,units = 'in',width=9, height=6, res=1000)
-#print(combined_plot_acc_curve)
-#dev.off()
+png(filename="figures/species_function_acc_curve.png" ,units = 'in',width=9, height=6, res=1000)
+print(combined_plot_acc_curve)
+dev.off()
 
 
 
