@@ -33,6 +33,7 @@ heatmap_func =pheatmap(mat ,fontsize_row = 7 ,fontsize_col = 8,
          clustering_distance_cols = "correlation",   
          clustering_method = "ward.D",
          annotation_legend = TRUE, heatmap_legend_param = list(title = "clr_z") )
+
 png(filename="figures/heatmap_func_cat_clr_z.png" ,units = 'in',width=9, height=6, res=1000)
 print(heatmap_func)
 dev.off()

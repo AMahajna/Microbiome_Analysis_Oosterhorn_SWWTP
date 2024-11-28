@@ -12,6 +12,19 @@ tse_gene = mae[[6]]
 tse_phyla = agglomerateByRank(tse_bacteria, rank = "Phylum")
 tse_func_cat = agglomerateByRank(tse_pathway, rank = "Kingdom")
 
+
+core_pathways = getPrevalence(
+  tse_pathway, rank = "Class",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(32)
+
+selected <- rowData(tse_pathway)$Class %in% rownames(as.data.frame(core_pathways)) &
+  !is.na(rowData(tse_pathway)$Class)
+tse_core_pathways <- tse_pathway[selected, ]
+
+tse_core_pathways = agglomerateByRank(tse_core_pathways, rank = "Class")
+tse_core_pathways = transformAssay(
+  x = tse_core_pathways, assay.type = "relabundance", method = "clr", name = "clr")
+
 ################################################################################
 #Creat mae_function
 tse_function_list <- list(bacteriota = tse_phyla, functions = tse_func_cat)
@@ -32,8 +45,8 @@ res <- testExperimentCrossCorrelation(
   experiment1 = 1,
   experiment2 = 2,
   assay.type1 = "clr",
-  assay.type2 = "relabundance",
-  method = "pearson",
+  assay.type2 = "clr",
+  method = "spearman",
   test.signif = TRUE,
   p_adj_threshold = NULL,    # Add significance threshold
   cor_threshold = NULL,      # Add correlation threshold
@@ -63,12 +76,15 @@ p <- Heatmap(res$cor,
              column_names_rot = -45,
              column_names_gp = gpar(fontsize = 8),  # Font size for column names
              row_names_gp = gpar(fontsize = 8),     # Font size for row names
+             clustering_distance_rows = "euclidean",
              clustering_method_rows = "ward.D",
+             clustering_distance_columns = "euclidean",
              clustering_method_columns = "ward.D"
 )
 
 
-png(filename="figures/heatmap_bacterial_phyla_clr_func_cat_relabundance_pearson_euclidean_wardd.png" ,units = 'in',width=9, height=6, res=1000)
+#png(filename="figures/heatmap_bacterial_phyla_clr_subsystems_clr_spearman_euclidean_wardd.png" ,units = 'in',width=9, height=6, res=1000)
+png(filename="figures/heatmap_bacterial_phyla_clr_func_cat_clr_spearman_euclidean_wardd.png" ,units = 'in',width=9, height=6, res=1000)
 print(p)
 dev.off()
 ################################################################################
