@@ -12,6 +12,9 @@ suppressMessages({
     source(file = "scripts/10_function_composition.R")
     source(file = "scripts/11_cross_association_phyla_func_cat.R")
     source(file = "scripts/12_feature_importance_analysis.R")
+    source(file = "scripts/13_combine_plots_unknown_accumulation.R")
+    source(file = "scripts/14_combine_plots_prevalence_RE.R")
+    source(file = "scripts/15_combine_plots_heataps.R")
   
   })
 })
