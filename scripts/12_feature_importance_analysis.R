@@ -29,7 +29,7 @@ control_CV = trainControl( method = "cv", number = 5)
 
 ################################################################################
 
-set.seed(100)
+set.seed(1100)
 
 N_df = df[, c(1:31, which(names(df) == "N_removal"))]
 

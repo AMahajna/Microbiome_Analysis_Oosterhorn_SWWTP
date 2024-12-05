@@ -12,16 +12,31 @@ tse_gene = mae[[6]]
 ##Prevalence  
 #Create tse_phylum 
 tse_phylum <- agglomerateByRank(tse, rank = "Phylum", update.tree = TRUE)
+tse_class <- agglomerateByRank(tse, rank = "Class", update.tree = TRUE)
 altExp(tse, "Phylum") <- tse_phylum
+altExp(tse, "Class") <- tse_class
 
 #Prevalence of Phylum in total community labeled by kingdom 
 rowData(altExp(tse,"Phylum"))$prevalence <- 
-  getPrevalence(altExp(tse,"Phylum"), detection = 1/100, 
+  getPrevalence(altExp(tse,"Phylum"), detection = 0, 
                 sort = FALSE,
                 assay.type = "counts", as.relative = TRUE)
 
 prevalence_plot = plotRowData(altExp(tse,"Phylum"), "prevalence", point_size=5,
                               colour_by = "Kingdom")
+
+
+
+rowData(altExp(tse,"Class"))$prevalence <- 
+  getPrevalence(altExp(tse,"Class"), detection = 0, 
+                sort = FALSE,
+                assay.type = "counts", as.relative = TRUE)
+
+df_prvalence_class = as.data.frame(rowData(altExp(tse,"Class"))$prevalence)
+
+df_prevalence = as.data.frame(rowData(altExp(tse,"Phylum"))$prevalence)
+
+df_core_phyla = df_prevalence[df_prevalence == 1]
 
 #png(filename="figures/prevalence.png" ,units = 'in',width=9, height=6, res=1000)
 print(prevalence_plot)

@@ -84,9 +84,17 @@ p <- Heatmap(res$cor,
 
 
 #png(filename="figures/heatmap_bacterial_phyla_clr_subsystems_clr_spearman_euclidean_wardd.png" ,units = 'in',width=9, height=6, res=1000)
-png(filename="figures/heatmap_bacterial_phyla_clr_func_cat_clr_spearman_euclidean_wardd.png" ,units = 'in',width=9, height=6, res=1000)
+png(filename="figures/heatmap_bacterial_phyla_clr_func_cat_clr_spearman_euclidean_wardd.png" ,units = 'in',width=9, height=7.5, res=1000)
 print(p)
 dev.off()
 ################################################################################
 
+tse_respiration <- tse_pathway[
+  rowData(tse_pathway)$Kingdom %in% c("Respiration"), ]
 
+unique(rowData(tse_respiration)$Phylum)
+
+tse_nitrogen <- tse_pathway[
+  rowData(tse_pathway)$Kingdom %in% c("Nitrogen Metabolism"), ]
+
+unique(rowData(tse_nitrogen)$Class)
