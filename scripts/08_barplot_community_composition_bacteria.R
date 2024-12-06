@@ -12,11 +12,18 @@ tse_gene = mae[[6]]
 # Getting top taxa on a Phylum level
 tse_class_bacteria <- agglomerateByRank(tse_bacteria, rank ="Class")
 
-top_taxa_bacteria_class <- getTopFeatures(tse_class_bacteria, top = 12, assay.type = "relabundance")
+core_class = getPrevalence(
+  tse_class_bacteria, rank = "Class",detection = 1, sort = TRUE, assay.type = "counts",
+  as.relative = FALSE) %>% head(12)
 
+
+core_bacteria_class <-  names(core_class)
+
+
+core_bacteria_class <- setdiff(core_bacteria_class, "c__") 
 # Renaming the "Phylum" rank to keep only top taxa and the rest to "Other"
 class_renamed <- lapply(rowData(tse_class_bacteria)$Class, function(x){
-  if (x %in% top_taxa_bacteria_class) {x} else {"Other"}
+  if (x %in% core_bacteria_class) {x} else {"Other"}
 })
 rowData(tse_class_bacteria)$Class <- as.character(class_renamed)
 
@@ -115,5 +122,7 @@ plot_phylum_relabundance <- wrap_plots(plots_phylum[[2]], plots_phylum[[1]], nco
 #######################################################################
 
 png(filename="figures/combined_barplot.png" ,units = 'in',width=9, height=6, res=1000)
+tiff(filename="figures/combined_barplot.tiff" ,units = 'in',width=9, height=6, res=1000)
+
 print(wrap_plots(plot_phylum_relabundance, legend_phylum,plots[[1]], legend, nrow = 2, widths = c(2, 1)))
 dev.off()
