@@ -84,6 +84,8 @@ rowData(tse_phylum_bacteria)$Phylum <- as.character(phylum_renamed)
 plots_phylum <- plotAbundance(tse_phylum_bacteria, rank = "Phylum", 
                               assay.type = "relabundance", features = "Date")
 
+
+
 # Modify the legend of the first plot to be smaller
 plots_phylum[[1]] <- plots_phylum[[1]] +
   theme(
@@ -115,14 +117,15 @@ plots_phylum[[2]] <- plots_phylum[[2]] +
 plot_phylum_relabundance <- wrap_plots(plots_phylum[[2]], plots_phylum[[1]], ncol = 1, heights = c(2, 10))
 # Combine the plot with the legend
 
-#png(filename="figures/barplot_phylum.png" ,units = 'in',width=9, height=6, res=1000)
-#wrap_plots(plot_phylum_relabundance, legend_phylum, nrow = 1, widths = c(2, 1))
-#dev.off()
+png(filename="figures/barplot_phylum.png" ,units = 'in',width=9, height=6, res=1000)
+wrap_plots(plot_phylum_relabundance, legend_phylum, nrow = 1, widths = c(2, 1))
+dev.off()
+
 
 #######################################################################
 
 png(filename="figures/combined_barplot.png" ,units = 'in',width=9, height=6, res=1000)
-tiff(filename="figures/combined_barplot.tiff" ,units = 'in',width=9, height=6, res=1000)
+#tiff(filename="figures/combined_barplot.tiff" ,units = 'in',width=9, height=6, res=1000)
 
 print(wrap_plots(plot_phylum_relabundance, legend_phylum,plots[[1]], legend, nrow = 2, widths = c(2, 1)))
 dev.off()

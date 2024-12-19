@@ -38,7 +38,7 @@ png(filename="figures/heatmap_func_cat_clr_z.png" ,units = 'in',width=9, height=
 print(heatmap_func)
 dev.off()
 
-#png(filename="figures/heatmap_func_cat_clr_z_no_cluster.png" ,units = 'in',width=9, height=6, res=1000)
-#pheatmap(mat, cluster_rows = FALSE,fontsize_row = 8 ,fontsize_col = 8,
-#         cluster_cols = FALSE,annotation_legend = TRUE, heatmap_legend_param = list(title = "clr_z"))
-#dev.off()
+png(filename="figures/heatmap_func_cat_clr_z_no_cluster.png" ,units = 'in',width=9, height=6, res=1000)
+pheatmap(mat, cluster_rows = FALSE,fontsize_row = 8 ,fontsize_col = 8,
+         cluster_cols = FALSE,annotation_legend = TRUE, heatmap_legend_param = list(title = "clr_z"))
+dev.off()
