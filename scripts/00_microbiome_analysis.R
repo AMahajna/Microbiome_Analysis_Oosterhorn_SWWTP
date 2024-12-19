@@ -2,7 +2,8 @@ suppressMessages({
   suppressWarnings({
     source(file = "scripts/01_install_load_packages.R")
     source(file = "scripts/02_import_clean_data.R")
-    #source(file = "scripts/03_feature_accumulation_curve.R")
+    source(file = "scripts/03_a_rarefaction_curves.R")
+    source(file = "scripts/03_b_feature_accumulation_curve.R")
     #source(file = "scripts/04_quality_control.R")
     source(file = "scripts/05_species_function_curve.R")
     source(file = "scripts/06_prevalence.R")

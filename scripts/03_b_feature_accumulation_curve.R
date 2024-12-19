@@ -20,7 +20,7 @@ for (r in ranks) {
 
 ranks = c('Kingdom', 'Phylum', 'Class', 'Order')
 for (r in ranks) {
-  altExp(tse_pathway,r) <- agglomerateByRank(tse_bacteria, r, agglomerate.tree = TRUE)
+  altExp(tse_pathway,r) <- agglomerateByRank(tse_pathway, r, agglomerate.tree = TRUE)
 }
 
 #####################################################################################
